@@ -1,2 +1,2 @@
-# tutorials
-Collection of tutorials in markdown format
+# telenor-startiot-tutorials
+Collection of tutorials in markdown format.
