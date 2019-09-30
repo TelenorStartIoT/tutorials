@@ -10,16 +10,19 @@ Thirdly, there is the IoT platform or platform elements. An IoT platform tries t
 
 ## Contents
 
-  1. [4G LTE Cellular IoT Networks](#)
-
-    1.1 [Foo](#)  
-    1.2 [Bar](#)
-
-  2. [APN: Getting Data Out of the Cellular Network to an IP Endpoint]()
-    i. [Foo](#)
-    ii.[Bar](#) 
-  3. [Cellular LPWAN Modems, Devices and Development Kits]()
-  4. [IoT Platforms: Telenor Managed IoT Cloud and IoT Gateway]()
+  1. [4G LTE Cellular IoT Networks](#1-4g-lte-cellular-iot-networks)
+     1. [Coverage](#coverage)
+     2. [NB-IoT (NB1)](#nb-iot-nb1)
+     3. [LTE-M (Cat M1/M1)](#lte-m-cat-m1m1)
+  2. [APN: Getting Data Out of the Cellular Network to an IP Endpoint](#2-apn-getting-data-out-of-the-cellular-network-to-an-ip-endpoint)
+     1. [Public APN](#public-apn)
+     2. [Private APN](#private-apn) 
+  3. [Cellular LPWAN Modems, Devices and Development Kits](#3-cellular-lpwan-modems-devices-and-development-kits)
+     1. [LPWAN Cellular Modems](#lpwan-cellular-modems)
+     2. [IoT Devices](#iot-devices)
+     3. [LPWAN Development Kits](#lpwan-development-kits)
+  4. [IoT Platforms: Telenor Managed IoT Cloud and IoT Gateway](#4-iot-platforms-telenor-managed-iot-cloud-and-iot-gateway)
+     1. [Telenor Managed IoT Cloud (MIC)](#telenor-managed-iot-cloud-mic)
 
 ## 1. 4G LTE Cellular IoT Networks
 
