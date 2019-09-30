@@ -11,8 +11,10 @@ Thirdly, there is the IoT platform or platform elements. An IoT platform tries t
 ## Contents
 
   1. [4G LTE Cellular IoT Networks](#)
-    i. [Foo](#)
-    ii. [Bar](#)
+
+    1.1 [Foo](#)  
+    1.2 [Bar](#)
+
   2. [APN: Getting Data Out of the Cellular Network to an IP Endpoint]()
     i. [Foo](#)
     ii.[Bar](#) 
@@ -31,7 +33,7 @@ Telenor offers IoT coverage across Norway, including Svalbard. IoT at 4G is the 
 
 NB-IoT is ideal for battery-powered devices that occasionally transmit data over the web. This makes the battery life very long, in some cases up to 10 years. NB-IoT tracking is an important area of ​​IoT, and can be practically applied to just about anything that moves. Not just animals, but shipping, containers and means of transport. NB-IoT is suitable when sending data sporadic and when lowest possible power consumption is required.
 
-![NB-IoT use cases](01-nb-iot-use-cases.png)
+![NB-IoT use cases](./assets/01-nb-iot-use-cases.png)
 
 NB-IoT use cases (source: Nordic Semiconductor).
 
@@ -39,7 +41,7 @@ NB-IoT use cases (source: Nordic Semiconductor).
 
 LTE-M is suitable for active sensors requiring higher speeds and greater bandwidth, while also requiring good battery life and / or better penetration coverage. LTE-M is tomorrow's version of today's 2G and 3G solutions. LTE-M subscription supports LTE-M and LTE traffic. LTE-M supports SMS, but not yet VoLTE. LTE-M is suitable for real time mobility cases or when streaming of data is required.
 
-![LTE-M (Cat M1) use cases](02-cat-m1.png)
+![LTE-M (Cat M1) use cases](./assets/02-cat-m1.png)
 
 LTE-M (Cat M1) use cases (source: Nordic Semiconductor).
 
@@ -49,7 +51,7 @@ You can find a lot of information on the Internet about the difference between L
 
 The 4G LTE network transmits data from your devices to IP based endpoints. In the 4G architecture it is the "Public Data Network Gateway" (PGW) that transforms data from the cellular network to IP based networks. It is possible to set up IP access points from the PGW in many different ways. All the different access points are given names, this is the APN (Access Point Name). It is the cellular operator that creates and manages the access points in the PGW. Some APN's are public, meaning that any device is allowed to send traffic through the access point and some are private (restricted). Some APN's only allow forwarding of traffic to specific IP endpoints and some allow forwarding to any IP endpoint. Some APN's use IPsec tunnels to forward traffic encrypted to one specific endpoint and some APN's do not. We will not get into the details here. In Telenor Start IoT we use both public APN's and private APN's sending securely to a specific endpoint. More about that later.
 
-![Simplified cellular IoT architecture](03-cellular-architectural-overview.png)
+![Simplified cellular IoT architecture](./assets/03-cellular-architectural-overview.png)
 
 The figure shows a simplified overview of our NB-IoT/LTE-M network architecture. CIoT RAN is what most people call a base station, the PGW is the point in the cellular network where the data leaves the operator network and enters an IP network (PDN). The CIoT service is your service endpoint or an IoT platform endpoint (e.g. the Managed IoT Cloud platform that is part of the Telenor Start IoT offering).
 
@@ -71,11 +73,11 @@ In the context of IoT we often talk about modems, devices and development kits. 
 
 In day to day speech, a cellular modem is a device that allows a personal computer or a router to receive Internet access via a mobile broadband connection instead of using telephone or cable television lines. In our context however, referring to a modem means the part on the circuit board that handles the cellular connectivity. Traditionally the modem has always been a separate entity on the circuit board but today we are also starting to see the modem integrated together with an [MCU](https://en.wikipedia.org/wiki/Microcontroller) or CPU and other components into a System on a Chip (SoC). A cellular Low Power Wide Area Network (LPWAN) modem is a modem that supports either NB-IoT or LTE-M or both. The Ublox R410 and the Sequans Monarch (see images) are examples of modems that supports both while the UBlox N210 is an example of a modem which only supports NB-IoT. The Mediatec MT2625 and Nordic nrF9166 are examples of NB-IoT only (Mediatec) and NB-IoT/LTE-M (Nordic) LPWAN SoCs. LPWAN cellular modems are used as one of the building blocks for IoT devices and IoT development kits.
 
-![SARA R410M](04-sara-r410m.png)
+![SARA R410M](./assets/04-sara-r410m.png)
 
 UBlox SARA R410M modem.
 
-![Sequans](05-sequans.png)
+![Sequans](./assets/05-sequans.png)
 
 Sequans Monarch NB-IoT/LTE-M (Cat M1) modem.
 
@@ -83,11 +85,11 @@ Sequans Monarch NB-IoT/LTE-M (Cat M1) modem.
 
 A cellular IoT device naturally includes a cellular modem (or SoC) but in addition, other components are usually added to the [PCB](https://en.wikipedia.org/wiki/Printed_circuit_board) as well. Cellular IoT devices are often specifically designed to meet the needs for a particular IoT use case. In principle, all types of equipment that includes network connectivity can be thought of as an IoT device. The Telenor Start IoT offering is however focusing on LPWAN IoT and this limits the fitting use cases. LPWAN IoT devices usually consists of at least a LPWAN modem, power circuitry, sensors and actuators relevant for the use case in questions. Many of the LPWAN IoT devices are powered by batteries.
 
-![Mictrack](06-mt825-waterproof-nb-iot-gps-tracker.jpg)
+![Mictrack](./assets/06-mt825-waterproof-nb-iot-gps-tracker.jpg)
 
 The Mictrack NB-IoT/LTE-M (Cat M1) GPS tracking device.
 
-![Q Free](07-parking-sensor.jpg)
+![Q Free](./assets/07-parking-sensor.jpg)
 
 The Q Free NB-IoT parking space sensor.
 
@@ -97,15 +99,15 @@ Development kits have at least two meanings related to IoT. Modem or SoC vendors
 
 Another type of common development kits are units targeted at developers or makers that most of all would like to experiment with software, or would like to create relatively small prototypes for an IoT device. The purpose of such a prototype is often to create everything around the device itself that you need to create an IoT service (e.g. Web or mobile phone based applications, dashboards, etc.). This is the kind of development kit that we are providing as part of the Telenor Start IoT offering. These development kits are also a great starting place to play around with the technology and have tons of fun. With a proper casing the prototypes might even be suited for long term testing of vital characteristics of your IoT service (e.g. power consumption, suitability of chosen sensors, etc.). The Arduino MKRNB1500 development kit is an example of this type of development kit and is one of the kits we are currently using in the Telenor Start IoT offering.
 
-![UBlox N211](08-n211-dev-kit.jpg)
+![UBlox N211](./assets/08-n211-dev-kit.jpg)
 
 UBlox N211 NB-IoT modem development kit.
 
-![Nordic nrf9160 SoC](09-nrf91.jpg)
+![Nordic nrf9160 SoC](./assets/09-nrf91.jpg)
 
 Nordic nrf9160 SoC development kit.
 
-![Arduino MKRNB1500](10-mkrnb1500.jpg)
+![Arduino MKRNB1500](./assets/10-mkrnb1500.jpg)
 
 Arduino MKRNB1500 development kit.
 
