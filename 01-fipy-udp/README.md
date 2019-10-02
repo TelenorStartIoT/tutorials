@@ -124,9 +124,9 @@ Do not worry about the details for now, this was just for your information. It i
 
 ### Add a Thing Representing Your Dev-Kit
 
-The "Thing Type" and "Thing" together is a representation of your dev kit in MIC. It is possible to have more than one thing in a Thing Type and this will make the Things in the Thing Type to behave in the same manner with respect to how payloads from the Things are handled. The handling of the payload is described in your uplink transform.
+The "Thing Type" and "Thing" together is a representation of your dev kit in MIC. It is possible to have more than one thing in a Thing Type and this will make the Things in the Thing Type behave in the same manner with respect to how payloads from the Things are handled. The handling of the payload is described in your uplink transform.
 
-You must click on the "+ THINGS" button to create a new Thing. In the create new Thing form, de-select the "Create batch" slider. You must then add a "Thing Name", a "Description", select your "Domain" and choose "Protocol" for your Thing. When you select "cellular" as protocol you will also have to add the IMSI and IMEI number of your dev-kit. The IMSI and IMEI was obtained in a previous chapter. The image on the right shows an example of what it should look like.
+You must click on the "+ THINGS" button to create a new Thing. In the create new Thing form, de-select the "Create batch" slider. You must then add a "Thing Name", a "Description", select your "Domain" and choose "Protocol" for your Thing. When you select "Cellular" as protocol you will also have to add the IMSI and IMEI number of your dev-kit. The IMSI and IMEI was obtained in a previous chapter. The image on the right shows an example of what it should look like.
 
 ![Add new Thing to Thing Type](./assets/07-thing.png)
 
@@ -164,7 +164,9 @@ You can download the example code from here: https://github.com/TelenorStartIoT/
 
 You should choose the "Download ZIP" option in the "Clone or Download" button pop-up. This will download a ZIP archive with the example code.
 
-### Unzip the Example Code and It In VSCode
+![Download ZIP](./assets/10-download-zip.png)
+
+### Unzip the Example Code and Open It In VSCode
 
 Unzip the example code. How to do this varies depending on your computer system. Most systems will unzip it if you double click on the zip file.
 
