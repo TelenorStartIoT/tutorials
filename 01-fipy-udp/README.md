@@ -13,7 +13,7 @@ You will learn how to:
    * program the dev kit and send data to MIC over Telenor's excellent 4G LTE-M or NB-IoT network
    * view your data in MIC
 
-You can also find a lot of info related to the FiPy on Pycom's own documentation site: [Pycom's own documentation](https://docs.pycom.io/gettingstarted/).
+You can also find a lot of info related to the FiPy on Pycom's own documentation site: https://docs.pycom.io/gettingstarted/
 
 ## Contents
 
@@ -37,7 +37,7 @@ This Chapter will show you how to download and install the VSCode editor and the
 
 ### Download the VSCode Editor
 
-The easiest way to program the FiPy is to use the VSCode editor and install the Pymakr plugin for the VSCode editor. You can download the VSCode editor for Windows, Linux and MacOS here: https://code.visualstudio.com/download. Download and install the VSCode editor.
+The easiest way to program the FiPy is to use the VSCode editor and install the Pymakr plugin for the VSCode editor. You can download the VSCode editor for Windows, Linux and MacOS here: https://code.visualstudio.com/download. Download and install the VSCode editor for your operating system.
 
 ![Download VSCode](./assets/00-download-vscode.png)
 
@@ -51,17 +51,17 @@ When both the VSCode editor and the Pymakr plugin have been successfully install
 
 ## 2. Assemble the FiPy Dev-Kit
 
-In this chapter you will learn how to assemble and connect the FiPy dev-kit to the VSCode editor. You will also communicate with the dev-kit in order to check the firmware version and retrieve the IMSI and IMEI numbers that you will need to register you dev-kit in the Managed IoT Cloud platform. More on that in a later chapter, let us first connect the dev-kit to VSCode.
+In this chapter you will learn how to assemble and connect the FiPy dev-kit to the VSCode editor. You will also communicate with the dev-kit in order to check the firmware version and retrieve the IMSI and IMEI numbers that you will need to register you dev-kit in the MIC platform. More on that in a later chapter, let us first connect the dev-kit to VSCode.
 
 ### Attach the Antenna
 
-**Important notice**: You should always mount the 4G antenna to the connector on the bottom side of the FiPy . The result of not connecting the antenna could be that you harm the modem when it is connected. You should insert the provided SIM card in the SIM card slot on the bottom side of the FiPy. If you do not have the SIM inserted it will be impossible to connect to the 4G network.
+**Important**: You should always mount the 4G antenna to the connector on the bottom side of the FiPy . The result of not connecting the antenna could be that you harm the modem when it is connected. You should insert the provided SIM card in the SIM card slot on the bottom side of the FiPy. If you do not have the SIM inserted it will be impossible to connect to the 4G network.
 
 ![LTE antenna](./assets/02-lte-ant-fipy.png)
 
 ### Insert the SIM and Mount FiPy on the Expansion Board
 
-You should now mount the FiPy module to the provided Expansion Board. The USB connector on the expansion board must be in the same direction as the reset button on the FiPy module. The image on the right shows you what it should look like. You should check that all the jumper switches on the Expansion board is present. The jumper switches are the small plastic jumpers located on the upper left side of the expansion board. Without all the jumpers in place it might be impossible to get contact with the FiPy. You should also check that all the PIN's on the FiPy are matching the open connectors on the expansion board (i.e. that it is aligned correctly) when you push the FiPy model into the expansion board.
+You should now mount the FiPy module to the provided Expansion Board. The USB connector on the expansion board must be in the same direction as the reset button on the FiPy module. The image shows you what it should look like. You should check that all the jumper switches on the Expansion board is present. The jumper switches are the small plastic jumpers located on the upper left side of the expansion board. Without all the jumpers in place it might be impossible to get contact with the FiPy. You should also check that all the PIN's on the FiPy are matching the open connectors on the expansion board (i.e. that it is aligned correctly) when you push the FiPy model into the expansion board.
 
 ![Insert SIM](./assets/03-sim-fipy.png)
 
@@ -75,7 +75,7 @@ Mount the FiPy on the Expansion board.
 
 You are now ready to follow the "Connecting via serial USB" procedure described here: https://docs.pycom.io/pymakr/installation/vscode/#connecting-via-serial-usb
 
-As a result, you should now be able to connect to the FiPy dev kit using a USB port on your computer. You should note that the micro USB cable is not supplied with the dev-kit.
+As a result, you should now be able to connect to the FiPy dev-kit using a USB port on your computer. The Pymakr plugin will automatically detect your dev-kit and connect VSCode to it. You should note that the micro USB cable is not supplied with the dev-kit.
 
 If you select the "All commands" button (located at the bottom bar) and then select "Get board version" in the VSCode Pymakr menu you should see the version number of the underlying Pycom Firmware.
 
@@ -96,11 +96,11 @@ It should be OK to use the firmware that is pre-installed on your FiPy but you s
 
 ## 3. Register Your FiPy Dev-Kit in Telenor Managed IoT Cloud
 
-In this chapter you will learn how to register your Dev-Kit to Telenor Managed IoT Cloud (MIC). You will also learn how to get the IMSI and IMEI number from the FiPy device. Using the IMSI and IMEI information you will learn how to add a new 4G LTE-M (Cat M1) "Thing" in MIC. You will also learn how to add a transformation of your payload and how to create a dashboard. The payload transformation makes it possible for you to view the individual parts of the payload in different type of widgets in the dashboard. Widget types ranges from simple textual widgets to graphical representations of your data.
+In this chapter you will learn how to register your Dev-Kit to Telenor Managed IoT Cloud (MIC). Using the IMSI and IMEI information you will learn how to add a new "Thing" in MIC. You will also learn how to add a transformation of your payload and how to create a dashboard. The payload transformation makes it possible for you to view the individual parts of the payload in different types of widgets in the dashboard. Widget types ranges from simple textual widgets to graphical representations of your data.
 
 ### Sign Up For a MIC Platform Account
 
-You will have to register for a MIC account in order to register your dev-kit. You can do that here: https://startiot.mic.telenorconnexion.com
+You will have to register for a MIC account in order to register your dev-kit. You can do that here: https://demonorway.mic.telenorconnexion.com
 
 ![Login](./assets/05-login-mic.png)
 
@@ -120,13 +120,13 @@ return JSON.parse(payload.toString('utf-8'));
 
 This code is just one simple example of what the uplink transform can look like. In this case it will transform JSON formatted payloads into a JavaScript object and return it. This will separate each property of the object into its separate "parts". For each "part" a resource in MIC will be created. A resource is an MQTT endpoint.
 
-Do not worry about the details for now, this was just for your information. It is possible to create uplink transformations for payloads formatted in basically any format (hex, binary, text, JSON, etc). The uplink transform is just a snippet of JavaScript code that MIC will use when doing transformations on your payload, and is generally used to unpack small payloads into understandable resources.
+Do not worry about the details for now, this was just for your information. It is possible to create uplink transformations for payloads formatted in basically any format (hex, binary, text, JSON, etc.). The uplink transform is just a snippet of JavaScript code that MIC will use when doing transformations on your payload, and is generally used to unpack small payloads into understandable resources.
 
 ### Add a Thing Representing Your Dev-Kit
 
-The "Thing Type" and "Thing" together is a representation of your dev kit in MIC. It is possible to have more than one thing in a Thing Type and this will make the Things in the Thing Type behave in the same manner with respect to how payloads from the Things are handled. The handling of the payload is described in your uplink transform.
+The "Thing Type" and "Thing" together is a representation of your dev-kit in MIC. It is possible to have more than one thing in a Thing Type and this will make the Things in the Thing Type behave in the same manner with respect to how payloads from the Things are handled. The handling of the payload is described in your uplink transformation.
 
-You must click on the "+ THINGS" button to create a new Thing. In the create new Thing form, de-select the "Create batch" slider. You must then add a "Thing Name", a "Description", select your "Domain" and choose "Protocol" for your Thing. When you select "Cellular" as protocol you will also have to add the IMSI and IMEI number of your dev-kit. The IMSI and IMEI was obtained in a previous chapter. The image on the right shows an example of what it should look like.
+You must click on the "+ THINGS" button to create a new Thing. In the create new Thing form, de-select the "Create batch" slider. You must then add a "Thing Name", a "Description", select your "Domain" and choose "Protocol" for your Thing. When you select "Cellular" as protocol you will also have to add the IMSI and IMEI numbers of your dev-kit. The image on shows an example of what it should look like.
 
 ![Add new Thing to Thing Type](./assets/07-thing.png)
 
@@ -158,7 +158,7 @@ It could however be a good idea to upgrade the LTE-M firmware when new versions 
 
 In this chapter you will learn how to program the FiPy dev-kit. The chapter will guide you through how to use the provided example code to connect the FiPy to the LTE-M or NB-IoT networks. Be aware that the FiPy Sequans modem firmware can only support either LTE-M (Cat M1) or NB-IoT. If you want to experiment with the NB-IoT network you will have to flash the Sequans modem on the FiPy with the NB-IoT firmware first.
 
-### Download Example Code as a ZIP File
+### Download Example Code
 
 You can download the example code from here: https://github.com/TelenorStartIoT/FiPyDevKitCatM1
 
@@ -170,8 +170,34 @@ You should choose the "Download ZIP" option in the "Clone or Download" button po
 
 Unzip the example code. How to do this varies depending on your computer system. Most systems will unzip it if you double click on the zip file.
 
-Open the folder using the "File > Open Folder" option in VSCode.
+Open the folder using the "File > Open Folder" ("File > Open" on MacOS) option in VSCode.
+
+![Open project in VSCode](./assets/11-open-project.png)
 
 ### Modify the Program's Network Configuration
 
 The program you downloaded has the network (modem) configuration that should be used to connect to the M1 network. If you are using the NB1 network change the initModem function in the lib/startiot_catm1.py file by commenting out the four lines shown on the right. Note that if you want to use the NB1 network you will also have to flash the Sequans modem with the NB1 firmware as described in the previous lesson.
+
+### Run the Program
+
+Connect the FiPy that is mounted on the expansion board to your computer (if not already connected). Make sure that the SIM and LTE antenna is connected! The Pymakr plugin in VSCode will automatically detect the dev-kit.
+
+To upload and run the program on your FiPy, simply click the "Upload" button located at the bottom bar. This will first upload the code, then it will reset your FiPy and run the uploaded code.
+
+### Check the Output From the Program
+
+If everything goes well you should see output from the program in the Pycom Console window in VSCode. The image shows you what it could look like (the output from the program might be different).
+
+### Wrapping It All Up
+
+You should now be able to view your data in the MIC dashboard. Try to add a time series widget by clicking the “+WIDGET” button in MIC and set the type to be "Time Series". Images below shows some sample screenshots on how to do it.
+
+### Happy Hacking!
+
+This concludes the Get started with the FiPy tutorial. Your next step could be to connect the supplied DHT11 sensor to the FiPy and to modify the "dummy" payload string with values from the DHT11 sensor.
+
+A god starting point would be to use the library code supplied here:
+
+https://github.com/JurassicPork/DHT_PyCom/tree/pulses_get
+
+Happy hacking!
