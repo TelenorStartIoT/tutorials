@@ -25,7 +25,7 @@ https://www.arduino.cc/en/Guide/MKRNB1500Introduction...
      1. Sub Header
      2. Sub Header 2
 
-## 1. Chapter One
+## 1. Preparations for Arduino dev kit
 
 ### Sub Header
 
