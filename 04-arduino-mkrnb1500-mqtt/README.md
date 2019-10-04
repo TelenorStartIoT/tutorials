@@ -2,25 +2,59 @@
 
 > Reading time: 45 minutes
 
-Introduction...
+# Arduino MKR1500 MQTT/TLS 1.2 over M1
+This tutorial gives brief instructions on how to get started with the Arduino MKR1500 dev kit. This tutorial will send data from the Arduino MKR1500 dev kit using secure (TLS 1.2) MQTT packet over the M1 (LTE Cat M1) network.
+
+You will learn:
+
+* How to download the Arduino Desktop IDE
+* How to assemble the dev kit and connect it to the Arduino Desktop IDE
+* How to create a Telenor Start IoT Managed IoT Cloud (MIC) platform account
+* How to register your dev kit in MIC and create payload transformations
+* How to program the dev kit and send data to MIC over MQTT/TLS1.2 on Telenor’s excellent 4G LTE IoT Cat M1 network
+* How to view your data in MIC
+
+You can also find a lot of info related to the Arduino MKR on Arduino´s own documentation site: https://www.arduino.cc/en/Guide/MKRNB1500
 
 ## Contents
 
-  1. Chapter One
+  1. Preparations for Arduino dev kit, part one
      1. Sub Header
      2. Sub Header 2
   2. Chapter Two
      1. Sub Header
      2. Sub Header 2
 
-## 1. Chapter One
+## 1. Preparations for Arduino dev kit, part one
 
-### Sub Header
+This lesson will show you how to download and install the Arduino Desktop IDE. The Arduino Desktop IDE is what you will use to connect to and program your dev kit.
 
-### Sub Header 2
+### Download and install the Arduino Desktop IDE
 
-## 2. Chapter Two
+The easiest way to program the Arduino MKR1500 dev kit is to use the Arduino Desktop IDE. You can download the Arduino IDE from https://www.arduino.cc/en/Guide/HomePage. Scroll down to the “Install the Arduino Desktop IDE” and select the link that is appropriate for your computers operating system and follow the instructions there.
 
-### Sub Header
+![Download Aurduino desktop](./01-%20Arduino%20home%20page.png)
 
-### Sub Header 2
+When the Arduino Desktop IDE has been successfully installed you are ready to connect to the dev kit and start programming your own firmware for the Arduino. The next lesson will show you how to connect your dev kit to the Arduino IDE.
+
+## 2. Assemble the Arduino dev kit
+
+In this lesson you will learn how to assemble and connect the Arduino dev kit to the Arduino Desktop IDE. You will also communicate with the dev kit in order to check the firmware revision and retrieve the IMSI and IMEI numbers that you will need to register you dev kit in the Managed IoT Cloud platform. More on that in a later lesson, let us first connect the dev kit to the Arduino IDE.
+
+### Connect the antenna and insert the SIM card
+
+Before you connect the Arduino MKR1500 to your computer you need to make sure that the LTE antenna and the SIM card is installed onto the MKR1500 board. The antenna that comes with the dev kit should be mounted on the small UFL connector on the left side of the UBlox modem on the front side of the board. 
+
+![ConnectingAntenna](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/02-Connecting-Antenna1.jpg)
+
+The SIM card should be inserted in the SIM card slot located on the back side of the board. The small symbol on the SIM card slot shows the direction the SIM card should be inserted.
+
+![SIMCardslot](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/03-SimCardSlot.jpg)
+
+* Please also remove the black conductive foam from the MKR board pins before usage. If you don’t remove it, the board may behave erratically.*
+
+### Add board support for the dev kit in the IDE
+
+Open the Arduino Desktop IDE. Before you connect your board to the computer, the first thing you need to do is to add the Atmel SAMD Core to the IDE. This simple procedure is done selecting Tools menu, then Boards and last Boards Manager. When the boards manager is displayed (see image), search for NB 1500 and install the SAMD core by clicking the install button.
+
+
