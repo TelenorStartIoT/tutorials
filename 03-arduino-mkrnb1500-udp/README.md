@@ -28,20 +28,19 @@ https://www.arduino.cc/en/Guide/MKRNB1500Introduction...
      4. Select the port in the IDE
      5. Get the IMSI and IMEI number of your dev kit
      
- 3. Register your Arduino dev kit in Telenor StartIoT Managed IoT Cloud
-    1.Sign up for a MIC platform account
-    2.Add a new thing type
-    3.Add a thing representing your dev kit
-    4.See your thing
-    5.Example dashboard
-    6.Start Programming
+  3. Register your Arduino dev kit in Telenor StartIoT Managed IoT Cloud
+     1. Sign up for a MIC platform account
+     2. Add a new thing type
+     3. Add a thing representing your dev kit
+     4. See your thing
+     5. Example dashboard
  
- 4.Programming of the Arduino dev kit
-   1.Download the example code as a zip file
-   2.Add (open) the example code in the Arduino Desktop IDE
-   3.Add the MKRNB IoT library
-   4.Run the example program
-   5.See your data displayed in MIC
+ 4. Programming of the Arduino dev kit
+     1. Download the example code as a zip file
+     2. Add (open) the example code in the Arduino Desktop IDE
+     3. Add the MKRNB IoT library
+     4. Run the example program
+     5. See your data displayed in MIC
     
     
     
