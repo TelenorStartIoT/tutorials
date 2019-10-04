@@ -12,7 +12,7 @@ In this tutorial we will point you two examples on our experimental documentatio
 
   1. [EE 410 breakout with Arduino](#EE-410-breakout-with-Arduino)
      1. [Connecting the EE 410 to Horde](#Connecting-the-EE-410-to-Horde)
-     2.[ Connecting the EE410 to MIC](#Connecting-the-EE410-to-MIC)
+     2. [ Connecting the EE410 to MIC](#Connecting-the-EE410-to-MIC)
   2. [EE R410 breakout with Raspberry Pi](#EE-R410-breakout-with-Raspberry-Pi)
      
 
