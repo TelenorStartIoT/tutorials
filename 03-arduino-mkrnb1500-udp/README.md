@@ -13,7 +13,7 @@ You will learn:
 - How to program the dev kit and send data to MIC over Telenor’s excellent 4G LTE IoT Cat M1 network
 - How to view your data in MIC
 
-* You can also find a lot of info related to the Arduino MKR on Arduino´s own documentation site: *
+*You can also find a lot of info related to the Arduino MKR on Arduino´s own documentation site:*
 https://www.arduino.cc/en/Guide/MKRNB1500Introduction...
 
 ## Contents
@@ -43,14 +43,14 @@ In this lesson you will learn how to assemble and connect the Arduino dev kit to
 
 ### Connect the antenna and insert the SIM card
 
-Before you connect the Arduino MKR1500 to your computer you need to make sure that the LTE antenna and the SIM card is installed onto the MKR1500 board. The antenna that comes with the dev kit should be mounted on the small UFL connector on the left side of the UBlox modem on the front side of the board. The SIM card should be inserted in the SIM card slot located on the back side of the board. The small symbol on the SIM card slot shows the direction the SIM card should be inserted.
+Before you connect the Arduino MKR1500 to your computer you need to make sure that the LTE antenna and the SIM card is installed onto the MKR1500 board. The antenna that comes with the dev kit should be mounted on the small UFL connector on the left side of the UBlox modem on the front side of the board. 
 
-* Please also remove the black conductive foam from the MKR board pins before usage. If you don’t remove it, the board may behave erratically *
+![ConnectingAntenna](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/02-Connecting-Antenna1.jpg)
 
-![ConnectingAntenna](./03-arduino-mkrnb1500-udp/02-Connecting-Antenna1.jpg)
+The SIM card should be inserted in the SIM card slot located on the back side of the board. The small symbol on the SIM card slot shows the direction the SIM card should be inserted.
 
-![SIMCardslot](./03-arduino-mkrnb1500-udp/03-SimCardSlot.jpg)
+![SIMCardslot](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/03-SimCardSlot.jpg)
 
-
+*Please also remove the black conductive foam from the MKR board pins before usage. If you don’t remove it, the board may behave erratically*
 
 
