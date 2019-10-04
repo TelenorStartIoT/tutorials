@@ -23,6 +23,10 @@ https://www.arduino.cc/en/Guide/MKRNB1500Introduction...
      
   2. Assemble the Arduino dev kit
      1. Connect the antenna and insert the SIM card
+     2. Add board support for the dev kit in the IDE
+     3. Select the board type in the IDE
+     4. Select the port in the IDE
+     5. Get the IMSI and IMEI number of your dev kit
     
 ## 1. Preparations for Arduino dev kit
 
@@ -53,4 +57,60 @@ The SIM card should be inserted in the SIM card slot located on the back side of
 
 *Please also remove the black conductive foam from the MKR board pins before usage. If you don’t remove it, the board may behave erratically*
 
+### Add board support for the dev kit in the IDE
+
+Open the Arduino Desktop IDE. Before you connect your board to the computer, the first thing you need to do is to add the Atmel SAMD Core to the IDE. This simple procedure is done selecting Tools menu, then Boards and last Boards Manager. When the boards manager is displayed (see image), search for NB 1500 and install the SAMD core by clicking the install button
+
+![AddBoardSupport](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/04-AddBoardSupport.jpg)
+
+### Select the board type in the IDE
+
+Now that the SAMD Core is installed, you can connect the board to the computer using a standard micro USB cable. In the IDE, from Tools select the Board Arduino MKR NB 1500.
+![SelectingBoard](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/05-SelectingBoard.jpg)
+
+### Select the port in the IDE
+
+Now it is time to finally select the port the Arduino MKR1500 is connected to. This will look slightly different depending on the operating system your computer is using. The example image shows what it typically looks like on a Windows OS.
+
+![SelectPortIDE](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/06-SelectPortID.jpg)
+
+### Get the IMSI and IMEI number of your dev kit
+
+Create a new sketch in the IDE and copy the following code into the sketch:
+
+// baud rate used for both Serial ports
+unsigned long baud = 115200;
+
+void setup() {
+  // enable the POW_ON pin
+  pinMode(SARA_PWR_ON, OUTPUT);
+  digitalWrite(SARA_PWR_ON, HIGH);
+  // reset the ublox module
+  pinMode(SARA_RESETN, OUTPUT);
+  digitalWrite(SARA_RESETN, HIGH);
+  delay(100);
+  digitalWrite(SARA_RESETN, LOW);
+
+  Serial.begin(baud);
+  SerialSARA.begin(baud);
+}
+
+void loop() {
+  if (Serial.available()) {
+    SerialSARA.write(Serial.read());
+  }
+
+  if (SerialSARA.available()) {
+    Serial.write(SerialSARA.read());
+  }
+}
+
+![GettingIMSInumber](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/07A-GettingIMSInumber.jpg)
+
+AT+CIMI;+CGSN
+
+Leave the serial monitor open. You’ll need to copy these numbers when we provision the device in Telenor Start IoT Managed IoT Cloud in the next lesson.
+
+In the next lesson you will register and connect your dev kit to Telenor Start IoT Managed IoT Cloud
+![SerialMonitor](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/07B-GettingIMSInumber.jpg)
 
