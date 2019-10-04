@@ -179,6 +179,107 @@ Unzip the source code. How to do the unzipping will vary depending on your opera
 
 Add the example code to the Arduino Desktop IDE (File->Open…) and select the Arduino_MIC_MQTT.ino file. We do want to change the content of the MICCertificates——–.h file with the certificate and private key for your thing in MIC. Let us first download the certificate and key from MIC.
 
+![AddExampleSourceCode](https://github.com/TelenorStartIoT/tutorials/blob/master/04-arduino-mkrnb1500-mqtt/02-ExampleCode.jpg)
+
+## Download MIC certificate and keys
+
+You will have to download the MIC certificate for your thing. It will be downloaded as a zip file. Unzip the zip file. Unzipping the zip file creates a folder with the certificates and keys. You will have to transform the certificates and the private key to DER Hex format since this is the only format the UBlox R410 modem understands. In order to facilitate for mutual authentication between the dev kit and the platform you will also need the AWS IoT root certificate. This certificate is already included the Arduino source code.
+
+![MICCertifiacted](https://github.com/TelenorStartIoT/tutorials/blob/master/04-arduino-mkrnb1500-mqtt/03-MICCertificated.jpg)
+
+## Change file name and include statement in the .ino file
+
+The goal is to create a MICCertificates——–.h file containing your things certificates and keys. The file MICCertificatesYOUR_THING_ID.h is just a template. As a start, rename this file to match your things thing id by changing the YOUR_THING_ID part of the file name with your things id (e.g. MICCertificates00001234.h). Also change the include statement in the .ino file accordingly. If your SIM card has a PIN you will also have to add that in the .ino file.
+
+![ChangeFileName](https://github.com/TelenorStartIoT/tutorials/blob/master/04-arduino-mkrnb1500-mqtt/04-ChangeFileName.jpg)
+
+## Transforming the certificate and key
+
+*NOTE: When following the next two steps to transform the PEM client certificate and the PEM private key, the needed parameters to and output from openssl commands and hexdump may vary with different versions of openssl, hexdump and operating systems. If you experience differences you will have to try your best 🙂 to get it right.*
+
+## Transform the PEM client certificate
+
+The certificate and private key downloaded from MIC is in PEM format. The UBlox R410 modem expects the certificate and key to be in DER format. To transform the content of your thing´s PEM certificate to DER Hex format you can use the following command:
+
+openssl x509 -C -in cert.pem > certDER.c
+
+Open the resulting certDER.c file and scroll down to the “unsigned char the_certificate[xxx]” part of the file. Copy the Hex for the certificate into your MICCertificates——–.h file and add the number (xxx) at the bottom of the definition (this is the size).
+
+Copy the certificate hex code from the generated certDER.c
+
+![CopyHexCode](https://github.com/TelenorStartIoT/tutorials/blob/master/04-arduino-mkrnb1500-mqtt/05-CopyHexCode.jpg)
+
+Copy the certificate hex code to the MIC_CLIENT_CERTIFICATE part of the MICCertificates——–.h file
+
+![CopyHexCodeCertToMIC](https://github.com/TelenorStartIoT/tutorials/blob/master/04-arduino-mkrnb1500-mqtt/06-CopyHexCodeCertToMIC.jpg)
+
+Add the size number at the bottom of the MIC_CLIENT_CERTIFICATE definition in the MICCertificates——–.h file
+
+![AddSizeNumber](https://github.com/TelenorStartIoT/tutorials/blob/master/04-arduino-mkrnb1500-mqtt/07-AddSizeNumber.jpg)
+
+## Transform the PEM private key
+
+To change the private key (privkey.pem) from PEM to DER format that is suitable in the MICCertificates——–.h is a little bit more tricky. Start by using this openssl command:
+
+
+1
+openssl rsa -inform PEM -in privkey.pem -outform DER -out privkey.dat
+Use this command to transform the binary file to the appropriate textual hex format:
+
+hexdump -e '16/1 "0x%02x, " "\n"' privkey.dat > privkey.hex
+1
+hexdump -e '16/1 "0x%02x, " "\n"' privkey.dat > privkey.hex
+You now have the format you need in the privkey.hex file but be aware that there could be some trailing 0x0 at the end of the file. If that is the case, they need to be removed when you copy this into the MICCertificates——–.h file.
+
+To find the size (number of bytes) you can either count them manually 🙂 or use the ls -l command on the privkey.dat file:
+
+> ls -l privkey.dat
+-rw-------@ 1 testuser  staff  1193 Apr 24 12:56 privkey.dat
+1
+2
+> ls -l privkey.dat
+-rw-------@ 1 testuser  staff  1193 Apr 24 12:56 privkey.dat
+In the above case, the size is 1193.
+
+Your source code should now be ready for execution on the Arduino but you need to add the MKR1500 library before you compile and download it for execution on your device.
+
+![StartFormat](https://github.com/TelenorStartIoT/tutorials/blob/master/04-arduino-mkrnb1500-mqtt/08A-TransformPEMPrivateKey.jpg)
+The start of the formatted privkey bytes in the MICCertificates——–.h file.
+
+Your source code should now be ready for execution on the Arduino but you need to add the MKR1500 library before you compile and download it for execution on your device.
+
+![EndFormat](https://github.com/TelenorStartIoT/tutorials/blob/master/04-arduino-mkrnb1500-mqtt/08B-TransformPEMPrivateKey.jpg)
+The end of the formatted privkey bytes in the MICCertificates——–.h file. Note where the size is placed and that trailing 0x0 has been removed.
+
+## Add the MKRNB IoT library
+
+The example code requires the Arduino MKRNB library. Add it to your sketch (Sketch->Include Library…), search for MKR NB and click install.
+
+![AddMKRNBLibrary](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/09B-AddMKRNBLibrary.jpg)
+
+### Run the example program
+
+Compile and run the example code on the MKR1500 device by clicking on the upload arrow symbol or choosing “Sketch->Upload..” from the menu. Open the Serial Monitor (Tools->Serial Monitor…) and see the log output from your program.
+
+![RunExampleProgram](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/09B-AddMKRNBLibrary.jpg)
+
+### See your data displayed in MIC
+
+Open the MIC dashboard and see your data displayed in MIC.
+
+![MICDashBoard](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/09D-MICDashBoard.jpg)
+
+## Happy hacking!
+This concludes the Get started with the Arduino dev kit tutorial. Your next step could be to connect the supplied DHT11 sensor to the Arduino dev kit and to modify the “dummy” payload string with values from the DHT11 sensor.
+
+A god starting point would be to find out how to use the DHT library code supplied here:
+
+https://github.com/winlinvip/SimpleDHT
+
+Happy hacking!
+
+
+
 
 
 
