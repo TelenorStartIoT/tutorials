@@ -20,6 +20,7 @@ You can also find a lot of info related to the Arduino MKR on Arduino´s own doc
 
   1.[ Preparations for Arduino dev kit, part one](#Preparations-for-Arduino-dev-kit-part one)
      1. [Download and install the Arduino Desktop IDE](#Download-and-install-the-Arduino-Desktop-IDE)
+     
   2. Assemble the Arduino dev kit
      1. Connect the antenna and insert the SIM card
      2. Add board support for the dev kit in the IDE
