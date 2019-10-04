@@ -52,7 +52,7 @@ This lesson will show you how to download and install the Arduino Desktop IDE. T
 
 The easiest way to program the Arduino MKR1500 dev kit is to use the Arduino Desktop IDE. You can download the Arduino IDE from https://www.arduino.cc/en/Guide/HomePage. Scroll down to the “Install the Arduino Desktop IDE” and select the link that is appropriate for your computers operating system and follow the instructions there.
      
-![Download Aurduino desktop](./01-%20Arduino%20home%20page.png)
+![Download Aurduino desktop](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/01-%20Arduinohomepage.jpg)
      
 When the Arduino Desktop IDE has been successfully installed you are ready to connect to the dev kit and start programming your own firmware for the Arduino. The next lesson will show you how to connect your dev kit to the Arduino IDE.
      
