@@ -7,14 +7,14 @@ The EE R410 breakout board is a pinout of the Ublox Sara R410M modem with power 
 More about the Ublox Sara R410M modem can be found here: https://www.u-blox.com/en/product/sara-r4n4-series
 
 In this tutorial we will point you two examples on our experimental documentation site that shows how to use the breakout with either an Arduino based MCU sending UDP and JSON formatted payloads or a Raspberry Pi. The Raspberry Pi lesson will only show you how to get started using the UART connection to the modem but leaves the rest to you.
+
 ## Contents
 
-  1. Chapter One
-     1. Sub Header
-     2. Sub Header 2
-  2. Chapter Two
-     1. Sub Header
-     2. Sub Header 2
+  1. EE 410 breakout with Arduino
+     1. Connecting the EE 410 to Horde
+     2. Connecting the EE410 to MIC
+  2. EE R410 breakout with Raspberry Pi
+     
 
 ## 1. EE 410 breakout with Arduino
 
