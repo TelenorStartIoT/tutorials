@@ -21,32 +21,32 @@ You can also find a lot of info related to the Arduino MKR on Arduino´s own doc
   1. [Preparations for Arduino dev kit, part one](#Preparations-for-Arduino-dev-kit-part-one)
      1. [Connect the antenna and insert the SIM card](#Connect-the-antenna-and-insert-the-SIM-card)
      
-  2. Assemble the Arduino dev kit
-     1. Connect the antenna and insert the SIM card
-     2. Add board support for the dev kit in the IDE
-     3. Select the board type in the IDE
-     4. Select the port in the IDE
-     5. Get the IMSI and IMEI number of your dev kit
+  2. [Assemble the Arduino dev kit](#Assemble-the-Arduino-dev-kit)
+     1. [Connect the antenna and insert the SIM card](#Connect-the-antenna-and-insert-the-SIM-card)
+     2. [Add board support for the dev kit in the IDE](#Add-board-support-for-the-dev-kit-in-the-IDE)
+     3. [Select the board type in the IDE](##Select-the-board-type-in-the-IDE)
+     4. [Select the port in the IDE](#Select-the-port-in-the-IDE)
+     5. [Get the IMSI and IMEI number of your dev kit](#Get-the-IMSI-and-IMEI-number-of-your-dev-kit)
      
-  3. Register your dev kit in Telenor StartIoT Managed IoT Cloud as a MQTT thing type
-     1. Sign up for a MIC platform account
-     2. Add a new thing type
-     3. Add a thing representing your dev kit
-     4. See your thing
-     5. Example dashboard
-     6. Start Programming
+  3. [Register your dev kit in Telenor StartIoT Managed IoT Cloud as a MQTT thing type](#Register-your-dev-kit-in-Telenor-StartIoT-Managed-IoT-Cloud-as-a-MQTT-thing-type)
+     1. [Sign up for a MIC platform account](#Sign-up-for-a-MIC-platform-account)
+     2. [ Add a new thing type](#Add-a-new-thing-type)
+     3. [Add a thing representing your dev kit](#Add-a-thing-representing-your-dev-kit)
+     4. [See your thing](#See-your-thing)
+     5. [Example dashboard](#Example-dashboard)
+     6. [Start Programming](#Start-Programming)
      
-4. Programming the Arduino for MQTT over TLS 1.2 (M1 only)
-     1. Download source code
-     2. Add (open) the example code in the Arduino Desktop IDE
-     3. Download MIC certificate and keys
-     4. Change file name and include statement in the .ino file
-     5. Transforming the certificate and key
-     6. Transform the PEM client certificate
-     7. Transform the PEM private key
-     8. Add the MKRNB IoT library
-     9. Run the example program
-     10. See your data displayed in MIC
+4. [Programming the Arduino for MQTT over TLS 1.2 (M1 only)](#Programming-the-Arduino-for-MQTT-over-TLS-1.2-(M1-only))
+     1. [Download source code](#Download-source-code)
+     2. [Add (open) the example code in the Arduino Desktop IDE](#Add-(open)-the-example-code-in-the-Arduino-Desktop-IDE)
+     3. [Download MIC certificate and keys](#Download-MIC-certificate-and-keys)
+     4. [Change file name and include statement in the .ino file](#Change-file-name-and-include-statement-in-the-.ino-file)
+     5. [Transforming the certificate and key](#Transforming-the-certificate-and-key)
+     6. [Transform the PEM client certificate](#Transform-the-PEM-client-certificate)
+     7. [Transform the PEM private key](#Transform-the-PEM-private-key)
+     8. [Add the MKRNB IoT library](#Add-the-MKRNB-IoT-library)
+     9. [Run the example program](#Run-the-example-program)
+     10.[See your data displayed in MIC](#See-your-data-displayed-in-MIC)
      
 
 ## 1. Preparations for Arduino dev kit, part one
