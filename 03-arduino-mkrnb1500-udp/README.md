@@ -18,7 +18,7 @@ https://www.arduino.cc/en/Guide/MKRNB1500Introduction...
 
 ## Contents
 
-  1. [Preparations for Arduino dev kit](#1. Preparations for Arduino dev kit)
+  1. [Preparations for Arduino dev kit](#1.PreparationsforArduinodevkit)
      1. [Download and install the Arduino Desktop IDE](# Download and install the Arduino Desktop IDE)
      
   2. [Assemble the Arduino dev kit](# 2. Assemble the Arduino dev kit)
