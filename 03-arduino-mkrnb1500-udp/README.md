@@ -18,30 +18,30 @@ https://www.arduino.cc/en/Guide/MKRNB1500Introduction...
 
 ## Contents
 
-  1. [Preparations for Arduino dev kit](#1.Preparations-for-Arduino-devkit)
+  1. [Preparations for Arduino dev kit](#1.Preparations-for-Arduino-dev-kit)
      1. [Download and install the Arduino Desktop IDE](#Download-and-install-the-Arduino-Desktop-IDE)
      
   2. [Assemble the Arduino dev kit](#2.Assemble-the-Arduino-dev-kit)
      1. [Connect the antenna and insert the SIM card](#Connect-the-antenna-and-insert-the-SIM-card)
      2. [Add board support for the dev kit in the IDE](#Add-board-support-for-the-dev-kit-in-the-IDE)
      3. [Select the board type in the IDE](#Select-the-board-type-in-the-IDE)
-     4. [Select the port in the IDE](### Select the port in the IDE)
-     5. [Get the IMSI and IMEI number of your dev kit](### Get the IMSI and IMEI number of your dev kit)
+     4. [Select the port in the IDE](#Select-the-port-in-the-IDE)
+     5. [Get the IMSI and IMEI number of your dev kit](#Get-the-IMSI-and-IMEI-number-of-your-dev-kit)
      
-  3. [Register your Arduino dev kit in Telenor StartIoT Managed IoT Cloud](## 3.Register your Arduino dev kit in Telenor StartIoT Managed IoT Cloud)
-     1. [Sign up for a MIC platform account](### Sign up for a MIC platform account)
-     2. [Add a new thing type](### Add a new thing type)
-     3. [Add a thing representing your dev kit](### Add a thing representing your dev kit)
-     4. [See your thing](### See your thing)
-     5. [Example dashboard](### Example dashboard)
-     6. [Start Programming](### Start Programming)
+  3. [Register your Arduino dev kit in Telenor StartIoT Managed IoT Cloud](#3.Register-your-Arduino-dev-kit-in-Telenor-StartIoT-Managed-IoT-Cloud)
+     1. [Sign up for a MIC platform account](#Sign-up-for-a-MIC-platform-account)
+     2. [Add a new thing type](#Add-a-new-thing-type)
+     3. [Add a thing representing your dev kit](#Add-a-thing-representing-your-dev-kit)
+     4. [See your thing](#See-your-thing)
+     5. [Example dashboard](#Example-dashboard)
+     6. [Start Programming](#Start-Programming)
  
- 4. [Programming of the Arduino dev kit](## 4.Programming of the Arduino dev kit)
-     1. [Download the example code as a zip file](### Download the example code as a zip file)
-     2. [Add (open) the example code in the Arduino Desktop IDE](### Add (open) the example code in the Arduino Desktop IDE)
-     3. [Add the MKRNB IoT library](### Add the MKRNB IoT library)
-     4. [Run the example program](### Run the example program)
-     5. [See your data displayed in MIC](### See your data displayed in MIC)
+ 4. [Programming of the Arduino dev kit](#4.Programming-of-the-Arduino-dev-kit)
+     1. [Download the example code as a zip file](#Download-the-example-code-as-a-zip-file)
+     2. [Add (open) the example code in the Arduino Desktop IDE](#Add-(open)-the-example-code-in-the-Arduino-Desktop-IDE)
+     3. [Add the MKRNB IoT library](#Add-the-MKRNB-IoT-library)
+     4. [Run the example program](#Run-the-example-program)
+     5. [See your data displayed in MIC](#See-your-data-displayed-in-MIC)
     
     
     
