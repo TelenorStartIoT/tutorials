@@ -10,6 +10,7 @@ You will learn how to:
    * assemble the dev-kit and connect it to the VSCode editor
    * create a Telenor Start IoT Managed IoT Cloud (MIC) platform account
    * register your dev-kit in MIC and create payload transformations
+   * flash the modem firmware on the FiPy (to support either LTE-M or NB-IoT)
    * program the dev kit and send data to MIC over Telenor's excellent 4G LTE-M or NB-IoT network
    * view your data in MIC
 
@@ -132,9 +133,9 @@ Do not worry about the details for now, this was just for your information. It i
 
 ### Add a Thing Representing Your Dev-Kit
 
-The "Thing Type" and "Thing" together is a representation of your dev-kit in MIC. It is possible to have more than one thing in a Thing Type and this will make the Things in the Thing Type behave in the same manner with respect to how payloads from the Things are handled. The handling of the payload is described in your uplink transformation.
+The "Thing Type" and "Thing" together is a representation of your dev-kit in MIC. It is possible to have more than one Thing in a Thing Type and this will make the Things in the Thing Type behave in the same manner with respect to how payloads from the Things are handled. The handling of the payload is described in your uplink transformation.
 
-To add a new Thing, click on the "+ THINGS" button. De-select the "Create batch" slider in the pop-up window. You must then add a "Thing Name", a "Description", select your "Domain" and choose "Protocol" for your Thing. When you select "Cellular" as protocol you will also have to add the IMSI and IMEI numbers of your dev-kit. The image shows an example of what it should look like.
+To add a new Thing, click on the "+ THINGS" button. De-select the "Create batch" slider in the pop-up window. You must then add a "Thing Name", a "Description", select your "Domain" and choose "Protocol" for your Thing. When you select "UDP" as protocol you will also have to add the IMSI and IMEI numbers of your dev-kit. The image shows an example of what it should look like.
 
 ![Add new Thing to Thing Type](./assets/10-thing.png)
 
