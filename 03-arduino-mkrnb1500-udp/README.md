@@ -218,13 +218,15 @@ Add the example code to the Arduino Desktop IDE (File > Open...) and select the 
 
 Compile and run the example code on the Arduino MKR NB 1500 device by clicking on the upload arrow symbol or choosing "Sketc" > "Upload..." from the menu. Open the Serial Monitor (Tools > Serial Monitor...) and see the log output from your program.
 
-![RunExampleProgram](./09B-AddMKRNBLibrary.jpg)
+![Run the program](./assets/-run-program.png)
+
+![Run the program](./assets/-run-program2.png)
 
 ### See Your Data Displayed in MIC
 
 Open the MIC dashboard and see your data displayed in MIC.
 
-![MICDashBoard](./09D-MICDashBoard.jpg)
+![MICDashBoard](./assets/-example-dashboard.png)
 
 ### Happy Hacking!
 
