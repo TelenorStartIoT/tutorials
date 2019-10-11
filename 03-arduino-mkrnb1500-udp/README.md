@@ -51,13 +51,13 @@ This lesson will show you how to download and install the Arduino Desktop IDE an
 
 ### Download the Arduino Desktop IDE
 
-The easiest way to program the Arduino MKR NB 1500 dev-kit is to use the Arduino Desktop IDE. You can download the Arduino IDE for Windows, Linux and MacOS from https://www.arduino.cc/en/Main/software.
+The easiest way to program the Arduino MKR NB 1500 dev-kit is to use the Arduino Desktop IDE. You can download the Arduino IDE for Windows, Linux and MacOS here: https://www.arduino.cc/en/Main/software.
 
 ![Download Aurduino Desktop IDE](./assets/00-download-arduino-ide.png)
 
 ### Add Board Support for the Dev-Kit in the IDE
 
-Open the Arduino Desktop IDE. Before you connect your board to the computer, the first thing you need to do is to add the Atmel SAMD Core to the IDE. This simple procedure is done selecting Tools menu, then Boards and last Boards Manager. When the boards manager is displayed (see image), search for "MKR NB" and install the SAMD core by clicking the install button
+Open the Arduino Desktop IDE. The first thing you need to do before you connect your board to the computer is to add the Atmel SAMD Core to the IDE. This simple procedure is done by selecting "Tools" menu, then "Boards" and "Boards Manager". When the boards manager is displayed (see image), search for "MKR NB" and install the SAMD core by clicking the install button.
 
 ![Add board support](./assets/01-add-board-support.png)
 
@@ -69,7 +69,7 @@ The example code that we will later run requires the Arduino MKRNB library. Add 
 
 ## 2. Assemble the Arduino Dev-Kit
 
-In this chapter you will learn how to assemble and connect the Arduino dev-kit to the Arduino Desktop IDE. You will also communicate with the dev-kit in order to check the firmware version and retrieve the IMSI and IMEI numbers that you will need to register you dev-kit in the MIC platform. More on that in a later chapter, let us first assemble the dev-kit.
+In this chapter you will learn how to assemble and connect the Arduino dev-kit to the Arduino Desktop IDE. You will also communicate with the dev-kit in order to retrieve the IMSI and IMEI numbers that you will need to register you dev-kit in the MIC platform. More on that in a later chapter, let us first assemble the dev-kit.
 
 ### Attach the Antenna and Insert the SIM Card
 
@@ -85,13 +85,13 @@ Please also remove the black conductive foam from the board pins before usage. I
 
 ### Select the Board Type in the IDE
 
-Now that the SAMD Core is installed you can connect the board to the computer using a standard micro USB cable. In the IDE, from Tools select the Board "Arduino MKR NB 1500".
+If the SAMD Core is installed you can connect the board to the computer using a standard micro USB cable. In the IDE, from "Tools" menu select the Board "Arduino MKR NB 1500".
 
 ![Select board](./assets/-select-board.png)
 
 ### Select the Port in the IDE
 
-Now it is time to finally select the port that the Arduino MKR NB 1500 is connected to. This will look slightly different depending on the operating system your computer is using. The example image shows what it typically looks like on a MacOS.
+Now it is time to finally select the port that the Arduino MKR NB 1500 is connected to. This will look slightly different depending on the operating system your computer is using. The example image shows what it typically looks like on MacOS.
 
 ![Select port](./assets/-select-port.png)
 
@@ -130,11 +130,13 @@ void loop() {
 
 ![Serial passthrough sketch](./assets/-serial-passthrough.png)
 
+Open the serial monitor (Tools > Serial Monitor). Make sure that the "Both NL & CR" option is selected and that the baud rate is set to "115200 baud". Then, type the following command in the input field to get the IMSI and IMEI numbers:
+
+```
 AT+CIMI;+CGSN
+```
 
-Leave the serial monitor open. You’ll need to copy these numbers when we provision the device in Telenor Start IoT Managed IoT Cloud in the next lesson.
-
-In the next lesson you will register and connect your dev kit to Telenor Start IoT Managed IoT Cloud
+Leave the serial monitor open. You'll need to copy these numbers when we provision the device in Telenor Start IoT Managed IoT Cloud in the next lesson.
 
 ![Serial monitor](./assets/-get-imsi-imei.png)
 
