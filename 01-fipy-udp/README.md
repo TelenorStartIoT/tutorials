@@ -2,7 +2,7 @@
 
 > Reading time: 60 minutes
 
-This tutorial gives brief instructions on how to get started with the FiPy dev-kit. This tutorial will send JSON formatted data in an UDP packet over the LTE-M (Cat M1) or NB-IoT (NB1) network.
+This tutorial gives brief instructions on how to get started with the FiPy dev-kit. This tutorial will send JSON formatted data in a UDP packet over the LTE-M (Cat M1) or NB-IoT (NB1) network.
 
 You will learn how to:
 
@@ -11,7 +11,7 @@ You will learn how to:
    * create a Telenor Start IoT Managed IoT Cloud (MIC) platform account
    * register your dev-kit in MIC and create payload transformations
    * flash the modem firmware on the FiPy (to support either LTE-M or NB-IoT)
-   * program the dev kit and send data to MIC over Telenor's excellent 4G LTE-M or NB-IoT network
+   * program the dev-kit and send data to MIC over Telenor's excellent 4G LTE-M or NB-IoT network
    * view your data in MIC
 
 You can also find a lot of info related to the FiPy on Pycom's own documentation site: https://docs.pycom.io/gettingstarted/
@@ -65,7 +65,7 @@ When both the VSCode editor and the Pymakr plugin have been successfully install
 
 In this chapter you will learn how to assemble and connect the FiPy dev-kit to the VSCode editor. You will also communicate with the dev-kit in order to check the firmware version and retrieve the IMSI and IMEI numbers that you will need to register you dev-kit in the MIC platform. More on that in a later chapter, let us first assemble the dev-kit.
 
-### Attach the Antenna
+### Attach the Antenna and Insert the SIM Card
 
 **Important**: You should always mount the 4G antenna to the connector on the bottom side of the FiPy. The result of not connecting the antenna could be that you harm the modem when it is connected.
 

@@ -47,7 +47,7 @@ When both the VSCode editor and the Pymakr plugin have been successfully install
 
 In this chapter you will learn how to assemble and connect the FiPy dev-kit to the VSCode editor. You will also communicate with the dev-kit in order to check the firmware version. More on that in a later chapter, let us first assemble the dev-kit.
 
-### Attach the Antenna
+### Attach the Antenna and Insert the SIM Card
 
 **Important**: You should always mount the 4G antenna to the connector on the bottom side of the FiPy. The result of not connecting the antenna could be that you harm the modem when it is connected.
 
