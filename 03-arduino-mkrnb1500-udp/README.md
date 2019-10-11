@@ -6,12 +6,12 @@ This tutorial gives brief instructions on how to get started with the Arduino MK
 
 You will learn how to:
 
-- download the Arduino Desktop IDE
-- assemble the dev-kit and connect it to the Arduino Desktop IDE
-- create a Telenor Start IoT Managed IoT Cloud (MIC) platform account
-- register your dev-kit in MIC and create payload transformations
-- program the dev-kit and send data to MIC over Telenor's excellent 4G LTE-M or NB-IoT network
-- view your data in MIC
+  * download the Arduino Desktop IDE
+  * assemble the dev-kit and connect it to the Arduino Desktop IDE
+  * create a Telenor Start IoT Managed IoT Cloud (MIC) platform account
+  * register your dev-kit in MIC and create payload transformations
+  * program the dev-kit and send data to MIC over Telenor's excellent 4G LTE-M or NB-IoT network
+  * view your data in MIC
 
 You can also find a lot of info related to the Arduino MKR NB 1500 on Arduino's own documentation site:
 https://www.arduino.cc/en/Guide/MKRNB1500Introduction...
@@ -20,14 +20,12 @@ https://www.arduino.cc/en/Guide/MKRNB1500Introduction...
 
   1. [Preparations for Arduino dev kit](#1.Preparations-for-Arduino-dev-kit)
      1. [Download and install the Arduino Desktop IDE](#Download-and-install-the-Arduino-Desktop-IDE)
-     
   2. [Assemble the Arduino dev kit](#2.Assemble-the-Arduino-dev-kit)
      1. [Connect the antenna and insert the SIM card](#Connect-the-antenna-and-insert-the-SIM-card)
      2. [Add board support for the dev kit in the IDE](#Add-board-support-for-the-dev-kit-in-the-IDE)
      3. [Select the board type in the IDE](#Select-the-board-type-in-the-IDE)
      4. [Select the port in the IDE](#Select-the-port-in-the-IDE)
      5. [Get the IMSI and IMEI number of your dev kit](#Get-the-IMSI-and-IMEI-number-of-your-dev-kit)
-     
   3. [Register your Arduino dev kit in Telenor StartIoT Managed IoT Cloud](#3.Register-your-Arduino-dev-kit-in-Telenor-StartIoT-Managed-IoT-Cloud)
      1. [Sign up for a MIC platform account](#Sign-up-for-a-MIC-platform-account)
      2. [Add a new thing type](#Add-a-new-thing-type)
@@ -35,16 +33,13 @@ https://www.arduino.cc/en/Guide/MKRNB1500Introduction...
      4. [See your thing](#See-your-thing)
      5. [Example dashboard](#Example-dashboard)
      6. [Start Programming](#Start-Programming)
- 
  4. [Programming of the Arduino dev kit](#4.Programming-of-the-Arduino-dev-kit)
      1. [Download the example code as a zip file](#Download-the-example-code-as-a-zip-file)
      2. [Add (open) the example code in the Arduino Desktop IDE](#Add-(open)-the-example-code-in-the-Arduino-Desktop-IDE)
      3. [Add the MKRNB IoT library](#Add-the-MKRNB-IoT-library)
      4. [Run the example program](#Run-the-example-program)
      5. [See your data displayed in MIC](#See-your-data-displayed-in-MIC)
-    
-    
-    
+
 ## 1. Download and Install the Arduino Desktop IDE and Add Board Support
 
 This lesson will show you how to download and install the Arduino Desktop IDE and add board support for the Arduino MKR NB 1500 dev-kit. The Arduino Desktop IDE is what you will use to connect to and program your dev-kit.
@@ -172,7 +167,7 @@ Do not worry about the details for now, this was just for your information. It i
 
 The "Thing Type" and "Thing" together is a representation of your dev-kit in MIC. It is possible to have more than one Thing in a Thing Type and this will make the Things in the Thing Type behave in the same manner with respect to how payloads from the Things are handled. The handling of the payload is described in your uplink transformation.
 
-To add a new Thing, click on the "+ THINGS" button. De-select the "Create batch" slider in the pop-up window. You must then add a "Thing Name", a "Description", select your "Domain" and choose "Protocol" for your Thing. When you select "UDP" as protocol you will also have to add the IMSI and IMEI numbers of your dev-kit. The image shows an example of what it should look like.
+To add a new Thing, click on the "+ THINGS" button. De-select the "Create batch" slider in the pop-up window. You must then add a "Thing Name", a "Description", select your "Domain" and choose "Protocol" for your Thing. When you select "LPWAN" as protocol you will also have to add the IMSI and IMEI numbers of your dev-kit. The image shows an example of what it should look like.
 
 ![Add new Thing to Thing Type](./assets/-thing.png)
 
