@@ -99,6 +99,7 @@ Now it is time to finally select the port the Arduino MKR1500 is connected to. T
 
 Create a new sketch in the IDE and copy the following code into the sketch:
 
+```cpp
 // baud rate used for both Serial ports
 unsigned long baud = 115200;
 
@@ -125,6 +126,7 @@ void loop() {
     Serial.write(SerialSARA.read());
   }
 }
+```
 
 ![GettingIMSInumber](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/07A-GettingIMSInumber.jpg)
 
@@ -244,25 +246,20 @@ Add the size number at the bottom of the MIC_CLIENT_CERTIFICATE definition in th
 ## Transform the PEM private key
 
 To change the private key (privkey.pem) from PEM to DER format that is suitable in the MICCertificates——–.h is a little bit more tricky. Start by using this openssl command:
+`openssl rsa -inform PEM -in privkey.pem -outform DER -out privkey.dat`
 
-
-1
-openssl rsa -inform PEM -in privkey.pem -outform DER -out privkey.dat
 Use this command to transform the binary file to the appropriate textual hex format:
+`hexdump -e '16/1 "0x%02x, " "\n"' privkey.dat > privkey.hex`
 
-hexdump -e '16/1 "0x%02x, " "\n"' privkey.dat > privkey.hex
-1
-hexdump -e '16/1 "0x%02x, " "\n"' privkey.dat > privkey.hex
 You now have the format you need in the privkey.hex file but be aware that there could be some trailing 0x0 at the end of the file. If that is the case, they need to be removed when you copy this into the MICCertificates——–.h file.
 
 To find the size (number of bytes) you can either count them manually 🙂 or use the ls -l command on the privkey.dat file:
 
+```
 > ls -l privkey.dat
 -rw-------@ 1 testuser  staff  1193 Apr 24 12:56 privkey.dat
-1
-2
-> ls -l privkey.dat
--rw-------@ 1 testuser  staff  1193 Apr 24 12:56 privkey.dat
+```
+
 In the above case, the size is 1193.
 
 Your source code should now be ready for execution on the Arduino but you need to add the MKR1500 library before you compile and download it for execution on your device.
