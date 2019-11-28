@@ -2,13 +2,13 @@
 
 > Reading time: 45 minutes
 
-This tutorial gives brief instructions on how to get started with the FiPy dev-kit. This tutorial will send data using the MQTT protocol using TLS 1.2 encryption directly to Telenor Managed IoT Cloud (MIC) over the LTE-M (Cat M1) or NB-IoT (NB1) network.
+This tutorial gives brief instructions on how to get started with the FiPy dev-kit. This tutorial will send data with the MQTT protocol using TLS 1.2 encryption directly to Telenor Managed IoT Cloud (MIC) over the LTE-M (Cat M1) or NB-IoT (NB1) network.
 
 You will learn how to:
 
    * download and install the VSCode editor and the Pymakr plugin
    * assemble the dev-kit and connect it to the VSCode editor
-   * create a Telenor Start IoT Managed IoT Cloud (MIC) platform account
+   * create a Telenor Managed IoT Cloud (MIC) platform account
    * register your dev-kit in MIC and create payload transformations
    * flash the modem firmware on the FiPy (to support either LTE-M or NB-IoT)
    * program the dev-kit and send data to MIC using MQTT over Telenor's excellent 4G LTE-M or NB-IoT network
@@ -54,7 +54,7 @@ Insert the Nano SIM card.
 
 ### Mount FiPy on the Expansion Board
 
-You should now mount the FiPy module to the provided Expansion Board. The USB connector on the expansion board must be in the same direction as the reset button on the FiPy module. The image shows you what it should look like. You should check that all the jumper switches on the Expansion board is present. The jumper switches are the small plastic jumpers located on the upper left side of the expansion board. Without all the jumpers in place it might be impossible to get contact with the FiPy. You should also check that all the PIN's on the FiPy are matching the open connectors on the expansion board (i.e. that it is aligned correctly) when you push the FiPy model into the expansion board.
+You should now mount the FiPy module to the provided Expansion Board. The USB connector on the expansion board must be in the same direction as the reset button on the FiPy module. The image shows you what it should look like. You should check that all the jumper switches on the Expansion board is present. The jumper switches are the small plastic jumpers located on the upper left side of the expansion board. Without all the jumpers in place it might be impossible to get contact with the FiPy. You should also check that all the PIN's on the FiPy are matching the open connectors on the expansion board (i.e. that it is aligned correctly) when you push the FiPy module into the expansion board.
 
 ![Expansion board 3.0](./assets/04-expansion-board-3-fipy.png)
 
@@ -66,7 +66,7 @@ You should now be able to connect to the FiPy dev-kit using a USB port on your c
 
 ![FiPy connected to VSCode and Pymakr](./assets/05-fipy-connected.png)
 
-If you don't see the Pycom Console window you can open it though the window menu "Window" > "New Terminal" and switch to "Pycom Console" in the drop-down.
+If you don't see the Pycom Console window you can open it though the window menu "Window" > "New Terminal" and switch to "Pycom Console" in the drop-down menu.
 
 If you select the "All commands" button (located at the bottom bar) and then select "Get board version" in the VSCode Pymakr menu you should see the version number of the underlying Pycom Firmware.
 
@@ -78,7 +78,7 @@ It should be OK to use the firmware that is pre-installed on your FiPy but you s
 
 ## 3. Register Your FiPy Dev-Kit in Telenor Managed IoT Cloud as an MQTT Thing
 
-In this chapter you will learn how to register your dev-kit to Telenor Managed IoT Cloud (MIC). You will learn how to add a new MQTT "Thing" in MIC. You will also learn how to create a dashboard to display your data in MIC. When sending MQTT data to MIC it will be possible to view the separate values in the MQTT publish packet in MIC widgets. Widget types in MIC ranges from simple textual widgets to graphical representations of your data.
+In this chapter you will learn how to register your dev-kit in Telenor Managed IoT Cloud (MIC). You will learn how to add a new MQTT "Thing" in MIC. You will also learn how to create a dashboard to display your data. When sending MQTT data to MIC it will be possible to view the separate values in the MQTT publish packet in MIC widgets. Widget types in MIC ranges from simple textual widgets to graphical representations of your data.
 
 ### Sign Up For a MIC Platform Account
 
@@ -100,21 +100,29 @@ To add a new "Thing Type" click on the "+NEW THING TYPE" button and give it a na
 
 The "Thing Type" and "Thing" together is a representation of your dev-kit in MIC. It is possible to have more than one thing in a Thing Type and this will make the Things in the Thing Type behave in the same manner with respect to how payloads from the Things are handled. The handling of the payload is described in your uplink transformation. When using the MQTT protocol we will however not make use of the uplink transformation.
 
-To add a new Thing, click on the "+ THINGS" button. De-select the "Create batch" slider in the pop-up window. You must then add a "Thing Name", a "Description", select your "Domain" and choose "MQTT" as the protocol for your Thing.
+To add a new Thing, click on the "+ THINGS" button.
 
-![Add new Thing to Thing Type](./assets/09-thing.png)
+![Add new Thing to Thing Type](./assets/09-new-thing.png)
+
+A pop-up window will appear. De-select the "Create batch" slider in the pop-up window. You must then add a "Thing Name", a "Description", select your "Domain" and choose "MQTT" as the protocol for your Thing.
+
+![Configure new Thing in Thing Type](./assets/10-thing.png)
 
 ### See Your Newly Created Thing
 
-You can look at and access your Thing if you click the "List" tab. The image shows an example list of devices reflecting a single dev-kit Thing.
+You can access your Thing if you click the "Thing List" button and then "ADD THING LIST WIDGET". This will add a widget to the Thing Type view with a list of Things.
 
-![New Thing in MIC](./assets/10-thing-list.png)
+![New Thing in MIC](./assets/11-thing-list-widget.png)
+
+The Thing List widget will show our single Thing that we just created.
+
+![New Thing in MIC](./assets/12-thing-list.png)
 
 ### Example Dashboard
 
 If you click on the "Thing name" in the list you will create a dashboard for your Thing. The dashboard will be mainly empty until the first payload for your Thing arrives. The dashboard is configurable and you can add widgets that represents values sent from your dev-kit (called resources). The image shows a very simple dashboard for what it could look like. It is possible to add more advanced widgets.
 
-![Dashboard](./assets/11-sample-dashboard.png)
+![Dashboard](./assets/13-sample-dashboard.png)
 
 ### Start Programming!
 
@@ -140,7 +148,7 @@ You can download the example code from here: https://github.com/TelenorStartIoT/
 
 You should choose the "Download ZIP" option in the "Clone or Download" button pop-up. This will download a ZIP archive with the example code.
 
-![Download ZIP](./assets/12-download-zip.png)
+![Download ZIP](./assets/14-download-zip.png)
 
 ### Unzip the Example Code and Open It In VSCode
 
@@ -148,15 +156,15 @@ Unzip the example code. How to do this varies depending on your computer system.
 
 Open the folder using the "File > Open Folder" ("File > Open" on MacOS) option in VSCode.
 
-![Open project in VSCode](./assets/13-open-project.png)
+![Open project in VSCode](./assets/15-open-project.png)
 
-![Open project in VSCode](./assets/14-open-project.png)
+![Open project in VSCode](./assets/16-open-project.png)
 
 ### Download the Certificates and Keys From MIC
 
 Download the certificates and keys for your Thing as the image shows (you will get a ZIP file). Unzip the downloaded file and and add the content to the "cert" folder in the code project (remove old certificates and keys from this folder if present).
 
-![Download certificates and keys](./assets/15-download-certs.png)
+![Download certificates and keys](./assets/17-download-certs.png)
 
 ### Modify the Program's MQTT Configuration
 
@@ -164,9 +172,9 @@ You will have to change Thing ID configuration variable at the top of the [main.
 
 To see your Thing ID, click on the + sign in the list view and check the unchecked Thing ID box (see image).
 
-![View Thing ID](./assets/16-view-thing-id.png)
+![View Thing ID](./assets/18-view-thing-id.png)
 
-Note your Thing ID in the list view and cadd it to the code:
+Note your Thing ID in the list view and add it to the code:
 
 ``` python
 # Your Telenor Managed IoT Cloud (MIC) Thing configuration.
@@ -205,15 +213,15 @@ To upload and run the program on your FiPy, simply click the "Upload" button loc
 
 If everything goes well you should see output from the program in the Pycom Console window in VSCode. The image shows what it could look like (the output from the program might be different).
 
-![Program output](./assets/17-program-output.png)
+![Program output](./assets/18-program-output.png)
 
 ### Wrapping It All Up
 
 You should now be able to view your data in the MIC dashboard. Try to add a time series widget by clicking the “+WIDGET” button in MIC and set the type to be "Time Series". Images below shows some sample screenshots on how to do it.
 
-![Timeseries widget](./assets/18-timeseries-widget.png)
+![Timeseries widget](./assets/19-timeseries-widget.png)
 
-![Example dashboard](./assets/19-example-dashboard.png)
+![Example dashboard](./assets/20-example-dashboard.png)
 
 ### Happy Hacking!
 

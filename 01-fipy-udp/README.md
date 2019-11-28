@@ -129,7 +129,7 @@ A pop-up window will appear. De-select the "Create batch" slider in the pop-up w
 
 ### See Your Newly Created Thing
 
-You can access your Thing if you click the "Thing List" button and then "ADD THING LIST WIDGET". This will add a widget to the THing Type view with a list of Things.
+You can access your Thing if you click the "Thing List" button and then "ADD THING LIST WIDGET". This will add a widget to the Thing Type view with a list of Things.
 
 ![New Thing in MIC](./assets/12-thing-list-widget.png)
 
