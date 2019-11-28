@@ -16,15 +16,6 @@ You will learn how to:
 
 You can also find a lot of info related to the FiPy on Pycom's own documentation site: https://docs.pycom.io/gettingstarted/
 
-## Contents
-
-  1. Chapter One
-     1. Sub Header
-     2. Sub Header 2
-  2. Chapter Two
-     1. Sub Header
-     2. Sub Header 2
-
 ## 1. Download and Install the VSCode Editor and the Pymakr Plugin
 
 This chapter will show you how to download and install the VSCode editor and the Pymakr plugin. The Pymakr plugin together with the VSCode editor is what you will use to connect to and program your FiPy dev-kit.

@@ -8,40 +8,13 @@ You will learn how to:
 
    * download and install the VSCode editor and the Pymakr plugin
    * assemble the dev-kit and connect it to the VSCode editor
-   * create a Telenor Start IoT Managed IoT Cloud (MIC) platform account
+   * create a Telenor Managed IoT Cloud (MIC) platform account
    * register your dev-kit in MIC and create payload transformations
    * flash the modem firmware on the FiPy (to support either LTE-M or NB-IoT)
    * program the dev-kit and send data to MIC over Telenor's excellent 4G LTE-M or NB-IoT network
    * view your data in MIC
 
 You can also find a lot of info related to the FiPy on Pycom's own documentation site: https://docs.pycom.io/gettingstarted/
-
-## Contents
-
-   1. [Download and Install the VSCode Editor and the Pymakr Plugin](#1-download-and-install-the-vscode-editor-and-the-pymakr-plugin)
-      1. [Download the VSCode Editor](#download-the-vscode-editor)
-      2. [Install the Pymakr Plugin for VSCode](#install-the-pymakr-plugin-for-vscode)
-   2. [Assemble the FiPy Dev-Kit](#2-assemble-the-fipy-dev-kit)
-      1. [Attach the Antenna](#attach-the-antenna)
-      2. [Mount FiPy on the Expansion Board](#mount-fipy-on-the-expansion-board)
-      3. [Connect the FiPy to the VSCode Editor](#connect-the-fipy-to-the-vscode-editor)
-      4. [Upgrade the Pycom Firmware](#upgrade-the-pycom-firmware)
-   3. [Register Your FiPy Dev-Kit in Telenor Managed IoT Cloud](#3-register-your-fipy-dev-kit-in-telenor-managed-iot-cloud)
-      1. [Sign Up For a MIC Platform Account](#sign-up-for-a-mic-platform-account)
-      2. [Add a New Thing Type](#add-a-new-thing-type)
-      3. [Add a Thing Representing Your Dev-Kit](#add-a-thing-representing-your-dev-kit)
-      4. [See Your Newly Created Thing](#see-your-newly-created-thing)
-      5. [Example Dashboard](#example-dashboard)
-      6. [Start Programming!](#start-programming)
-   4. [Flash FiPy for NB-IoT or Update the LTE-M Firmware](#4-flash-fipy-for-nb-iot-or-update-the-lte-m-firmware)
-   5. [Program the FiPy Using UDP (LTE-M or NB-IoT)](#5-program-the-fipy-using-udp-lte-m-or-nb-iot)
-      1. [Download Example Code](#download-example-code)
-      2. [Unzip the Example Code and Open It In VSCode](#unzip-the-example-code-and-open-it-in-vscode)
-      3. [Modify the Program's Network Configuration](#modify-the-programs-network-configuration)
-      4. [Run the Program](#run-the-program)
-      5. [Check the Output From the Program](#check-the-output-from-the-program)
-      6. [Wrapping It All Up](#wrapping-it-all-up)
-      7. [Happy Hacking!](#happy-hacking)
 
 ## 1. Download and Install the VSCode Editor and the Pymakr Plugin
 
@@ -81,7 +54,7 @@ Insert the Nano SIM card.
 
 ### Mount FiPy on the Expansion Board
 
-You should now mount the FiPy module to the provided Expansion Board. The USB connector on the expansion board must be in the same direction as the reset button on the FiPy module. The image shows you what it should look like. You should check that all the jumper switches on the Expansion board is present. The jumper switches are the small plastic jumpers located on the upper left side of the expansion board. Without all the jumpers in place it might be impossible to get contact with the FiPy. You should also check that all the PIN's on the FiPy are matching the open connectors on the expansion board (i.e. that it is aligned correctly) when you push the FiPy model into the expansion board.
+You should now mount the FiPy module to the provided Expansion Board. The USB connector on the expansion board must be in the same direction as the reset button on the FiPy module. The image shows you what it should look like. You should check that all the jumper switches on the Expansion board is present. The jumper switches are the small plastic jumpers located on the upper left side of the expansion board. Without all the jumpers in place it might be impossible to get contact with the FiPy. You should also check that all the PIN's on the FiPy are matching the open connectors on the expansion board (i.e. that it is aligned correctly) when you push the FiPy module into the expansion board.
 
 ![Expansion board 3.0](./assets/04-expansion-board-3-fipy.png)
 
@@ -93,13 +66,13 @@ You should now be able to connect to the FiPy dev-kit using a USB port on your c
 
 ![FiPy connected to VSCode and Pymakr](./assets/05-fipy-connected.png)
 
-If you don't see the Pycom Console window you can open it though the window menu "Window" > "New Terminal" and switch to "Pycom Console" in the drop-down.
+If you don't see the Pycom Console window you can open it though the window menu "Window" > "New Terminal" and switch to "Pycom Console" in the drop-down menu.
 
 If you select the "All commands" button (located at the bottom bar) and then select "Get board version" in the VSCode Pymakr menu you should see the version number of the underlying Pycom Firmware.
 
 ![FiPy board version](./assets/06-pymakr-board-version.png)
 
-In the next chapter you will need the IMSI and IMEI numbers of the dev-kit. To get that, type the following in the REPL (after the >>>) and include carriage return (press enter) after each line. Make a note of the IMSI and IMEI numbers displayed (or just keep the VSCode editor open and available).
+In the next chapter you will need the IMSI and IMEI numbers from the dev-kit. To get that, type the following lines one-by-one in the REPL (after the >>>) and include carriage return (press enter) after each line. Make a note of the IMSI and IMEI numbers displayed (or just keep the VSCode editor open and available).
 
 ``` python
 from network import LTE
@@ -116,7 +89,7 @@ It should be OK to use the firmware that is pre-installed on your FiPy but you s
 
 ## 3. Register Your FiPy Dev-Kit in Telenor Managed IoT Cloud
 
-In this chapter you will learn how to register your dev-kit to Telenor Managed IoT Cloud (MIC). Using the IMSI and IMEI information you will learn how to add a new "Thing" in MIC. You will also learn how to add a transformation of your payload and how to create a dashboard. The payload transformation makes it possible for you to unpack data packets and view the individual parts of the payload in different types of widgets in the dashboard. Widget types ranges from simple textual widgets to graphical representations of your data.
+In this chapter you will learn how to register your dev-kit in Telenor Managed IoT Cloud (MIC). Using the IMSI and IMEI information you will learn how to add a new "Thing" in MIC. You will also learn how to add a transformation of your payload and how to create a dashboard. The payload transformation makes it possible for you to unpack data packets and view the individual parts of the payload in different types of widgets in the dashboard. Widget types ranges from simple textual widgets to graphical representations of your data.
 
 ### Sign Up For a MIC Platform Account
 
@@ -140,27 +113,35 @@ return JSON.parse(payload.toString('utf-8'));
 
 This code is just one simple example of what the uplink transform can look like. In this case it will transform JSON formatted payloads into a JavaScript object and return it. This will separate each property of the object into its separate "parts". For each "part" a resource in MIC will be created.
 
-Do not worry about the details for now, this was just for your information. It is possible to create uplink transformations for payloads formatted in basically any format (hex, binary, text, JSON, etc.). The uplink transform is just a snippet of JavaScript code that MIC will use when doing transformations on your payload, and is generally used to unpack small payloads into understandable resources.
+Do not worry about the details for now, this was just for your information. It is possible to create uplink transformations for payloads formatted in basically any format (hex, binary, text, JSON, etc.). The uplink transform is just a snippet of JavaScript code that MIC will use when doing transformations on your payload, and is generally used to unpack compressed payloads into understandable resources.
 
 ### Add a Thing Representing Your Dev-Kit
 
 The "Thing Type" and "Thing" together is a representation of your dev-kit in MIC. It is possible to have more than one Thing in a Thing Type and this will make the Things in the Thing Type behave in the same manner with respect to how payloads from the Things are handled. The handling of the payload is described in your uplink transformation.
 
-To add a new Thing, click on the "+ THINGS" button. De-select the "Create batch" slider in the pop-up window. You must then add a "Thing Name", a "Description", select your "Domain" and choose "Protocol" for your Thing. When you select "UDP" as protocol you will also have to add the IMSI and IMEI numbers of your dev-kit. The image shows an example of what it should look like.
+To add a new Thing, click on the "+ THINGS" button.
 
-![Add new Thing to Thing Type](./assets/10-thing.png)
+![Add new Thing to Thing Type](./assets/10-new-thing.png)
+
+A pop-up window will appear. De-select the "Create batch" slider in the pop-up window. You must then add a "Thing Name", a "Description", select your "Domain" and choose "Protocol" for your Thing. When you select "LPWAN" as protocol you will also have to add the IMSI and IMEI numbers of your dev-kit. The image shows an example of what it should look like.
+
+![Configure new Thing in Thing Type](./assets/11-thing.png)
 
 ### See Your Newly Created Thing
 
-You can look at and access your Thing if you click the "List" tab. The image shows an example list of devices reflecting a single dev-kit Thing.
+You can access your Thing if you click the "Thing List" button and then "ADD THING LIST WIDGET". This will add a widget to the THing Type view with a list of Things.
 
-![New Thing in MIC](./assets/11-thing-list.png)
+![New Thing in MIC](./assets/12-thing-list-widget.png)
+
+The Thing List widget will show our single Thing that we just created.
+
+![New Thing in MIC](./assets/13-thing-list.png)
 
 ### Example Dashboard
 
 If you click on the "Thing name" in the list you will create a dashboard for your Thing. The dashboard will be mainly empty until the first payload for your Thing arrives. The dashboard is configurable and you can add widgets that represents values sent from your dev-kit (called resources). The image shows a very simple dashboard for what it could look like. It is possible to add more advanced widgets.
 
-![Dashboard](./assets/12-sample-dashboard.png)
+![Dashboard](./assets/14-sample-dashboard.png)
 
 ### Start Programming!
 
@@ -186,7 +167,7 @@ You can download the example code from here: https://github.com/TelenorStartIoT/
 
 You should choose the "Download ZIP" option in the "Clone or Download" button pop-up. This will download a ZIP archive with the example code.
 
-![Download ZIP](./assets/13-download-zip.png)
+![Download ZIP](./assets/14-download-zip.png)
 
 ### Unzip the Example Code and Open It In VSCode
 
@@ -194,9 +175,9 @@ Unzip the example code. How to do this varies depending on your computer system.
 
 Open the folder using the "File > Open Folder" ("File > Open" on MacOS) option in VSCode.
 
-![Open project in VSCode](./assets/14-open-project.png)
-
 ![Open project in VSCode](./assets/15-open-project.png)
+
+![Open project in VSCode](./assets/16-open-project.png)
 
 ### Modify the Program's Network Configuration
 
@@ -229,15 +210,15 @@ To upload and run the program on your FiPy, simply click the "Upload" button loc
 
 If everything goes well you should see output from the program in the Pycom Console window in VSCode. The image shows what it could look like (the output from the program might be different).
 
-![Program output](./assets/16-program-output.png)
+![Program output](./assets/17-program-output.png)
 
 ### Wrapping It All Up
 
 You should now be able to view your data in the MIC dashboard. Try to add a time series widget by clicking the “+WIDGET” button in MIC and set the type to be "Time Series". Images below shows some sample screenshots on how to do it.
 
-![Timeseries widget](./assets/17-timeseries-widget.png)
+![Timeseries widget](./assets/18-timeseries-widget.png)
 
-![Example dashboard](./assets/18-example-dashboard.png)
+![Example dashboard](./assets/19-example-dashboard.png)
 
 ### Happy Hacking!
 
