@@ -1,0 +1,90 @@
+<html>
+  <head>
+    <title>My Awesome Chart</title>
+    <!-- Load c3.css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.6.13/c3.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Our chart -->
+    <div id="chart"></div>
+
+    <!-- Load d3.js and c3.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.1/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.6.13/c3.min.js"></script>
+    <!-- Load MIC SDK -->
+    <script src="https://unpkg.com/mic-sdk-js@3.1.0/dist/mic-sdk-js.min.js"></script>
+    <script>
+      // Create the chart
+      var chart = c3.generate({
+        bindto: '#chart',
+        data: {
+          x: 'x',
+          columns: [
+            ['x'],
+            ['y']
+          ]
+        },
+        axis: {
+          x: {
+            type: 'timeseries',
+            tick: {
+              format: '%Y-%m-%d'
+            }
+          }
+        }
+      });
+
+      // Init with username and password
+      MIC.init({
+        username: '<MIC username>',
+        password: '<MIC password>'
+      }).then(() => {
+
+        // Do an Elasticsearch query to get Thing data
+        MIC.elasticsearch({
+          query: {
+            size: 1000, // Set a limit of 1000 "hits"
+            query: {
+              bool: {
+                filter: [
+                  {
+                    term: {
+                      thingName: '<MIC Thing Name>'
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        })
+          .then((result) => {
+            // Create new x/y columns
+            var x = ['x'];
+            var y = ['y'];
+
+            // The resource representing the Y-axis value
+            var resource = 'temperature';
+
+            // Loop through each "hit" in the Elasticsearch query result
+            for (let i in result.hits.hits) {
+              var currentHit = result.hits.hits[i];
+
+              // Pick out timestamp and value from the "hit"
+              var timestamp = currentHit._source.timestamp || null;
+              var value = currentHit._source.state[resource] || null;
+
+              // Add to new columns
+              x.push(timestamp);
+              y.push(value);
+            }
+
+            // Swap out old data with new data in our chart
+            chart.load({
+              unload: true,
+              columns: [x, y]
+            });
+          });
+      });
+    </script>
+  </body>
+</html>
