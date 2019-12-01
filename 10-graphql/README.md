@@ -6,13 +6,7 @@ In addition to a RESTful API, Managed IoT Cloud also offers a GraphQL endpoint t
   * Use the GraphQL API to query Things
   * Display a list of Things in a static HTML page
 
-### Contents
-
-  1. Use the MIC GraphiQL Playground to Test GraphQL Queries
-  2. Setup HTML Page and Run a GraphQL Query
-  3. Run a GraphQL Query Using the MIC SDK
-
-# 1. Use the MIC GraphiQL Playground to Test GraphQL Queries
+## 1. Use the MIC GraphiQL Playground to Test GraphQL Queries
 
 In order to explore the "graph" that the MIC GraphQL API exposes, you can use the GraphiQL playground to test and explore available queries. Access the playground here:
 
@@ -28,7 +22,7 @@ In the top right corner in the GraphiQL playground click the "Docs" button to op
 
 You now see a list of available queries (or "nodes") in the GraphQL API.
 
-### Try Some Queries
+### 1.2 Try Some Queries
 
 Now let's try some queries. In the left side pane, insert the following query:
 
