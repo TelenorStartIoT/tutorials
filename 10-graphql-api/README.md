@@ -18,7 +18,7 @@ You must login with your MIC accound that you have previously aquired.
 
 In the top right corner in the GraphiQL playground click the "Docs" button to open the "Documentation Explorer". You will see two root types; query and mutation. For now, click on the query type.
 
-![GraphiQL Query Explorer](https://github.com/TelenorStartIoT/tutorials/blob/master/10-graphql/assets/query-explorer.png "GraphiQL Query Explorer")
+![GraphiQL Query Explorer](https://github.com/TelenorStartIoT/tutorials/blob/master/10-graphql-api/assets/query-explorer.png "GraphiQL Query Explorer")
 
 You now see a list of available queries (or "nodes") in the GraphQL API.
 
@@ -42,13 +42,13 @@ Now let's try some queries. In the left side pane, insert the following query:
 
 Here we query the "allThings" node and tell it to return a list of Things and include the label, description, thingName, imei and imsi of each Thing. Click the "play" button or CTRL+ENTER to run the query. The result is displayed in the right pane.
 
-![GraphiQL Query Result](https://github.com/TelenorStartIoT/tutorials/blob/master/10-graphql/assets/query-result.png "GraphiQL Query Result")
+![GraphiQL Query Result](https://github.com/TelenorStartIoT/tutorials/blob/master/10-graphql-api/assets/query-result.png "GraphiQL Query Result")
 
 By using the "Documentation Explorer" you can browse available queries and immediately try them.
 
 When you're writing queries you can click SHIFT+SPACE to get a list of available fields in the current node. This is very useful and saves you time from browsing the "Documentation Explorer".
 
-![GraphiQL Query Helper](https://github.com/TelenorStartIoT/tutorials/blob/master/10-graphql/assets/query-helper.png "GraphiQL Query Helper")
+![GraphiQL Query Helper](https://github.com/TelenorStartIoT/tutorials/blob/master/10-graphql-api/assets/query-helper.png "GraphiQL Query Helper")
 
 ## 2. Setup HTML Page and Run a GraphQL Query
 
@@ -161,7 +161,7 @@ At the end we take the result and convert it into a string. The string is then i
 
 Save the file and open it in a web browser. After a while you will see the result of the GraphQL query displayed:
 
-![HTML Result](https://github.com/TelenorStartIoT/tutorials/blob/master/10-graphql/assets/html-result.png "HTML Result")
+![HTML Result](https://github.com/TelenorStartIoT/tutorials/blob/master/10-graphql-api/assets/html-result.png "HTML Result")
 
 ## 4. Add Styles to the List
 
@@ -245,4 +245,4 @@ Finally, change the code where the result from the GraphQL query is parsed as a 
 
 Save the file and reload the webpage. You will now see a much nicer list of Things:
 
-![Nice List](https://github.com/TelenorStartIoT/tutorials/blob/master/10-graphql/assets/nice-list.png "Nice List")
+![Nice List](https://github.com/TelenorStartIoT/tutorials/blob/master/10-graphql-api/assets/nice-list.png "Nice List")
