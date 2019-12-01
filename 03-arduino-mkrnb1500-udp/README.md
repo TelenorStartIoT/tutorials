@@ -195,8 +195,26 @@ Add the example code to the Arduino Desktop IDE (File > Open...) and select the 
 
 ![Open project in Arduino Desktop IDE](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/16-open-project2.png)
 
+### 4.3 Modify the Program's Network Configuration
 
-### 4.3 Run the Program
+The program you downloaded is by default configured to use the LTE-M (Cat M1) network. If you open the [arduino_secrets.h](https://github.com/TelenorStartIoT/arduino-dev-kit-udp/blob/master/arduino_secrets.h) file you will se the following code:
+
+``` cpp
+// Network related configuration
+#define SECRET_PINNUMBER "1111"          // SIM card PIN number
+#define SECRET_GPRS_APN  "telenor.iotgw" // Telenor IoT Gateway APN
+#define SECRET_UDP_PORT  1234            // Telenor IoT Gateway UDP port
+#define SECRET_RAT       7               // Radio Access Technology (7 is for LTE-M and 8 is for NB-IoT)
+#define SECRET_COPS      24201           // Telenor network shortname
+```
+
+As described in the code comments, if you are using the NB-IoT network you must change the `SECRET_RAT` define to `8`:
+
+``` cpp
+#define SECRET_RAT       8               // Radio Access Technology (7 is for LTE-M and 8 is for NB-IoT)
+```
+
+### 4.4 Run the Program
 
 Compile and run the example code on the Arduino MKR NB 1500 device by clicking on the upload arrow symbol or choosing "Sketc" > "Upload..." from the menu. Open the Serial Monitor (Tools > Serial Monitor...) and see the log output from your program.
 
@@ -204,13 +222,13 @@ Compile and run the example code on the Arduino MKR NB 1500 device by clicking o
 
 ![Run the program](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/18-run-program2.png)
 
-### 4.4 See Your Data Displayed in MIC
+### 4.5 See Your Data Displayed in MIC
 
 Open the MIC dashboard and see your data displayed in MIC.
 
 ![Example dashboard](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/19-example-dashboard.png)
 
-### 4.5 Happy Hacking!
+### 4.6 Happy Hacking!
 
 This concludes the "Get Started With the Arduino Dev-Kit (UDP over NB-IoT or LTE-M)" tutorial. our next step could be to connect the supplied DHT11 sensor to the FiPy and to modify the "dummy" payload string with values from the DHT11 sensor.
 
