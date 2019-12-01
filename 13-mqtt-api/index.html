@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <title>My Awesome Live Chart</title>
+    <!-- Load c3.css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.6.13/c3.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Our chart -->
+    <div id="chart"></div>
+
+    <!-- An MQTT message log (for debugging) -->
+    <pre id="log"></pre>
+
+    <!-- Load d3.js and c3.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.1/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.6.13/c3.min.js"></script>
+    <!-- Load MIC SDK -->
+    <script src="https://unpkg.com/mic-sdk-js@latest/dist/mic-sdk-js.min.js"></script>
+    <script>
+      // Create the gauge chart
+      var chart = c3.generate({
+        bindto: '#chart',
+        data: {
+          type: 'gauge',
+          columns: [
+            ['temperature', 0.0]
+          ]
+        },
+        gauge: {
+          min: -50,
+          max: 50,
+          label: {
+            format: function (value) {
+              return value + '°C';
+            }
+          }
+        }
+      });
+
+      // Init with username and password
+      MIC.init({
+        username: '<MIC username>',
+        password: '<MIC password>'
+      }).then(() => {
+
+        // Create a new MQTT client
+        MIC.mqtt()
+          .then((client) => {
+            // Event listener when the client connects
+            client.on('connect', function () {
+              // Immediately subscribe to a topic
+              client.subscribe('thing-update/StartIoT/dust/#');
+
+              // Log event
+              document.getElementById('log').innerHTML += 'Subscribed!\n\n';
+            });
+
+            // Event listener for when a message is received
+            client.on('message', function (topic, message) {
+              try {
+                var json = JSON.parse(message.toString());
+                var value = json.state.reported.v10;
+                
+                // Update gauge chart
+                chart.load({
+                  columns: [['temperature', value]]
+                });
+
+                // Log message
+                document.getElementById('log').innerHTML += message.toString() + '\n\n';
+              } catch (e) {
+                // Log error
+                document.getElementById('log').innerHTML += 'Failed to parse message: ' + e.message;
+              }
+            });
+
+            // Event listener if a reconnect happens
+            client.on('reconnect', function () {
+              // Log event
+              document.getElementById('log').innerHTML += 'Reconnected!\n\n';
+            });
+          });
+      });
+    </script>
+  </body>
+</html>
