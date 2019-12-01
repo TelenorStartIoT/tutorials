@@ -1,6 +1,6 @@
 # Get Started With the EE R410
 
-> Reading time: 45 minutes
+> Document under construction
 
 The EE R410 breakout board is a pinout of the Ublox Sara R410M modem with power circuits, SIM card slot and an USB port. The breakout board does not include a processing unit and must be used together with an external unit that manages the modems serial port and issues AT commands (aka Hayes commands) to the modem in a controlled fashion. It connects to a PC via USB for easy experimentation, or via UART to embedded devices (an MCU or even a Raspberry Pi). It comes fully assembled with soldered headers and antenna.
 
@@ -33,7 +33,7 @@ If you did connect the EE410 breakout to Horde (as per instructions above), firs
 
 Use the IMEI/IMSI number of your breakout to add the breakout as a thing in MIC. How to do this is described in detail in this **MIC lesson.**
 
-![ConnectingEEToMIC](https://github.com/TelenorStartIoT/tutorials/blob/master/05-ee-r410/%3D1-ConnectingEEToMIC.jpg)
+![ConnectingEEToMIC](https://github.com/TelenorStartIoT/tutorials/blob/master/05-ee-r410/ConnectingEEToMIC.png)
 Delete the device in IoTGateway(Horde) by clicking the “Delete” button.
 
 **Change the hello.ino sketch**
