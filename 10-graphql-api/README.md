@@ -1,4 +1,4 @@
-# Using the Managed IoT Cloud GraphQL API to Interact with the Platform
+# Managed IoT Cloud - GraphQL API
 
 In addition to a RESTful API, Managed IoT Cloud also offers a GraphQL endpoint to interact with the API. GraphQL offloads much of the potential querying a developer has to make with a "traditional" RESTful API. Instead, a Graph query is sent to a single GraphQL endpoint and the desired data can be pinpointed by the server, drastically reducing the amount of network roundtrips a client has to make. In this document you will:
 
