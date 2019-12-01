@@ -1,6 +1,6 @@
 # FiPy Dev-Kit - UDP
 
-> NB-IoT or LTE-M
+> Works with NB-IoT or LTE-M
 
 This tutorial gives brief instructions on how to get started with the FiPy dev-kit. This tutorial will send JSON formatted data in a UDP packet over the LTE-M (Cat M1) or NB-IoT (NB1) network.
 

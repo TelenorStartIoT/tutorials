@@ -1,6 +1,6 @@
-# Get Started With the FiPy Dev-Kit (MQTT/TLS 1.2 over NB-IoT or LTE-M)
+# FiPy Dev-Kit - MQTT/TLS 1.2
 
-> Reading time: 45 minutes
+> Works with NB-IoT or LTE-M
 
 This tutorial gives brief instructions on how to get started with the FiPy dev-kit. This tutorial will send data with the MQTT protocol using TLS 1.2 encryption directly to Telenor Managed IoT Cloud (MIC) over the LTE-M (Cat M1) or NB-IoT (NB1) network.
 
@@ -24,13 +24,13 @@ This chapter will show you how to download and install the VSCode editor and the
 
 You can download the VSCode editor for Windows, Linux and MacOS here: https://code.visualstudio.com/download. Download and install the VSCode editor for your operating system.
 
-![Download VSCode](./assets/00-download-vscode.png)
+![Download VSCode](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/00-download-vscode.png)
 
 ### Install the Pymakr Plugin for VSCode
 
 When you have successfully installed the VSCode editor you need to enable VSCode to connect over USB to the FiPy dev-kit. For that, the VSCode editor needs the Pymakr plugin. You should follow the instructions given by Pycom in order to install the plugin: https://docs.pycom.io/pymakr/installation/vscode/
 
-![VSCode Pymakr plugin](./assets/01-pymakr.png)
+![VSCode Pymakr plugin](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/01-pymakr.png)
 
 When both the VSCode editor and the Pymakr plugin have been successfully installed you are ready to connect and start programming your own firmware for the FiPy. The next chapter will show you how to connect your dev-kit to the VSCode editor.
 
@@ -42,13 +42,13 @@ In this chapter you will learn how to assemble and connect the FiPy dev-kit to t
 
 **Important**: You should always mount the 4G antenna to the connector on the bottom side of the FiPy. The result of not connecting the antenna could be that you harm the modem when it is connected.
 
-![LTE antenna](./assets/02-lte-ant-fipy.png)
+![LTE antenna](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/02-lte-ant-fipy.png)
 
 Attach the antenna on the bottom side of the FiPy.
 
 You should insert your SIM card into the SIM card slot on the bottom side of the FiPy. Notice the cut-corner of the SIM card to get the correct orientation. If you do not have the SIM inserted it will be impossible to connect to the 4G network.
 
-![Insert SIM](./assets/03-sim-fipy.png)
+![Insert SIM](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/03-sim-fipy.png)
 
 Insert the Nano SIM card.
 
@@ -56,7 +56,7 @@ Insert the Nano SIM card.
 
 You should now mount the FiPy module to the provided Expansion Board. The USB connector on the expansion board must be in the same direction as the reset button on the FiPy module. The image shows you what it should look like. You should check that all the jumper switches on the Expansion board is present. The jumper switches are the small plastic jumpers located on the upper left side of the expansion board. Without all the jumpers in place it might be impossible to get contact with the FiPy. You should also check that all the PIN's on the FiPy are matching the open connectors on the expansion board (i.e. that it is aligned correctly) when you push the FiPy module into the expansion board.
 
-![Expansion board 3.0](./assets/04-expansion-board-3-fipy.png)
+![Expansion board 3.0](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/04-expansion-board-3-fipy.png)
 
 Mount the FiPy on the Expansion board.
 
@@ -64,13 +64,13 @@ Mount the FiPy on the Expansion board.
 
 You should now be able to connect to the FiPy dev-kit using a USB port on your computer. The Pymakr plugin will automatically detect your dev-kit and connect VSCode to it. You should note that the micro USB cable is not supplied with the dev-kit.
 
-![FiPy connected to VSCode and Pymakr](./assets/05-fipy-connected.png)
+![FiPy connected to VSCode and Pymakr](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/05-fipy-connected.png)
 
 If you don't see the Pycom Console window you can open it though the window menu "Window" > "New Terminal" and switch to "Pycom Console" in the drop-down menu.
 
 If you select the "All commands" button (located at the bottom bar) and then select "Get board version" in the VSCode Pymakr menu you should see the version number of the underlying Pycom Firmware.
 
-![FiPy board version](./assets/06-pymakr-board-version.png)
+![FiPy board version](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/06-pymakr-board-version.png)
 
 ### Upgrade the Pycom Firmware
 
@@ -84,7 +84,7 @@ In this chapter you will learn how to register your dev-kit in Telenor Managed I
 
 You will have to register for a MIC account in order to register your dev-kit. You can do that here: https://demonorway.mic.telenorconnexion.com
 
-![Login](./assets/07-login-mic.png)
+![Login](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/07-login-mic.png)
 
 Click on the "Sign Up" button in the upper right corner and follow the instructions in order to sign up. You should be aware that the signup is a two phased sign up. It therefore requires that you, in phase one, verify your email. We will send a link to the email you register and you will have to use the link to verify your email address. In phase two, we will manually register your private MIC domain and activate your account. You will then receive a second email stating that your account has been activated. Because of this procedure it may take up to 24 hours before your account is ready to be used.
 
@@ -94,7 +94,7 @@ You will be able to login to your MIC account when it is ready for use. When log
 
 To add a new "Thing Type" click on the "+NEW THING TYPE" button and give it a name and a description. Assign it to the domain that your user was added to. For things that are of type MQTT it is not necessary to add uplink or downlink transformations since the thing will send data following the MIC MQTT shadow update format. This format is directly understood by MIC. You should keep in mind that this may increase the payload size for each data packet that your IoT device sends.
 
-![Create Thing Type](./assets/08-thing-type.png)
+![Create Thing Type](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/08-thing-type.png)
 
 ### Add a Thing Representing Your Dev-Kit
 
@@ -102,27 +102,27 @@ The "Thing Type" and "Thing" together is a representation of your dev-kit in MIC
 
 To add a new Thing, click on the "+ THINGS" button.
 
-![Add new Thing to Thing Type](./assets/09-new-thing.png)
+![Add new Thing to Thing Type](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/09-new-thing.png)
 
 A pop-up window will appear. De-select the "Create batch" slider in the pop-up window. You must then add a "Thing Name", a "Description", select your "Domain" and choose "MQTT" as the protocol for your Thing.
 
-![Configure new Thing in Thing Type](./assets/10-thing.png)
+![Configure new Thing in Thing Type](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/10-thing.png)
 
 ### See Your Newly Created Thing
 
 You can access your Thing if you click the "Thing List" button and then "ADD THING LIST WIDGET". This will add a widget to the Thing Type view with a list of Things.
 
-![New Thing in MIC](./assets/11-thing-list-widget.png)
+![New Thing in MIC](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/11-thing-list-widget.png)
 
 The Thing List widget will show our single Thing that we just created.
 
-![New Thing in MIC](./assets/12-thing-list.png)
+![New Thing in MIC](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/12-thing-list.png)
 
 ### Example Dashboard
 
 If you click on the "Thing name" in the list you will create a dashboard for your Thing. The dashboard will be mainly empty until the first payload for your Thing arrives. The dashboard is configurable and you can add widgets that represents values sent from your dev-kit (called resources). The image shows a very simple dashboard for what it could look like. It is possible to add more advanced widgets.
 
-![Dashboard](./assets/13-sample-dashboard.png)
+![Dashboard](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/13-sample-dashboard.png)
 
 ### Start Programming!
 
@@ -148,7 +148,7 @@ You can download the example code from here: https://github.com/TelenorStartIoT/
 
 You should choose the "Download ZIP" option in the "Clone or Download" button pop-up. This will download a ZIP archive with the example code.
 
-![Download ZIP](./assets/14-download-zip.png)
+![Download ZIP](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/14-download-zip.png)
 
 ### Unzip the Example Code and Open It In VSCode
 
@@ -156,23 +156,23 @@ Unzip the example code. How to do this varies depending on your computer system.
 
 Open the folder using the "File > Open Folder" ("File > Open" on MacOS) option in VSCode.
 
-![Open project in VSCode](./assets/15-open-project.png)
+![Open project in VSCode](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/15-open-project.png)
 
-![Open project in VSCode](./assets/16-open-project.png)
+![Open project in VSCode](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/16-open-project.png)
 
 ### Download the Certificates and Keys From MIC
 
 Download the certificates and keys for your Thing as the image shows (you will get a ZIP file). Unzip the downloaded file and and add the content to the "cert" folder in the code project (remove old certificates and keys from this folder if present).
 
-![Download certificates and keys](./assets/17-download-certs.png)
+![Download certificates and keys](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/17-download-certs.png)
 
 ### Modify the Program's MQTT Configuration
 
-You will have to change Thing ID configuration variable at the top of the [main.py](./main.py) file of the downloaded project.
+You will have to change Thing ID configuration variable at the top of the [main.py](https://github.com/TelenorStartIoT/fipy-dev-kit-mqtt/blob/master/main.py) file of the downloaded project.
 
 To see your Thing ID, click on the + sign in the list view and check the unchecked Thing ID box (see image).
 
-![View Thing ID](./assets/18-view-thing-id.png)
+![View Thing ID](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/18-view-thing-id.png)
 
 Note your Thing ID in the list view and add it to the code:
 
@@ -184,7 +184,7 @@ THING_ID = '00001965'
 
 ### Modify the Program's Network Configuration
 
-The program you downloaded is by default configured to use the LTE-M (Cat M1) network. If you open the [main.py](./main.py) file you will se the following code at the top:
+The program you downloaded is by default configured to use the LTE-M (Cat M1) network. If you open the [main.py](https://github.com/TelenorStartIoT/fipy-dev-kit-mqtt/blob/master/main.py) file you will se the following code at the top:
 
 ``` python
 # Create a new Telenor Start IoT object using the LTE-M network.
@@ -213,15 +213,15 @@ To upload and run the program on your FiPy, simply click the "Upload" button loc
 
 If everything goes well you should see output from the program in the Pycom Console window in VSCode. The image shows what it could look like (the output from the program might be different).
 
-![Program output](./assets/18-program-output.png)
+![Program output](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/18-program-output.png)
 
 ### Wrapping It All Up
 
 You should now be able to view your data in the MIC dashboard. Try to add a time series widget by clicking the “+WIDGET” button in MIC and set the type to be "Time Series". Images below shows some sample screenshots on how to do it.
 
-![Timeseries widget](./assets/19-timeseries-widget.png)
+![Timeseries widget](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/19-timeseries-widget.png)
 
-![Example dashboard](./assets/20-example-dashboard.png)
+![Example dashboard](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/20-example-dashboard.png)
 
 ### Happy Hacking!
 
