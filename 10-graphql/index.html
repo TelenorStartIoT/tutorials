@@ -1,0 +1,94 @@
+<html>
+  <head>
+    <title>My MIC GraphQL Application</title>
+    <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .thing {
+      margin: 10px;
+      color: #FFF;
+      background: #009cff;
+      border: 5px solid #0075bf;
+      border-radius: 5px;
+      font-family: Arial, Helvetica, Verdana;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+    }
+    .thing > div {
+      width: 50%;
+      padding: 15px;
+    }
+    .thing > div:last-child {
+      background: #0075bf;
+    }
+    .thing b {
+      float: right;
+    }
+    </style>
+  </head>
+  <body>
+    <!-- The GraphQL output element -->
+    <div id="output"></div>
+
+    <!-- Load MIC SDK -->
+    <script src="https://unpkg.com/mic-sdk-js@latest/dist/mic-sdk-js.min.js"></script>
+    <script>
+      // Init with username and password
+      MIC.init({
+        username: '<MIC username>',
+        password: '<MIC password>'
+      }).then(() => {
+
+        // Run a GraphQL query
+        MIC.graphql({
+          query: `
+            {
+              allThings {
+                things {
+                  label
+                  description
+                  thingName
+                  imei
+                  imsi
+                }
+              }
+            }
+          `
+        })
+          .then((result) => {
+            // Get the list of Things from the GraphQL result
+            var things = result.data.allThings.things;
+
+            // Clear the list
+            document.getElementById('output').innerHTML = '';
+
+            // Loop through each Thing in the GraphQL result list
+            for (let i in things) {
+              var thing = things[i];
+
+              // Create HTML for a singe Thing
+              var html = `
+                <div class="thing">
+                  <div>
+                    <h1>${thing.label}</h1>
+                    <h2>${thing.description}</h2>
+                  </div>
+                  <div>
+                    <div>Thing Name: <b>${thing.thingName}</b></div>
+                    <div>IMSI: <b>${thing.imsi}</b></div>
+                    <div>IMEI: <b>${thing.imei}</b></div>
+                  </div>
+                </div>
+              `;
+
+              // Insert the Thing into the list
+              document.getElementById('output').innerHTML += html;
+            }
+          });
+      });
+    </script>
+  </body>
+</html>
