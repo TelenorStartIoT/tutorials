@@ -8,7 +8,7 @@ The Managed IoT Cloud App Board is great for creating dashboards to visualize da
 
 ## 1. Setup HTML Page and Fetch Necessary Libraries
 
-The timeseries chart will be created in a static HTML page that you can open in any web browser of your choice. We will use the C3.js JavaScript library for creating the timeseries chart and a [JavaScript MIC SDK](hhttps://github.com/TelenorStartIoT/mic-sdk-js). The MIC SDK will do most of the "heavy work" for us so that we can focus on creating the application.
+The timeseries chart will be created in a static HTML page that you can open in any web browser of your choice. We will use the C3.js JavaScript library for creating the timeseries chart and a [JavaScript MIC SDK](https://github.com/TelenorStartIoT/mic-sdk-js). The MIC SDK will do most of the "heavy work" for us so that we can focus on creating the application.
 
 Start by creating an "index.html" file with the following contents:
 
