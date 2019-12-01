@@ -211,7 +211,7 @@ The program you downloaded is by default configured to use the LTE-M (Cat M1) ne
 As described in the code comments, if you are using the NB-IoT network you must change the `SECRET_RAT` define to `8`:
 
 ``` cpp
-#define SECRET_RAT       8               // Radio Access Technology (7 is for LTE-M and 8 is for NB-IoT)
+#define SECRET_RAT       8 // Radio Access Technology (7 is for LTE-M and 8 is for NB-IoT)
 ```
 
 ### 4.4 Run the Program
