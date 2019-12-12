@@ -71,11 +71,11 @@ Mount the FiPy on the Expansion board.
 
 ### 2.3 Connect the FiPy to the VSCode Editor
 
-You should now be able to connect to the FiPy dev-kit using a USB port on your computer. The Pymakr plugin will automatically detect your dev-kit and connect VSCode to it. You should note that the micro USB cable is not supplied with the dev-kit.
+You should now be able to connect to the FiPy dev-kit using a USB port on your computer. The Pymakr plugin will automatically detect your dev-kit and connect VSCode to it. **Note that the micro USB cable is not supplied with the dev-kit.**
+
+If you don't see the Pycom Console window you can open it though the window menu **"Window" > "New Terminal" and switch to "Pycom Console" in the drop-down menu.**
 
 ![FiPy connected to VSCode and Pymakr](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-udp/assets/05-fipy-connected.png)
-
-If you don't see the Pycom Console window you can open it though the window menu "Window" > "New Terminal" and switch to "Pycom Console" in the drop-down menu.
 
 If you select the "All commands" button (located at the bottom bar) and then select "Get board version" in the VSCode Pymakr menu you should see the version number of the underlying Pycom Firmware.
 
