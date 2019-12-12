@@ -35,7 +35,7 @@ To install 'pymakr' plugin
    2. Type 'pymakr' in search bar. Click on install
 
 
-![VSCode Pymakr plugin](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-udp/assets/install_pymakr_extension.jpg)
+![VSCode Pymakr plugin](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-udp/assets/20-install_pymakr_extension.png)
 
 When both the VSCode editor and the Pymakr plugin have been successfully installed you are ready to connect and start programming your own firmware for the FiPy. The next chapter will show you how to connect your dev-kit to the VSCode editor.
 
