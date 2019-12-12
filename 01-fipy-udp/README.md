@@ -45,25 +45,29 @@ In this chapter you will learn how to assemble and connect the FiPy dev-kit to t
 
 ### 2.1 Attach the Antenna and Insert the SIM Card
 
-**Important**: You should always mount the 4G antenna to the connector on the bottom side of the FiPy. The result of not connecting the antenna could be that you harm the modem when it is connected.
+**Important**: You should always mount the 4G antenna to the connector on the bottom-right side of the FiPy. The result of **not connecting** the antenna could be that you harm the modem when it is connected.
 
-![LTE antenna](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-udp/assets/02-lte-ant-fipy.png)
+There is a slot to attach the antenna on the bottom-right side of the FiPy.
 
-Attach the antenna on the bottom side of the FiPy.
+![LTE antenna](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-udp/assets/02-lte-ant-fipy_new.png)
 
-You should insert your SIM card into the SIM card slot on the bottom side of the FiPy. Notice the cut-corner of the SIM card to get the correct orientation. If you do not have the SIM inserted it will be impossible to connect to the 4G network.
-
-![Insert SIM](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-udp/assets/03-sim-fipy.png)
-
+You should insert your SIM card into the SIM card slot on the bottom-left side of the FiPy.
 Insert the Nano SIM card.
+
+![Insert SIM](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-udp/assets/03-sim-fipy-new.png)
+
+ **Notice the cut-corner of the SIM card to get the correct orientation. If you do not have the SIM inserted it will be impossible to connect to the 4G network.**
+
 
 ### 2.2 Mount FiPy on the Expansion Board
 
-You should now mount the FiPy module to the provided Expansion Board. The USB connector on the expansion board must be in the same direction as the reset button on the FiPy module. The image shows you what it should look like. You should check that all the jumper switches on the Expansion board is present. The jumper switches are the small plastic jumpers located on the upper left side of the expansion board. Without all the jumpers in place it might be impossible to get contact with the FiPy. You should also check that all the PIN's on the FiPy are matching the open connectors on the expansion board (i.e. that it is aligned correctly) when you push the FiPy module into the expansion board.
-
-![Expansion board 3.0](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-udp/assets/04-expansion-board-3-fipy.png)
+You should now mount the FiPy module to the provided Expansion Board.The USB connector on the expansion board must be in the same direction as the reset button on the FiPy module. The image shows you what it should look like. You should check that all the jumper switches on the Expansion board is present. The jumper switches are the small plastic jumpers located on the upper left side of the expansion board. Without all the jumpers in place it might be impossible to get contact with the FiPy. You should also check that all the PIN's on the FiPy are matching the open connectors on the expansion board (i.e. that it is aligned correctly) when you push the FiPy module into the expansion board.
 
 Mount the FiPy on the Expansion board.
+
+![Expansion board 3.0](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-udp/assets/04-expansion-board-3-new-fipy.png)
+
+
 
 ### 2.3 Connect the FiPy to the VSCode Editor
 
