@@ -28,9 +28,13 @@ You can download the VSCode editor for Windows, Linux and MacOS here: https://co
 
 ### 1.2 Install the Pymakr Plugin for VSCode
 
-When you have successfully installed the VSCode editor you need to enable VSCode to connect over USB to the FiPy dev-kit. For that, the VSCode editor needs the Pymakr plugin. You should follow the instructions given by Pycom in order to install the plugin: https://docs.pycom.io/pymakr/installation/vscode/
+When you have successfully installed the VSCode editor you need 'Pymakr' plugin to enable VSCode to connect over USB to the FiPy dev-kit.
 
-![VSCode Pymakr plugin](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/01-pymakr.png)
+To install 'pymakr' plugin 
+   1. Click on extension icon. 
+   2. Type 'pymakr' in search bar. Click on install
+
+![VSCode Pymakr plugin](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/01-instal_pymakr_plugin.png)
 
 When both the VSCode editor and the Pymakr plugin have been successfully installed you are ready to connect and start programming your own firmware for the FiPy. The next chapter will show you how to connect your dev-kit to the VSCode editor.
 
@@ -40,15 +44,15 @@ In this chapter you will learn how to assemble and connect the FiPy dev-kit to t
 
 ### 2.1 Attach the Antenna and Insert the SIM Card
 
-**Important**: You should always mount the 4G antenna to the connector on the bottom side of the FiPy. The result of not connecting the antenna could be that you harm the modem when it is connected.
+**Important**: You should always mount the 4G antenna to the connector on the bottom side of the FiPy. The result of **not connecting** the antenna could be that you harm the modem when it is connected.
 
-![LTE antenna](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/02-lte-ant-fipy.png)
+![LTE antenna](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/02-lte-ant-fipy_new.png)
 
 Attach the antenna on the bottom side of the FiPy.
 
 You should insert your SIM card into the SIM card slot on the bottom side of the FiPy. Notice the cut-corner of the SIM card to get the correct orientation. If you do not have the SIM inserted it will be impossible to connect to the 4G network.
 
-![Insert SIM](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/03-sim-fipy.png)
+![Insert SIM](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/03-sim-fipy_new1.png)
 
 Insert the Nano SIM card.
 
@@ -56,19 +60,19 @@ Insert the Nano SIM card.
 
 You should now mount the FiPy module to the provided Expansion Board. The USB connector on the expansion board must be in the same direction as the reset button on the FiPy module. The image shows you what it should look like. You should check that all the jumper switches on the Expansion board is present. The jumper switches are the small plastic jumpers located on the upper left side of the expansion board. Without all the jumpers in place it might be impossible to get contact with the FiPy. You should also check that all the PIN's on the FiPy are matching the open connectors on the expansion board (i.e. that it is aligned correctly) when you push the FiPy module into the expansion board.
 
-![Expansion board 3.0](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/04-expansion-board-3-fipy.png)
+![Expansion board 3.0](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/04-expansion-board-3-new-fipy.png)
 
 Mount the FiPy on the Expansion board.
 
 ### 2.3 Connect the FiPy to the VSCode Editor
 
-You should now be able to connect to the FiPy dev-kit using a USB port on your computer. The Pymakr plugin will automatically detect your dev-kit and connect VSCode to it. You should note that the micro USB cable is not supplied with the dev-kit.
+You should now be able to connect to the FiPy dev-kit using a USB port on your computer. The Pymakr plugin will automatically detect your dev-kit and connect VSCode to it. **Note that the micro USB cable is not supplied with the dev-kit.**
 
 ![FiPy connected to VSCode and Pymakr](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/05-fipy-connected.png)
 
-If you don't see the Pycom Console window you can open it though the window menu "Window" > "New Terminal" and switch to "Pycom Console" in the drop-down menu.
+If you don't see the Pycom Console window you can open it though the window menu **"Window" > "New Terminal" and switch to "Pycom Console" in the drop-down menu.**
 
-If you select the "All commands" button (located at the bottom bar) and then select "Get board version" in the VSCode Pymakr menu you should see the version number of the underlying Pycom Firmware.
+If you select the **"All commands"** button (located at the bottom bar) and then select "Get board version" in the VSCode Pymakr menu you should able to see the version number of the underlying Pycom Firmware.
 
 ![FiPy board version](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/06-pymakr-board-version.png)
 
