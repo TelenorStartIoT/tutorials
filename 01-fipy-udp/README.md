@@ -54,7 +54,7 @@ There is a slot to attach the antenna on the bottom-right side of the FiPy.
 You should insert your SIM card into the SIM card slot on the bottom-left side of the FiPy.
 Insert the Nano SIM card.
 
-![Insert SIM](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-udp/assets/03-sim-fipy-new.png)
+![Insert SIM](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-udp/assets/03-sim-fipy-new1.png)
 
  **Notice the cut-corner of the SIM card to get the correct orientation. If you do not have the SIM inserted it will be impossible to connect to the 4G network.**
 
