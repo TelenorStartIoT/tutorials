@@ -255,6 +255,21 @@ If everything goes well you should see output from the program in the Pycom Cons
 
 ![Program output](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-udp/assets/17-program-output.png)
 
+#### 5.5.1 Unable to run program
+
+If you are not able to run the example code and see below error in your console. 
+
+![port error](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-udp/assets/17-fipy-error.jpg)
+
+Follow below steps
+- Disconnect your device.
+- Connect the pin '3V3' and 'P12'. 
+- Monitor LED light,the heartbeat LED will begin flashing orange slowly. If after 3 seconds the pin is still held high, the LED will start blinking faster. At this point release the wire from pin 'P12'.
+- Connect your device using USB and check if you were able to run the program.
+
+If everything goes well, program will run automatically and you will able to see the output in console.
+
+
 ### 5.6 Wrapping It All Up
 
 You should now be able to view your data in the MIC dashboard. Try to add a time series widget by clicking the “+WIDGET” button in MIC and set the type to be "Time Series". Images below shows some sample screenshots on how to do it.
