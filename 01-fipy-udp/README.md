@@ -111,7 +111,7 @@ It should be OK to use the firmware that is pre-installed on your FiPy but you s
 
 In this chapter you will learn 
 * How to register your dev-kit in Telenor Managed IoT Cloud (MIC). 
-* How to add a new MQTT "Thing" in MIC. 
+* How to add a new MQTT *"Thing"* in MIC. 
 * How to create a dashboard to display your data. When sending MQTT data to MIC it will be possible to view the separate values in the MQTT publish packet in MIC widgets. Widget types in MIC ranges from simple textual widgets to graphical representations of your data.
 
 ### 3.1 Sign Up For a MIC Platform Account
@@ -120,7 +120,7 @@ In this chapter you will learn
 
 ![Login](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-udp/assets/08-login-mic.png)
 
-Click on the "Sign Up" button in the upper right corner and follow the instructions in order to sign up. 
+Click on the **"Sign Up"** button in the *upper right corner* and follow the instructions in order to sign up. 
 
 Note: You should be aware that the signup are two phased sign up. 
 * In Phase one, verify your email. We will send a link to the email you register and you will have to use the link to verify your email address. 
@@ -130,9 +130,9 @@ Note: You should be aware that the signup are two phased sign up.
 
 Once we approved your MIC account, you will be able to login to your MIC account with your user id and password.
 
-When logged in create a new "Thing Type" for your dev-kit.
--  A things is a virtual representation of your IoT device.
--  A "Thing Type" is a way to organize multiple "Things" that share similarities.
+When logged in create a new **"Thing Type"** for your dev-kit.
+-  A **"Things"** is a virtual representation of your IoT device.
+-  A **"Thing Type"** is a way to organize multiple "Things" that share similarities.
 
 To add a *new* **"Thing Type"** click on the **"+NEW THING TYPE"** button and give it a name and a description.
 
@@ -146,13 +146,15 @@ return JSON.parse(payload.toString('utf-8'));
 
 This code is just one simple example of what the uplink transform can look like. In this case it will transform JSON formatted payloads into a JavaScript object and return it. This will separate each property of the object into its separate "parts". For each "part" a resource in MIC will be created.
 
-Do not worry about the details for now, this was just for your information. It is possible to create uplink transformations for payloads formatted in basically any format (hex, binary, text, JSON, etc.). The uplink transform is just a snippet of JavaScript code that MIC will use when doing transformations on your payload, and is generally used to unpack compressed payloads into understandable resources.
+Do not worry about the details for now, this was just for your information. It is possible to create uplink transformations for payloads formatted in basically any format (hex, binary, text, JSON, etc.). 
+
+The uplink transform is just a snippet of JavaScript code that MIC will use when doing transformations on your payload, and is generally used to unpack compressed payloads into understandable resources.
 
 ### 3.3 Add a Thing Representing Your Dev-Kit
 
 The *"Thing Type" and "Thing"* together is a representation of your dev-kit in MIC. 
 
-It is possible to have more than one Thing in a Thing Type and this will make the Things in the Thing Type behave in the same manner with respect to how payloads from the Things are handled. The handling of the payload is described in your uplink transformation.
+It is possible to have more than one *Thing* in a *Thing Type* and this will make the Things in the Thing Type behave in the same manner with respect to how payloads from the Things are handled. The handling of the payload is described in your uplink transformation.
 
 To add a new Thing, click on the **"+ THINGS"** button.
 
@@ -172,13 +174,15 @@ You can access your Thing if you click the **"Thing List"** button and then **"A
 
 ![New Thing in MIC](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-udp/assets/12-thing-list-widget.png)
 
-The Thing List widget will show our single Thing that we just created.
+The Thing List widget will show your single *Thing* that you created now.
 
 ![New Thing in MIC](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-udp/assets/13-thing-list.png)
 
 ### 3.5 Example Dashboard
 
-If you click on the **"Thing name"** in the list you will create a dashboard for your Thing. The dashboard will be mainly empty until the first payload for your Thing arrives. The dashboard is configurable and you can add widgets that represents values sent from your dev-kit (called resources). The image shows a very simple dashboard for what it could look like. It is possible to add more advanced widgets.
+If you click on the **"Thing name"** in the list you will create a dashboard for your Thing. 
+
+The dashboard will be mainly empty until the first payload for your Thing arrives. The dashboard is configurable and you can add widgets that represents values sent from your dev-kit (called resources). The image shows a very simple dashboard for what it could look like. It is possible to add more advanced widgets.
 
 ![Dashboard](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-udp/assets/14-sample-dashboard.png)
 
