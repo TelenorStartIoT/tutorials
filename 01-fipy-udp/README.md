@@ -88,7 +88,7 @@ If you don't see the Pycom Console window you can open it though the window menu
 
 ![FiPy connected to VSCode and Pymakr](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-udp/assets/05-fipy-connected.png)
 
-If you select the "All commands" button (located at the bottom bar) and then select "Get board version" in the VSCode Pymakr menu you should see the version number of the underlying Pycom Firmware.
+If you select the **"All commands"** button (located at the bottom bar) and then select **"Get board version"** in the VSCode Pymakr menu you should see the version number of the underlying Pycom Firmware.
 
 ![FiPy board version](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-udp/assets/06-pymakr-board-version.png)
 
