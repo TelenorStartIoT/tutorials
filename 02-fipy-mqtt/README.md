@@ -46,27 +46,41 @@ In this chapter you will learn how to assemble and connect the FiPy dev-kit to t
 
 **Important**: You should always mount the 4G antenna to the connector on the bottom side of the FiPy. The result of **not connecting** the antenna could be that you harm the modem when it is connected.
 
+There is a slot to attach the antenna on the *bottom-right* side of the FiPy.
+
 ![LTE antenna](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/02-lte-ant-fipy_new.png)
 
-Attach the antenna on the bottom side of the FiPy.
-
-You should insert your SIM card into the SIM card slot on the bottom side of the FiPy. Notice the cut-corner of the SIM card to get the correct orientation. If you do not have the SIM inserted it will be impossible to connect to the 4G network.
+You should insert your SIM card into the SIM card slot on the *bottom-left* side of the FiPy.
+Insert the *Nano SIM* card. 
 
 ![Insert SIM](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/03-sim-fipy-new1.png)
 
-Insert the Nano SIM card.
+  **Notice the cut-corner of the SIM card to get the correct orientation. If you do not have the SIM inserted it will be impossible to connect to the 4G network.**
 
 ### 2.2 Mount FiPy on the Expansion Board
 
-You should now mount the FiPy module to the provided Expansion Board. The USB connector on the expansion board must be in the same direction as the reset button on the FiPy module. The image shows you what it should look like. You should check that all the jumper switches on the Expansion board is present. The jumper switches are the small plastic jumpers located on the upper left side of the expansion board. Without all the jumpers in place it might be impossible to get contact with the FiPy. You should also check that all the PIN's on the FiPy are matching the open connectors on the expansion board (i.e. that it is aligned correctly) when you push the FiPy module into the expansion board.
+You should now mount the FiPy module to the provided Expansion Board. 
+
+The USB connector on the expansion board must be in the same direction as the reset button on the FiPy module. 
+
+The image shows you what it should look like. 
+- You should check that all the jumper switches on the Expansion board is present. 
+- The jumper switches are the small plastic jumpers located on the upper left side of the expansion board. 
+- Without all the jumpers in place it might be impossible to get contact with the FiPy.
+
+ You should also check that all the PIN's on the FiPy are matching the open connectors on the expansion board (i.e. that it is aligned correctly) when you push the FiPy module into the expansion board.
+
+ **Mount the FiPy on the Expansion board.**
 
 ![Expansion board 3.0](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/04-expansion-board-3-new-fipy.png)
 
-Mount the FiPy on the Expansion board.
+
 
 ### 2.3 Connect the FiPy to the VSCode Editor
 
-You should now be able to connect to the FiPy dev-kit using a USB port on your computer. The Pymakr plugin will automatically detect your dev-kit and connect VSCode to it. **Note that the micro USB cable is not supplied with the dev-kit.**
+You should now be able to connect to the FiPy dev-kit using a USB port on your computer. The Pymakr plugin will automatically detect your dev-kit and connect VSCode to it.
+
+ **Note that the micro USB cable is not supplied with the dev-kit.**
 
 ![FiPy connected to VSCode and Pymakr](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/05-fipy-connected.png)
 
@@ -94,6 +108,7 @@ In this chapter you will learn
 ![Login](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/07-login-mic.png)
 
 Click on the "Sign Up" button in the upper right corner and follow the instructions in order to sign up. 
+
 Note: You should be aware that the signup are two phased sign up. 
 * In Phase one, verify your email. We will send a link to the email you register and you will have to use the link to verify your email address. 
 * In phase two, we will manually register your private MIC domain and activate your account. You will then receive a second email stating that your account has been activated. **Because of this procedure it may take up to 24 hours before your account is ready to be used.**
@@ -101,27 +116,35 @@ Note: You should be aware that the signup are two phased sign up.
 ### 3.2 Add a New Thing Type
 
 Once we approved your MIC account, you will be able to login to your MIC account with your user id and password.
+
 When logged in create a new "Thing Type" for your dev-kit.
 -  A things is a virtual representation of your IoT device.
 -  A "Thing Type" is a way to organize multiple "Things" that share similarities.
 
-To add a new **"Thing Type"** click on the **"+NEW THING TYPE"** button and give it a name and a description. 
+To add a *new* **"Thing Type"** click on the **"+NEW THING TYPE"** button and give it a name and a description. 
 * Assign it to the domain that your user was added to. 
-Note: For things that are of type MQTT it is not necessary to add uplink or downlink transformations since the thing will send data following the MIC MQTT shadow update format. This format is directly understood by MIC. You should keep in mind that this may increase the payload size for each data packet that your IoT device sends.
+
+Note: For things that are of type MQTT it is not necessary to add uplink or downlink transformations since the thing will send data following the MIC MQTT shadow update format. This format is directly understood by MIC.
+
+You should keep in mind that this may increase the payload size for each data packet that your IoT device sends.
 
 ![Create Thing Type](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/08-thing-type.png)
 
 ### 3.3 Add a Thing Representing Your Dev-Kit
 
-The "Thing Type" and "Thing" together is a representation of your dev-kit in MIC. 
-   It is possible to have more than one thing in a Thing Type and this will make the Things in the Thing Type behave in the same manner with respect to how payloads from the Things are handled. The handling of the payload is described in your uplink transformation. When using the MQTT protocol we will however not make use of the uplink transformation.
+The *"Thing Type" and "Thing"* together is a representation of your dev-kit in MIC. 
+   
+It is possible to have more than one thing in a Thing Type and this will make the Things in the Thing Type behave in the same manner with respect to how payloads from the Things are handled. The handling of the payload is described in your uplink transformation. When using the MQTT protocol we will however not make use of the uplink transformation.
 
 To add a new Thing, click on the **"+ THINGS"** button.
 
 ![Add new Thing to Thing Type](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/09-new-thing.png)
 
 A pop-up window will appear. De-select the **"Create batch"** slider in the pop-up window.
-- You must then add a "Thing Name", a **"Description"**, select your **"Domain"** and choose **"MQTT"** as the protocol for your Thing.
+- You must then add a **"Thing Name"**, a **"Description"**, select your **"Domain"**.
+- Choose **"MQTT"** as the protocol for your Thing.
+
+The image shows an example of what it should look like.
 
 ![Configure new Thing in Thing Type](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/10-thing.png)
 
@@ -137,7 +160,8 @@ The Thing List widget will show our single Thing that we just created.
 
 ### 3.5 Example Dashboard
 
-If you click on the **"Thing name"** in the list you will create a dashboard for your Thing. The dashboard will be mainly empty until the first payload for your Thing arrives. The dashboard is configurable and you can add widgets that represents values sent from your dev-kit (called resources). The image shows a very simple dashboard for what it could look like. It is possible to add more advanced widgets.
+If you click on the **"Thing name"** in the list you will create a dashboard for your Thing. The dashboard will be mainly empty until the first payload for your Thing arrives. The dashboard is configurable and you can add widgets that represents values sent from your dev-kit (called resources). The image shows a very simple dashboard for what it could look like. 
+It is possible to add more advanced widgets.
 
 ![Dashboard](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/13-sample-dashboard.png)
 
