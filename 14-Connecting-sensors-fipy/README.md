@@ -45,7 +45,7 @@ Now it's a time to start programming the dev-kit to measure temperature and humi
 
 ### 2.1 Download Example Code
 
-You can download the example code from here: https://github.com/TelenorStartIoT/fipy-dev-kit-udp
+You can download the example code from here: (addlink to program)
 
 You should choose the "Download ZIP" option in the "Clone or Download" button pop-up. This will download a ZIP archive with the example code.
 
@@ -71,7 +71,7 @@ To upload and run the program on your FiPy, simply click the "Upload" button loc
 
 If everything goes well you should see output from the program in the Pycom Console window in VSCode. The image shows what it could look like (the output from the program might be different).
 
-![Program output](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-udp/assets/17-program-output.png)
+![Program output](addlink)
 
 #### 5.5.1 Unable to run program
 
