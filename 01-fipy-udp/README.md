@@ -92,7 +92,7 @@ If you select the **"All commands"** button (located at the bottom bar) and then
 
 ![FiPy board version](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-udp/assets/06-pymakr-board-version.png)
 
-In the next chapter you will need the IMSI and IMEI numbers from the dev-kit. To get that, type the following lines one-by-one in the REPL (after the >>>) and include carriage return (press enter) after each line. Make a note of the IMSI and IMEI numbers displayed (or just keep the VSCode editor open and available).
+In the next chapter you will need the IMSI and IMEI numbers from the dev-kit. To get that, type the following lines one-by-one in the REPL (after the >>>) and include carriage return (press enter) after each line. If you can't write anything in the REPL, press CTRL+C (or ^+C on Mac) to stop the program execution. Make a note of the IMSI and IMEI numbers displayed (or just keep the VSCode editor open and available).
 
 ``` python
 from network import LTE
