@@ -1,28 +1,33 @@
 # FiPy Dev-Kit - MQTT/TLS 1.2
 
-> Works with NB-IoT or LTE-M
+> Works with NB-IoT and LTE-M
 
-This tutorial gives brief instructions on how to get started with the FiPy dev-kit. This tutorial will send data with the MQTT protocol using TLS 1.2 encryption directly to Telenor Managed IoT Cloud (MIC) over the LTE-M (Cat M1) or NB-IoT (NB1) network.
+
+This tutorial gives you step by step instructions on how to get started with your FiPy dev-kit. You will learn how to program your dev-kit and send data with the MQTT protocol using TLS 1.2 encryption directly to Telenor Managed IoT Cloud (MIC) over the LTE-M (Cat M1) or NB-IoT (NB1) network.
 
 You will learn how to:
 
-   * download and install the VSCode editor and the Pymakr plugin
-   * assemble the dev-kit and connect it to the VSCode editor
-   * create a Telenor Managed IoT Cloud (MIC) platform account
-   * register your dev-kit in MIC and create payload transformations
-   * flash the modem firmware on the FiPy (to support either LTE-M or NB-IoT)
-   * program the dev-kit and send data to MIC using MQTT over Telenor's excellent 4G LTE-M or NB-IoT network
-   * view your data in MIC
+   * Download the software you need
+   * Assemble the dev-kit
+   * Create an account in Telenor Managed IoT Cloud (MIC)
+   * Register your device (dev-kit) as a thing in MIC
+   * Update device firmware if needed
+   * Program your dev-kit
+   * Send data to MIC using MQTT over Telenor's excellent 4G LTE-M or NB-IoT network
+   * View your data in MIC and tailor your dashboard
 
 You can also find a lot of info related to the FiPy on Pycom's own documentation site: https://docs.pycom.io/gettingstarted/
 
-## 1. Download and Install the VSCode Editor and the Pymakr Plugin
+## 1. Download the software you need
 
-This chapter will show you how to download and install the VSCode editor and the Pymakr plugin. The Pymakr plugin together with the VSCode editor is what you will use to connect to and program your FiPy dev-kit.
+To connect and program the FiPy dev-kit you need to download and install:
 
-### 1.1 Download the VSCode Editor
+   * Visual Studio Code editor (VSCode editor)
+   * Pymakr plugin in VSCode editor
 
-You can download the VSCode editor for Windows, Linux and MacOS here: https://code.visualstudio.com/download. Download and install the VSCode editor for your operating system.
+### 1.1 Download the Visual Studio Code Editor (VSCode editor)
+
+You can download the VSCode editor for Windows, Linux and MacOS here: https://code.visualstudio.com/download. Choose the right option for your operating system and download and install the program. 
 
 ![Download VSCode](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/00-download-vscode.png)
 
