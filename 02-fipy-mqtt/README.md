@@ -56,6 +56,7 @@ You will assemble these components to make your dev-kit operable:
    * SIM card
    * Expansion board
 
+
 ### 2.1 Attach the Antenna and Insert the SIM Card
 
 The LTE antenna and the SIM card are mounted directly to the FiPy.
@@ -73,6 +74,7 @@ Insert the *Nano SIM* card.
 ![Insert SIM](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/03-sim-fipy-new1.png)
 
   **Notice the cut-corner of the SIM card to get the correct orientation. If you do not have the SIM inserted it will be impossible to connect to a cellular network.**
+
 
 ### 2.2 Mount FiPy on the Expansion Board
 
@@ -99,11 +101,13 @@ Open VSCode on your computer and connect your device using a USB cable. The Pyma
 
 If you don't see the Pycom Console window you can open it though the window menu **"Window" > "New Terminal" and switch to "Pycom Console" in the drop-down menu.**
 
+
 ### 2.4 Find board firmware version
 
 If you select the **"All commands"** button (located at the bottom bar) and then select "Get board version" in the VSCode Pymakr menu you should able to see the version number of the underlying Pycom Firmware. 
 
 ![FiPy board version](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/06-pymakr-board-version.png)
+
 
 ### 2.5 Upgrade the Pycom Firmware 
 
@@ -111,80 +115,90 @@ In most cases it is ok to use the firmware that is pre-installed on your FiPy bu
 
 New versions and explenations of how to do the upgrade are made available on Pycom's own site here: https://docs.pycom.io/gettingstarted/installation/firmwaretool.html
 
+You are now ready to start creating your use case and register your device as a 'thing' in the IoT platform Telenor Managed IoT Cloud.
+
+
 ## 3. Register Your FiPy Dev-Kit in Telenor Managed IoT Cloud as an MQTT Thing
 
-In this chapter you will learn 
-* How to register your dev-kit in Telenor Managed IoT Cloud (MIC). 
-* How to add a new MQTT "Thing" in MIC. 
-* How to create a dashboard to display your data. When sending MQTT data to MIC it will be possible to view the separate values in the MQTT publish packet in MIC widgets. Widget types in MIC ranges from simple textual widgets to graphical representations of your data.
+You are now finished using VSCode for a little while and in this next section you just need an internet browser and your e-mail. 
+
+In this chapter you will learn how to use the Telenor Managed IoT Cloud (MIC) platform. This guide will explain all the steps necessary to create a user, register your thing and build a dashboard. 
+
+These are the steps chapter 3 will take you through:
+* Sign-up for a MIC platform account
+* Create a "Thing Type" for your dev-kit
+* Add a "Thing" representing your dev-kit
+* Create a dashboard for your thing's data
+
+When you have completed all this you are ready to start programming your dev-kit and visualise the data in MIC. 
 
 ### 3.1 Sign Up For a MIC Platform Account
 
-**Sign-up** for a MIC account in order to register your dev-kit. You can do that here: https://demonorway.mic.telenorconnexion.com
+You can **Sign-up** for a MIC account here: https://demonorway.mic.telenorconnexion.com
 
 ![Login](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/07-login-mic.png)
 
-Click on the "Sign Up" button in the upper right corner and follow the instructions in order to sign up. 
+Click on the "Sign Up" button in the upper right corner and follow the instructions in order to sign up. It is important that you fill out at least the **six first fields** in addition to **company**. This is a prerequisite for being verified as a user. 
 
-Note: You should be aware that the signup are two phased sign up. 
-* In Phase one, verify your email. We will send a link to the email you register and you will have to use the link to verify your email address. 
-* In phase two, we will manually register your private MIC domain and activate your account. You will then receive a second email stating that your account has been activated. **Because of this procedure it may take up to 24 hours before your account is ready to be used.**
+**Note:** You should be aware that the signup is two-phased, and after you have confirmed your email address it may take some time before your user account is activated. This is a manual verification process and may take up to 24 hours outside normal business hours. Once your account is ready for use you will receive an email stating that your account has been activated. 
 
-### 3.2 Add a New Thing Type
 
-Once we approved your MIC account, you will be able to login to your MIC account with your user id and password.
+### 3.2 Create a "Thing Type" for your dev-kit
 
-When logged in create a new "Thing Type" for your dev-kit.
--  A things is a virtual representation of your IoT device.
--  A "Thing Type" is a way to organize multiple "Things" that share similarities.
+Once your MIC account is activated, you will be able to login to your MIC account with your user id and password.
+
+Once you are logged in you can start by creating a new "Thing Type". 
+   * A "Thing Type" is a method of organising multiple "Things" that report on the same data resources. 
+   * A "Thing" must always belong to a "Thing Type", this is why we have to make this before registering a "Thing".
+
 
 To add a *new* **"Thing Type"** click on the **"+NEW THING TYPE"** button and give it a name and a description. 
 * Assign it to the domain that your user was added to. 
 
-Note: For things that are of type MQTT it is not necessary to add uplink or downlink transformations since the thing will send data following the MIC MQTT shadow update format. This format is directly understood by MIC.
-
-You should keep in mind that this may increase the payload size for each data packet that your IoT device sends.
+Note: For things that will communicate with the **MQTT protocol** it is **not necessary to add uplink or downlink transformations** since the thing will send data following the MIC MQTT shadow update format. This format is directly understood by MIC. 
 
 ![Create Thing Type](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/08-thing-type.png)
 
-### 3.3 Add a Thing Representing Your Dev-Kit
+For use cases where other protocols than MQTT is used, the uplink and downlink transforms will decide the payload handeling of all the *Things* within a *Thing Type*. This however is not relevant for this tutorial. 
 
-The *"Thing Type" and "Thing"* together is a representation of your dev-kit in MIC. 
-   
-It is possible to have more than one thing in a Thing Type and this will make the Things in the Thing Type behave in the same manner with respect to how payloads from the Things are handled. The handling of the payload is described in your uplink transformation. When using the MQTT protocol we will however not make use of the uplink transformation.
+
+### 3.3 Add a "Thing" Representing Your Dev-Kit
+
+Once you have established a *"Thing Type"* you can add your dev-kit as a *"Thing"*.
+
+Your *"Thing Types"* will be visible to you in the panel on the left hand side of the window. When creating a new *"Thing"* it will automatically belong to the selected *"Thing Type"*.
 
 To add a new Thing, click on the **"+ THINGS"** button.
 
 ![Add new Thing to Thing Type](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/09-new-thing.png)
 
-A pop-up window will appear. De-select the **"Create batch"** slider in the pop-up window.
-- You must then add a **"Thing Name"**, a **"Description"**, select your **"Domain"**.
-- Choose **"MQTT"** as the protocol for your Thing.
+A pop-up window will appear. 
+   * De-select the **"Create batch"** slider in the pop-up window.
+   * You must then add a **"Thing Name"**, a **"Description"** and select your **"Domain"**.
+   * Choose **"MQTT"** as the protocol for your Thing.
 
 The image shows an example of what it should look like.
 
 ![Configure new Thing in Thing Type](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/10-thing.png)
 
-### 3.4 See Your Newly Created Thing
-
-You can access your Thing if you click the **"Thing List"** button and then **"ADD THING LIST WIDGET"**. This will add a widget to the Thing Type view with a list of Things.
-
-![New Thing in MIC](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/11-thing-list-widget.png)
-
-The Thing List widget will show our single Thing that we just created.
+The things list will now show the Thing that you just created.
 
 ![New Thing in MIC](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/12-thing-list.png)
 
-### 3.5 Example Dashboard
 
-If you click on the **"Thing name"** in the list you will create a dashboard for your Thing. The dashboard will be mainly empty until the first payload for your Thing arrives. The dashboard is configurable and you can add widgets that represents values sent from your dev-kit (called resources). The image shows a very simple dashboard for what it could look like. 
-It is possible to add more advanced widgets.
+### 3.4 Create a dashboard for your "Thing's" data
+
+If you click on the name of your *Thing* in the list you will open the dashboard for your Thing. This dashboard will be mainly empty until the first payload from your dev-kit arrives. The dashboard is configurable and you can add widgets that represents values sent from your dev-kit. The different values are called resources. For example: Temperature can be a resource. 
+
+The image below shows an example of how a very simple dashboard can look like. The MIC platform have many advanced options for widgets so your dashboard can be tailored very spesifically to your use case and data.
+
+Note: When sending MQTT data to MIC it will be possible to view the separate values in the MQTT publish packet in MIC widgets. In cases where other protocols are used the resources have to be defined in the uplink transform before they are available to the widgets. 
 
 ![Dashboard](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/13-sample-dashboard.png)
 
-### 3.6 Start Programming!
+You have now established your dev-kit as a "Thing" in MIC and are ready to start programming. In the next chapters we will show you how to program your dev-kit to send dummy-data over the LTE-M or NB-IoT network to your dashboard in MIC. You will need both MIC in your browser and the VSCode editor to program your dev-kit.
 
-It is now time to start programming the dev-kit. In the next chapters we will show you how.
+Let's go! 
 
 ## 4. Flash FiPy for NB-IoT or Update the LTE-M Firmware
 
