@@ -1,8 +1,8 @@
-# FiPy Dev-Kit - UDP
+# FiPy Dev-Kit - CoAP
 
 > Works with NB-IoT or LTE-M
 
-This tutorial gives brief instructions on how to get started with the FiPy dev-kit. This tutorial will send JSON formatted data in a UDP packet over the LTE-M (Cat M1) or NB-IoT (NB1) network.
+This tutorial gives brief instructions on how to get started with the FiPy dev-kit. This tutorial will send JSON formatted data in a CoAP packet over the LTE-M (Cat M1) or NB-IoT (NB1) network.
 
 You will learn how to:
 
@@ -24,7 +24,7 @@ This chapter will show you how to download and install the VSCode editor and the
 
 You can download the VSCode editor for Windows, Linux and MacOS here: https://code.visualstudio.com/download. Download and install the VSCode editor for your operating system.
 
-![Download VSCode](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-udp/assets/00-download-vscode.png)
+![Download VSCode](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/00-download-vscode.png)
 
 ### 1.2 Install the Pymakr Plugin for VSCode
 
@@ -35,7 +35,7 @@ To install 'pymakr' plugin
    2. Type 'pymakr' in search bar. Click on install
 
 
-![VSCode Pymakr plugin](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-udp/assets/20-install_pymakr_extension.png)
+![VSCode Pymakr plugin](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/20-install_pymakr_extension.png)
 
 When both the VSCode editor and the Pymakr plugin have been successfully installed you are ready to connect and start programming your own firmware for the FiPy. The next chapter will show you how to connect your dev-kit to the VSCode editor.
 
@@ -49,12 +49,12 @@ In this chapter you will learn how to assemble and connect the FiPy dev-kit to t
 
 There is a slot to attach the antenna on the *bottom-right* side of the FiPy.
 
-![LTE antenna](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-udp/assets/02-lte-ant-fipy_new.png)
+![LTE antenna](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/02-lte-ant-fipy_new.png)
 
 You should insert your SIM card into the SIM card slot on the *bottom-left* side of the FiPy.
 Insert the Nano SIM card.
 
-![Insert SIM](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-udp/assets/03-sim-fipy-new1.png)
+![Insert SIM](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/03-sim-fipy-new1.png)
 
  **Notice the cut-corner of the SIM card to get the correct orientation. If you do not have the SIM inserted it will be impossible to connect to the 4G network.**
 
@@ -74,7 +74,7 @@ The image shows you what it should look like.
 
  **Mount the FiPy on the Expansion board.**
 
-![Expansion board 3.0](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-udp/assets/04-expansion-board-3-new-fipy.png)
+![Expansion board 3.0](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/04-expansion-board-3-new-fipy.png)
 
 
 
@@ -86,11 +86,11 @@ You should now be able to connect to the FiPy dev-kit using a USB port on your c
 
 If you don't see the Pycom Console window you can open it though the window menu **"Window" > "New Terminal" and switch to "Pycom Console" in the drop-down menu.**
 
-![FiPy connected to VSCode and Pymakr](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-udp/assets/05-fipy-connected.png)
+![FiPy connected to VSCode and Pymakr](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/05-fipy-connected.png)
 
 If you select the **"All commands"** button (located at the bottom bar) and then select **"Get board version"** in the VSCode Pymakr menu you should see the version number of the underlying Pycom Firmware.
 
-![FiPy board version](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-udp/assets/06-pymakr-board-version.png)
+![FiPy board version](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/06-pymakr-board-version.png)
 
 In the next chapter you will need the IMSI and IMEI numbers from the dev-kit. To get that, type the following lines one-by-one in the REPL (after the >>>) and include carriage return (press enter) after each line. If you can't write anything in the REPL, press CTRL+C (or ^+C on Mac) to stop the program execution. Make a note of the IMSI and IMEI numbers displayed (or just keep the VSCode editor open and available).
 
@@ -101,7 +101,7 @@ lte.send_at_cmd("AT+CIMI")
 lte.send_at_cmd("AT+CGSN")
 ```
 
-![IMSI and IMEI](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-udp/assets/07-imsi-imei.png)
+![IMSI and IMEI](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/07-imsi-imei.png)
 
 ### 2.4 Upgrade the Pycom Firmware
 
@@ -118,7 +118,7 @@ In this chapter you will learn
 
 **Sign-up** for a MIC account in order to register your dev-kit. You can do that here: https://demonorway.mic.telenorconnexion.com
 
-![Login](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-udp/assets/08-login-mic.png)
+![Login](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/08-login-mic.png)
 
 Click on the **"Sign Up"** button in the *upper right corner* and follow the instructions in order to sign up. 
 
@@ -142,7 +142,7 @@ To add a *new* **"Thing Type"** click on the **"+NEW THING TYPE"** button and gi
 return JSON.parse(payload.toString('utf-8'));
 ```
 
-![Create Thing Type](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-udp/assets/09-thing-type.png)
+![Create Thing Type](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/09-thing-type.png)
 
 This code is just one simple example of what the uplink transform can look like. In this case it will transform JSON formatted payloads into a JavaScript object and return it. This will separate each property of the object into its separate "parts". For each "part" a resource in MIC will be created.
 
@@ -158,7 +158,7 @@ It is possible to have more than one *Thing* in a *Thing Type* and this will mak
 
 To add a new Thing, click on the **"+ THINGS"** button.
 
-![Add new Thing to Thing Type](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-udp/assets/10-new-thing.png)
+![Add new Thing to Thing Type](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/10-new-thing.png)
 
 A pop-up window will appear. De-select the **"Create batch"** slider in the pop-up window. 
 - You must then add a **"Thing Name"**, a **"Description"**, select your **"Domain"**.
@@ -166,17 +166,17 @@ A pop-up window will appear. De-select the **"Create batch"** slider in the pop-
 
 The image shows an example of what it should look like.
 
-![Configure new Thing in Thing Type](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-udp/assets/11-thing.png)
+![Configure new Thing in Thing Type](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/11-thing.png)
 
 ### 3.4 See Your Newly Created Thing
 
 You can access your Thing if you click the **"Thing List"** button and then **"ADD THING LIST WIDGET"**. This will add a widget to the Thing Type view with a list of Things.
 
-![New Thing in MIC](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-udp/assets/12-thing-list-widget.png)
+![New Thing in MIC](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/12-thing-list-widget.png)
 
 The Thing List widget will show your single *Thing* that you created now.
 
-![New Thing in MIC](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-udp/assets/13-thing-list.png)
+![New Thing in MIC](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/13-thing-list.png)
 
 ### 3.5 Example Dashboard
 
@@ -184,7 +184,7 @@ If you click on the **"Thing name"** in the list you will create a dashboard for
 
 The dashboard will be mainly empty until the first payload for your Thing arrives. The dashboard is configurable and you can add widgets that represents values sent from your dev-kit (called resources). The image shows a very simple dashboard for what it could look like. It is possible to add more advanced widgets.
 
-![Dashboard](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-udp/assets/14-sample-dashboard.png)
+![Dashboard](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/14-sample-dashboard.png)
 
 ### 3.6 Start Programming!
 
@@ -200,17 +200,17 @@ It could however be a good idea to upgrade the LTE-M firmware when new versions 
 
 If you intend to use NB-IoT you must flash the modem firmware if you haven't done so already, as the factory image of the FiPy modem is configured for LTE-M (Cat M1).
 
-## 5. Program the FiPy Using UDP (LTE-M or NB-IoT)
+## 5. Program the FiPy Using CoAP (LTE-M or NB-IoT)
 
 In this chapter you will learn how to program the FiPy dev-kit. The chapter will guide you through how to use the provided example code to connect the FiPy to the LTE-M or NB-IoT networks. Be aware that the FiPy Sequans modem firmware can only support either LTE-M (Cat M1) or NB-IoT. If you want to experiment with the NB-IoT network you will have to flash the Sequans modem on the FiPy with the NB-IoT firmware first as described in the previous chapter.
 
 ### 5.1 Download Example Code
 
-You can download the example code from here: https://github.com/TelenorStartIoT/fipy-dev-kit-udp
+You can download the example code from here: https://github.com/TelenorStartIoT/fipy-dev-kit-coap
 
 You should choose the "Download ZIP" option in the "Clone or Download" button pop-up. This will download a ZIP archive with the example code.
 
-![Download ZIP](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-udp/assets/14-download-zip.png)
+![Download ZIP](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/14-download-zip.png)
 
 ### 5.2 Unzip the Example Code and Open It In VSCode
 
@@ -218,13 +218,13 @@ Unzip the example code. How to do this varies depending on your computer system.
 
 Open the folder using the "File > Open Folder" ("File > Open" on MacOS) option in VSCode.
 
-![Open project in VSCode](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-udp/assets/15-open-project.png)
+![Open project in VSCode](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/15-open-project.png)
 
-![Open project in VSCode](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-udp/assets/16-open-project.png)
+![Open project in VSCode](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/16-open-project.png)
 
 ### 5.3 Modify the Program's Network Configuration
 
-The program you downloaded is by default configured to use the LTE-M (Cat M1) network. If you open the [main.py](https://github.com/TelenorStartIoT/fipy-dev-kit-udp/blob/master/main.py) file you will se the following code at the top:
+The program you downloaded is by default configured to use the LTE-M (Cat M1) network. If you open the [main.py](https://github.com/TelenorStartIoT/fipy-dev-kit-coap/blob/master/main.py) file you will se the following code at the top:
 
 ``` python
 # Create a new Telenor Start IoT object using the LTE-M network.
@@ -253,13 +253,13 @@ To upload and run the program on your FiPy, simply click the "Upload" button loc
 
 If everything goes well you should see output from the program in the Pycom Console window in VSCode. The image shows what it could look like (the output from the program might be different).
 
-![Program output](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-udp/assets/17-program-output.png)
+![Program output](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/17-program-output.png)
 
 #### 5.5.1 Unable to run program
 
 If you are not able to run the example code and see below error in your console. 
 
-![port error](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-udp/assets/17-fipy-error.jpg)
+![port error](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/17-fipy-error.jpg)
 
 Follow below steps
 - Disconnect your device.
@@ -274,13 +274,13 @@ If everything goes well, program will run automatically and you will able to see
 
 You should now be able to view your data in the MIC dashboard. Try to add a time series widget by clicking the “+WIDGET” button in MIC and set the type to be "Time Series". Images below shows some sample screenshots on how to do it.
 
-![Timeseries widget](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-udp/assets/18-timeseries-widget.png)
+![Timeseries widget](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/18-timeseries-widget.png)
 
-![Example dashboard](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-udp/assets/19-example-dashboard.png)
+![Example dashboard](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/19-example-dashboard.png)
 
 ### 5.7 Happy Hacking!
 
-This concludes the "Get Started With the FiPy Dev-Kit (UDP over NB-IoT or LTE-M)" tutorial. Your next step could be to connect the supplied DHT11 sensor to the FiPy and to modify the "dummy" payload string with values from the DHT11 sensor.
+This concludes the "Get Started With the FiPy Dev-Kit (CoAP over NB-IoT or LTE-M)" tutorial. Your next step could be to connect the supplied DHT11 sensor to the FiPy and to modify the "dummy" payload string with values from the DHT11 sensor.
 
 A god starting point would be to use the library code supplied here:
 
