@@ -236,9 +236,9 @@ Download the certificates and keys for your Thing from MIC as the image shows (y
 
 ![Download certificates and keys](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/17-download-certs.png)
 
-Unzip the downloaded folder and add the three files (cert.pem, privkey.pem and pubkey.pem) to the "cert" folder in the folder you saved in the previous step 6.1. 
+Unzip the downloaded folder and add the three files (cert.pem, privkey.pem and pubkey.pem) to the "cert" folder within the folder *"with a name you can remember"*. 
 
-You should now have a folder with a *"name you can remember"* containing this:
+You should now have a folder named *"name you can remember"* containing this:
 
 ![Folder with project code](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/folder-with-a-name-you-can-remember.png)
 
@@ -246,28 +246,34 @@ Next step is to open the folder in the VSCode editor.
 
 ### 6.3 Open the Code In VSCode
 
-Open the folder using the "File > Open Folder" ("File > Open" on MacOS) option in VSCode.
+The folder you created in the previous step contains everything you need for your project code. Once you have opened the folder in the VSCode editor, the changes you do to the code will be saved directly to this folder when you press (ctrl+s). 
+
+First, open VSCode and then open your folder using the "File > Open Folder" ("File > Open" on MacOS) option.
 
 ![Open project in VSCode](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/15-open-project.png)
+
+You can now see your folder in the panel on the left hand side of the VSCode window. The main code is in the main.py file, which calls upon configurations and certificates that are located other places in the folder. 
 
 ![Open project in VSCode](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/16-open-project.png)
 
 
 ### 6.4 Modify the Program's MQTT Configuration
 
-You will have to change Thing ID configuration variable at the top of the [main.py](https://github.com/TelenorStartIoT/fipy-dev-kit-mqtt/blob/master/main.py) file of the downloaded project.
+You are now going to write/change some parameters in the code to make it spesific to your "Thing" (dev-kit). 
 
+The first parameter you have to add to your code is a "Thing ID". You can find this in MIC.  
 To see your Thing ID, click on the + sign in the list view and check the unchecked Thing ID box (see image).
 
 ![View Thing ID](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/18-view-thing-id.png)
 
-Note your Thing ID in the list view and add it to the code:
+Note your Thing ID (00000XXX) then open the main.py file in the VSCode and change the Thing ID variable almost at the top of the file. 
 
 ``` python
 # Your Telenor Managed IoT Cloud (MIC) Thing configuration.
 # Change this to your Thing name / ID:
-THING_ID = '00001965'
+THING_ID = '00000XXX'
 ```
+
 
 ### 6.5 Modify the Program's Network Configuration
 
