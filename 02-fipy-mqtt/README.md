@@ -232,14 +232,17 @@ Give the folder a *"name you can remember"* and save it to someplace you can fin
 
 ### 6.2 Download the Certificates and Keys From MIC
 
-Download the certificates and keys for your Thing from MIC as the image shows (you will get a ZIP file). Unzip the downloaded folder and add the thre files (cert.pem, privkey.pem and pubkey.pem) to the "cert" folder in the folder you saved in the previous step 6.1. 
+Download the certificates and keys for your Thing from MIC as the image shows (you will get a ZIP file). 
 
 ![Download certificates and keys](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/17-download-certs.png)
 
+Unzip the downloaded folder and add the three files (cert.pem, privkey.pem and pubkey.pem) to the "cert" folder in the folder you saved in the previous step 6.1. 
+
 You should now have a folder with a *"name you can remember"* containing this:
 
+![Folder with project code](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/folder-with-a-name-you-can-remember.png)
 
-
+Next step is to open the folder in the VSCode editor.
 
 ### 6.3 Open the Code In VSCode
 
