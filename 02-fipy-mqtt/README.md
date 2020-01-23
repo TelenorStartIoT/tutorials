@@ -303,12 +303,18 @@ Connect the FiPy that is mounted on the expansion board to your computer (if not
 
 To upload and run the program on your FiPy, simply click the "Upload" button located at the bottom bar. This will first upload the code, the certificate and key, then it will reset your FiPy and run the uploaded code.
 
+Tips and tricks if you get errors: 
+   * Put your device in safe boot mode. This you can do by holding down the "Safe Boot" button on the expansion board while pressing the reset button on the top of the FiPy. The light should flash yellow-ish. Try again to press upload. 
+   * Take the USB out of the computer and put it back in. 
+
+
 ### 6.7 Check the Output From the Program
 
-If everything goes well you should see output from the program in the Pycom Console window in VSCode. The image shows what it could look like (the output from the program might be different).
+If everything succeeds you should see output from the program in the Pycom Console window in VSCode (bottom part of the window). The image shows what it could look like (the output from the program might be different).
 
 ![Program output](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/18-program-output.png)
 
+If you have trouble with connecting to the network, visit our [forum] 
 
 ## 7 Visualise your data in MIC
 
