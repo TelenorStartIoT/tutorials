@@ -7,14 +7,13 @@ This tutorial gives you step by step instructions on how to get started with you
 
 You will learn how to:
 
-   1. Download the software you need
-   2. Assemble the dev-kit
-   3. Create an account in Telenor Managed IoT Cloud (MIC)
-   4. Register your device (dev-kit) as a thing in MIC
-   5. Update device firmware if needed
-   6. Program your dev-kit
-   7. Send data to MIC using MQTT over Telenor's excellent 4G LTE-M or NB-IoT network
-   8. View your data in MIC and tailor your dashboard
+   1. Sign up for a MIC platform account
+   2. Download the software you need
+   3. Assemble the dev-kit
+   4. Register your FyPy dev-kit as a thing in MIC
+   5. Upgrade device firmware if needed
+   6. Program your FyPy dev-kit
+   7. Visualise your data in MIC and tailor your dashboard
 
 You can also find a lot of info related to the FiPy on Pycom's own documentation site: https://docs.pycom.io/gettingstarted/
 
@@ -208,12 +207,12 @@ Once you have the right modem firmware on your dev-kit you can start programming
 
 ## 6. Program the FiPy Using MQTT 
 
-In this chapter you will learn how to program the FiPy dev-kit to send data using MQTT directly to MIC. The chapter will guide you through how to use the provided example code to connect the FiPy to the LTE-M or NB-IoT networks and publish dummy messages directly to Telenor Managed IoT Cloud.
+In this chapter you will learn how to program the FiPy dev-kit to send data using MQTT directly to MIC. The chapter will teach you how to use the provided example code to connect the FiPy to the LTE-M or NB-IoT networks and publish dummy messages directly to Telenor Managed IoT Cloud.
 
 The chapter will take you through these steps:
-   1. Download example code from GitHUB 
-   2. Save the code and open it in VSCode
-   3. Download certificates and keys for your thing from MIC
+   1. Download and save the example code from GitHUB 
+   2. Download and save certificates and keys for your thing from MIC
+   3. Open the code in VSCode
    4. Add the ThingID to your program's MQTT configuration
    5. Modify the program's network configuration
    6. Upload the program to your FiPy
@@ -227,9 +226,22 @@ You should choose the "Download ZIP" option in the "Clone or Download" button po
 
 ![Download ZIP](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/14-download-zip.png)
 
-### 6.2 Unzip the Example Code and Open It In VSCode
-
 Unzip the example code. How to do this varies depending on your computer system. Most systems will unzip it if you double click on the zip file.
+
+Give the folder a *"name you can remember"* and save it to someplace you can find back to it. 
+
+### 6.2 Download the Certificates and Keys From MIC
+
+Download the certificates and keys for your Thing from MIC as the image shows (you will get a ZIP file). Unzip the downloaded folder and add the thre files (cert.pem, privkey.pem and pubkey.pem) to the "cert" folder in the folder you saved in the previous step 6.1. 
+
+![Download certificates and keys](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/17-download-certs.png)
+
+You should now have a folder with a *"name you can remember"* containing this:
+
+
+
+
+### 6.3 Open the Code In VSCode
 
 Open the folder using the "File > Open Folder" ("File > Open" on MacOS) option in VSCode.
 
@@ -237,11 +249,6 @@ Open the folder using the "File > Open Folder" ("File > Open" on MacOS) option i
 
 ![Open project in VSCode](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/16-open-project.png)
 
-### 6.3 Download the Certificates and Keys From MIC
-
-Download the certificates and keys for your Thing as the image shows (you will get a ZIP file). Unzip the downloaded file and and add the content to the "cert" folder in the code project (remove old certificates and keys from this folder if present).
-
-![Download certificates and keys](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/17-download-certs.png)
 
 ### 6.4 Modify the Program's MQTT Configuration
 
