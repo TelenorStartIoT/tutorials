@@ -314,7 +314,7 @@ If everything succeeds you should see output from the program in the Pycom Conso
 
 ![Program output](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/18-program-output.png)
 
-If you have trouble with connecting to the network, visit our [forum] 
+If you have trouble with connecting to the network, visit our [forum](https://startiot.telenor.com/forums/forum/end-devices/pycom-fipy/) where many solutions are posted. Here you can ask questions or learn from other users' questions and answers.  
 
 ## 7 Visualise your data in MIC
 
@@ -328,11 +328,8 @@ Note: When sending MQTT data to MIC it will be possible to view the separate val
 
 ![Dashboard](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/13-sample-dashboard.png)
 
-You have now established your dev-kit as a "Thing" in MIC and are ready to start programming. In the next chapters we will show you how to program your dev-kit to send dummy-data over the LTE-M or NB-IoT network to your dashboard in MIC. You will need both MIC in your browser and the VSCode editor to program your dev-kit.
 
-Let's go!
-
-### 7.2 Creae Widgets
+### 7.2 Create Widgets
 
 You should now be able to view your data in the MIC dashboard. Try to add a time series widget by clicking the “+WIDGET” button in MIC and set the type to be "Time Series". Images below shows some sample screenshots on how to do it.
 
