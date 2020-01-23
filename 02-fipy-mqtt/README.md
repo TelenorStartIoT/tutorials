@@ -266,7 +266,7 @@ To see your Thing ID, click on the + sign in the list view and check the uncheck
 
 ![View Thing ID](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/18-view-thing-id.png)
 
-Note your Thing ID (00000XXX) then open the main.py file in the VSCode and change the Thing ID variable almost at the top of the file. 
+Note your Thing ID (00000XXX) then open the main.py file in the VSCode and change the Thing ID variable at line 17 of the file. 
 
 ``` python
 # Your Telenor Managed IoT Cloud (MIC) Thing configuration.
@@ -277,7 +277,7 @@ THING_ID = '00000XXX'
 
 ### 6.5 Modify the Program's Network Configuration
 
-The program you downloaded is by default configured to use the LTE-M (Cat M1) network. If you open the [main.py](https://github.com/TelenorStartIoT/fipy-dev-kit-mqtt/blob/master/main.py) file you will se the following code at the top:
+The program you downloaded is by default configured to use the LTE-M (Cat M1) network. If you open the [main.py](https://github.com/TelenorStartIoT/fipy-dev-kit-mqtt/blob/master/main.py) file you will se the following code at line 27-32:
 
 ``` python
 # Create a new Telenor Start IoT object using the LTE-M network.
@@ -293,8 +293,9 @@ As described in the code comments, if you are using the NB-IoT network you must 
 ``` python
 iot = StartIoT(network='nb-iot')
 ```
+**If you are using MQTT you do not have to change anything in this file and can go straight to uploading the program to your FiPy.** 
 
-Remember that if you want to use the NB-IoT network you will also have to flash the Sequans modem on the FiPy with the NB-IoT firmware as described in previous chapters.
+Note: Remember that if you want to use the NB-IoT network you will also have to flash the Sequans modem on the FiPy with the NB-IoT firmware as described in previous chapters.
 
 ### 6.6 Upload the Program to your FiPy
 
