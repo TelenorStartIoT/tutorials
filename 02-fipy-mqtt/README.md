@@ -143,7 +143,7 @@ These are the steps chapter 3 will take you through:
 4.1 Create a "Thing Type" for your dev-kit
 4.2 Add a "Thing" representing your dev-kit
 
-When you have completed all this you are ready to start programming your dev-kit and visualise the data in MIC. 
+When you have completed this you are ready to start programming your dev-kit and visualise the data in MIC. 
 
 ### 4.1 Create a "Thing Type" for your dev-kit
 
@@ -201,7 +201,7 @@ The FiPy is configured with the LTE-M (Cat M1) modem firmware as default from th
 It could however be a good idea to upgrade the LTE-M firmware when new versions are released. If you intend to use NB-IoT network you must flash the modem firmware, as the factory image of the FiPy modem is configured for LTE-M (Cat M1).
 Detailed instructions on how to update the LTE-M firmware or switch to NB-IoT firmware can be found here: https://docs.pycom.io/tutorials/lte/firmware.html
 
-We recommend using an SD card in this process, but feel free to follow the method most convenient to you. 
+**Note:** We recommend using an SD card in this process, but feel free to follow the method most convenient to you. 
 
 Once you have the right modem firmware on your dev-kit you can start programming. 
 
@@ -230,13 +230,14 @@ Unzip the example code. How to do this varies depending on your computer system.
 
 Give the folder a *"name you can remember"* and save it to someplace you can find back to it. 
 
+
 ### 6.2 Download the Certificates and Keys From MIC
 
 Download the certificates and keys for your Thing from MIC as the image shows (you will get a ZIP file). 
 
 ![Download certificates and keys](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/17-download-certs.png)
 
-Unzip the downloaded folder and add the three files (cert.pem, privkey.pem and pubkey.pem) to the "cert" folder within the folder *"with a name you can remember"*. 
+Unzip the downloaded folder and add the three files (cert.pem, privkey.pem and pubkey.pem) to the "cert" folder within the folder containing the example code from GitHub. 
 
 You should now have a folder named *"name you can remember"* containing this:
 
@@ -246,7 +247,7 @@ Next step is to open the folder in the VSCode editor.
 
 ### 6.3 Open the Code In VSCode
 
-The folder you created in the previous step contains everything you need for your project code. Once you have opened the folder in the VSCode editor, the changes you do to the code will be saved directly to this folder when you press (ctrl+s). 
+The folder you created in the previous step contains everything you need for your project code. Once you have opened the folder in the VSCode editor, you can edit and change the code. To save the changes you make, press (ctrl+s).  
 
 First, open VSCode and then open your folder using the "File > Open Folder" ("File > Open" on MacOS) option.
 
@@ -256,13 +257,14 @@ You can now see your folder in the panel on the left hand side of the VSCode win
 
 ![Open project in VSCode](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/16-open-project.png)
 
+Check that the cert-folder contains the three certificates and keys you downloaded from MIC in addittion to the root certificate. If it doesn't you must go back to step two and make sure the certificates are saved in the cert folder. 
 
 ### 6.4 Modify the Program's MQTT Configuration
 
 You are now going to write/change some parameters in the code to make it spesific to your "Thing" (dev-kit). 
 
 The first parameter you have to add to your code is a "Thing ID". You can find this in MIC.  
-To see your Thing ID, click on the + sign in the list view and check the unchecked Thing ID box (see image).
+To see your Thing ID, click on the + (or III) sign in the list view and check the unchecked Thing ID box (see image). The Thing ID for your things will now appear in the *Things List*. 
 
 ![View Thing ID](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/18-view-thing-id.png)
 
@@ -301,10 +303,13 @@ Note: Remember that if you want to use the NB-IoT network you will also have to 
 
 Connect the FiPy that is mounted on the expansion board to your computer (if not already). Make sure that the SIM and LTE antenna is connected! The Pymakr plugin in VSCode will automatically detect the dev-kit.
 
-To upload and run the program on your FiPy, simply click the "Upload" button located at the bottom bar. This will first upload the code, the certificate and key, then it will reset your FiPy and run the uploaded code.
+To upload and run the program on your FiPy, simply click the "Upload" button located at the bottom bar. This will first upload the code and the certificate and key, then it will reset your FiPy and run the uploaded code.
+
+Note: With dev-kits it is very common to get errors while trying to do this. We have listed some tips for you to try if you get errors, and if none of these work, visit our [forum](https://startiot.telenor.com/forums/forum/end-devices/pycom-fipy/) for more possible solutions. 
 
 Tips and tricks if you get errors: 
-   * Put your device in safe boot mode. This you can do by holding down the "Safe Boot" button on the expansion board while pressing the reset button on the top of the FiPy. The light should flash yellow-ish. Try again to press upload. 
+   * Check that your certificate files are located in the cert folder.
+   * Put your device in safe boot mode right before uploading the code. You can put your FiPy in safe boot mode by holding down the "Safe Boot" button on the expansion board while pressing the reset button (the only buttonon the top of the FiPy). The light should flash orange. Try again to press upload. Try this a couple of times if it doesn't work the first time. Sometimes the fith or sixth time's the charm. 
    * Take the USB out of the computer and put it back in. 
 
 
@@ -318,15 +323,19 @@ If you have trouble with connecting to the network, visit our [forum](https://st
 
 ## 7 Visualise your data in MIC
 
-### 7.1 View your Dashboard
+Now your dev-kit is sending dummy data on temperature and humidity over the chosen cellular network. The next step is to view and organise your data in MIC. 
+
+### 7.1 View and edit your Dashboard
 
 If you click on the name of your *Thing* in the list you will open the dashboard for your Thing. This dashboard will be mainly empty until the first payload from your dev-kit arrives. The dashboard is configurable and you can add widgets that represents values sent from your dev-kit. The diferent values are called resources. For example: Temperature can be a resource. 
 
-The image below shows an example of how a very simple dashboard can look like. The MIC platform have many advanced options for widgets so your dashboard can be tailored very spesifically to your use case and data.
+To edit your dashboard you have to press the *move* button in the top right corner. This will enable edit mode where you can move things around and create new widgets. 
 
-Note: When sending MQTT data to MIC it will be possible to view the separate values in the MQTT publish packet in MIC widgets. In cases where other protocols are used the resources have to be defined in the uplink transform before they are available to the widgets. 
+![Edit mode](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/22-Edit-dashboard.PNG)
 
-![Dashboard](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/13-sample-dashboard.png)
+Once you are in edit mode you can create new widgets and tailor the dashboard to your use-case. **Remember to press save** when you have done new changes, otherwise the edits will be lost. 
+
+![Create and save](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/23-Add-Widget-And_Save.PNG)
 
 
 ### 7.2 Create Widgets
@@ -336,6 +345,12 @@ You should now be able to view your data in the MIC dashboard. Try to add a time
 ![Timeseries widget](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/19-timeseries-widget.png)
 
 ![Example dashboard](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/20-example-dashboard.png)
+
+The image below shows an example of how a very simple dashboard can look like. The MIC platform have many advanced options for widgets so your dashboard can be tailored very spesifically to your use case and data.
+
+Note: When sending MQTT data to MIC it will be possible to view the separate values in the MQTT publish packet in MIC widgets. In cases where other protocols are used the resources have to be defined in the uplink transform before they are available to the widgets. 
+
+![Dashboard](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/13-sample-dashboard.png)
 
 ### 6.9 Happy Hacking!
 
