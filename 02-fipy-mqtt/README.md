@@ -344,8 +344,6 @@ You should now be able to view your data in the MIC dashboard. Try to add a time
 
 ![Timeseries widget](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/19-timeseries-widget.png)
 
-![Example dashboard](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/20-example-dashboard.png)
-
 The image below shows an example of how a very simple dashboard can look like. The MIC platform have many advanced options for widgets so your dashboard can be tailored very spesifically to your use case and data.
 
 Note: When sending MQTT data to MIC it will be possible to view the separate values in the MQTT publish packet in MIC widgets. In cases where other protocols are used the resources have to be defined in the uplink transform before they are available to the widgets. 
