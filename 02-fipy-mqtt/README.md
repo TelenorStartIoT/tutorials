@@ -303,6 +303,8 @@ Note: Remember that if you want to use the NB-IoT network you will also have to 
 
 Connect the FiPy that is mounted on the expansion board to your computer (if not already). Make sure that the SIM and LTE antenna is connected! The Pymakr plugin in VSCode will automatically detect the dev-kit.
 
+**Make sure you have saved your code after writing the modifications. You save by pressing (ctrl+s).**
+
 To upload and run the program on your FiPy, simply click the "Upload" button located at the bottom bar. This will first upload the code and the certificate and key, then it will reset your FiPy and run the uploaded code.
 
 Note: With dev-kits it is very common to get errors while trying to do this. We have listed some tips for you to try if you get errors, and if none of these work, visit our [forum](https://startiot.telenor.com/forums/forum/end-devices/pycom-fipy/) for more possible solutions. 
@@ -311,6 +313,8 @@ Tips and tricks if you get errors:
    * Check that your certificate files are located in the cert folder.
    * Put your device in safe boot mode right before uploading the code. You can put your FiPy in safe boot mode by holding down the "Safe Boot" button on the expansion board while pressing the reset button (the only buttonon the top of the FiPy). The light should flash orange. Try again to press upload. Try this a couple of times if it doesn't work the first time. Sometimes the fith or sixth time's the charm. 
    * Take the USB out of the computer and put it back in. 
+   * Try again (and again...)
+   * Check the Start IoT forum for more advanced troubleshooting. 
 
 
 ### 6.7 Check the Output From the Program
