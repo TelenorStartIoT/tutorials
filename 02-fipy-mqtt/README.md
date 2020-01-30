@@ -265,6 +265,7 @@ Check that the cert-folder contains the three certificates and keys you download
 ### 6.4 Modify the Program's MQTT Configuration
 
 You are now going to write/change some parameters in the code to make it spesific to your "Thing" (dev-kit). 
+Make sure you save your changes by pressing (ctrl+s).
 
 The first parameter you have to add to your code is a "Thing ID". You can find this in MIC.  
 To see your Thing ID, click on the + (or III) sign in the list view and check the unchecked Thing ID box (see image). The Thing ID for your things will now appear in the *Things List*. 
