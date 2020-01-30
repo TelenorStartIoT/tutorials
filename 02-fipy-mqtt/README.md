@@ -153,7 +153,7 @@ When you log in for the first time you can start by creating a new "Thing Type".
 
 
 To add a *new* **"Thing Type"** click on the **"+NEW THING TYPE"** button and give it a name and a description. 
-* Assign it to the domain that your user was added to. 
+* Assign it to your domain in the drop-down menu.  
 
 Note: For things that will communicate with the **MQTT protocol** it is **not necessary to add uplink or downlink transformations** since the thing will send data following the MIC MQTT shadow update format. This format is directly understood by MIC. 
 
@@ -276,6 +276,8 @@ THING_ID = '00000XXX'
 
 
 ### 6.5 Modify the Program's Network Configuration
+
+Note: If you are using the LTE-M network, you do not have to change the network configurations
 
 The program you downloaded is by default configured to use the LTE-M (Cat M1) network. If you open the [main.py](https://github.com/TelenorStartIoT/fipy-dev-kit-mqtt/blob/master/main.py) file you will se the following code at line 27-32:
 
