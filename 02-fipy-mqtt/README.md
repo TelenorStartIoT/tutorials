@@ -112,6 +112,11 @@ Open VSCode on your computer and connect your device using a USB cable. The Pyma
 
 ![FiPy connected to VSCode and Pymakr](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/05-fipy-connected.png)
 
+If your dev-kit is not automatically detected you can do it manually. Either by pressing "Pycom Console" to the left on the blue line or via the menu "all commands" > "Pymakr>Connect". 
+
+![Connect FiPy manually](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/Troubleshoot-connect-FiPy.png)
+
+
 If you don't see the Pycom Console window you can open it though the window menu **"Window" > "New Terminal" and switch to "Pycom Console" in the drop-down menu.**
 
 
@@ -141,7 +146,7 @@ These are the steps chapter 4 will take you through:
 4.1 Create a "Thing Type" for your dev-kit
 4.2 Add a "Thing" representing your dev-kit
 
-When you have completed this you are ready to start programming your dev-kit and visualise the data in MIC. 
+When you have completed this chapter you are ready to start programming your dev-kit and visualise the data in MIC. 
 
 ### 4.1 Create a "Thing Type" for your dev-kit
 
@@ -235,9 +240,9 @@ Download the certificates and keys for your Thing from MIC as the image shows (y
 
 ![Download certificates and keys](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/17-download-certs.png)
 
-Unzip the downloaded folder and add the three files (cert.pem, privkey.pem and pubkey.pem) to the "cert" folder within the folder containing the example code from GitHub. 
+Unzip the downloaded folder and add the three files (cert.pem, privkey.pem and pubkey.pem) to the "cert" folder within the GitHub code folder from the previous step. 
 
-You should now have a folder named *"name you can remember"* containing this:
+You should now have a folder with a *"name you can remember"* containing this:
 
 ![Folder with project code](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/folder-with-a-name-you-can-remember.png)
 
@@ -301,17 +306,18 @@ Note: Remember that if you want to use the NB-IoT network you will also have to 
 
 ### 6.6 Upload the Program to your FiPy
 
-Connect the FiPy that is mounted on the expansion board to your computer (if not already). Make sure that the SIM and LTE antenna is connected! The Pymakr plugin in VSCode will automatically detect the dev-kit.
+Connect the FiPy that is mounted on the expansion board to your computer (if not already). Make sure that the SIM and LTE antenna is connected. The Pymakr plugin in VSCode will automatically detect the dev-kit.
 
 **Make sure you have saved your code after writing the modifications. You save by pressing (ctrl+s).**
 
-To upload and run the program on your FiPy, simply click the "Upload" button located at the bottom bar. This will first upload the code and the certificate and key, then it will reset your FiPy and run the uploaded code.
+To upload and run the program on your FiPy, simply click the "Upload" button located at the bottom bar in VSCode. This will first upload the code and the certificate and key, then it will reset your FiPy and run the uploaded code.
 
-Note: With dev-kits it is very common to get errors while trying to do this. We have listed some tips for you to try if you get errors, and if none of these work, visit our [forum](https://startiot.telenor.com/forums/forum/end-devices/pycom-fipy/) for more possible solutions. 
+**Note:** With dev-kits it is very common to get errors while trying to do this. We have listed some tips for you to try if you get errors, and if none of these work, visit our [forum](https://startiot.telenor.com/forums/forum/end-devices/pycom-fipy/) for more possible solutions. 
 
 Tips and tricks if you get errors: 
    * Check that your certificate files are located in the cert folder.
    * Put your device in safe boot mode right before uploading the code. You can put your FiPy in safe boot mode by holding down the "Safe Boot" button on the expansion board while pressing the reset button (the only buttonon the top of the FiPy). The light should flash orange. Try again to press upload. Try this a couple of times if it doesn't work the first time. Sometimes the fith or sixth time's the charm. 
+   * Disconnect and re-connect the dev-kit in VSCode. Try again with the previous tip. 
    * Take the USB out of the computer and put it back in. 
    * Try again (and again...)
    * Check the Start IoT forum for more advanced troubleshooting. 
@@ -323,7 +329,7 @@ If everything succeeds you should see output from the program in the Pycom Conso
 
 ![Program output](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/18-program-output.png)
 
-If you have trouble with connecting to the network, visit our [forum](https://startiot.telenor.com/forums/forum/end-devices/pycom-fipy/) where many solutions are posted. Here you can ask questions or learn from other users' questions and answers.  
+If you have trouble with connecting to the network, revisit the tips in the previous section or visit our [forum](https://startiot.telenor.com/forums/forum/end-devices/pycom-fipy/) where many solutions are posted. Here you can ask questions or learn from other users' questions and answers.  
 
 ## 7 Visualise your data in MIC
 
