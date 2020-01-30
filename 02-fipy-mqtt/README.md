@@ -72,13 +72,11 @@ You will assemble these components to make your dev-kit operable:
    * Expansion board
 
 
-### 3.1 Attach the Antenna and Insert the SIM Card
+### 3.1 Attach the Antenna and Insert the SIM Card to the FiPy
 
-The LTE antenna and the SIM card are mounted directly to the FiPy.
+**Important**: You should always mount the 4G antenna to the connector on the **underside of the FiPy** (where the pins are). The result of not connecting the antenna right could be that you harm the modem when it is connected.
 
-**Important**: You should always mount the 4G antenna to the connector on the bottom side of the FiPy. The result of **not connecting** the antenna right could be that you harm the modem when it is connected.
-
-There is a slot to attach the antenna on the *bottom-right* side of the FiPy. It might be a little hard, but just press it on like a snap button. 
+The connector for the antenna is located on the right-hand side once the FiPy is turned with its pins upwards. It might be a little hard to connect the antenna, but just press it on like a snap-button. 
 
 ![LTE antenna](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/02-lte-ant-fipy_new.png)
 
@@ -110,7 +108,7 @@ You now have a device that can communicate with the VSCode editor.
 
 The next step is to connect your device to your computer and the VSCode editor. 
 
-Open VSCode on your computer and connect your device using a USB cable. The Pymakr plugin will automatically detect your dev-kit and connect VSCode to it.
+Open VSCode on your computer and connect your device using a USB cable. The Pymakr plugin will automatically detect your dev-kit and connect VSCode to it. 
 
 ![FiPy connected to VSCode and Pymakr](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/05-fipy-connected.png)
 
@@ -139,7 +137,7 @@ You are now finished using VSCode for a little while and in this next section yo
 
 In this chapter you will learn how to use the Telenor Managed IoT Cloud (MIC) platform. 
 
-These are the steps chapter 3 will take you through:
+These are the steps chapter 4 will take you through:
 4.1 Create a "Thing Type" for your dev-kit
 4.2 Add a "Thing" representing your dev-kit
 
