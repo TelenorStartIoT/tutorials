@@ -117,7 +117,7 @@ If your dev-kit is not automatically detected you can do it manually. Either by 
 ![Connect FiPy manually](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/Troubleshoot-connect-FiPy.png)
 
 
-If you don't see the Pycom Console window you can open it though the window menu **"Window" > "New Terminal" and switch to "Pycom Console" in the drop-down menu.**
+If you don't see the Pycom Console window you can open it though the window menu *"Window" > "New Terminal"* and switch to *"Pycom Console"* in the drop-down menu.
 
 
 ### 3.4 Find board firmware version
@@ -179,7 +179,7 @@ To add a new Thing, click on the **"+ THINGS"** button.
 
 A pop-up window will appear. 
    * De-select the **"Create batch"** slider in the pop-up window.
-   * You must then add a **"Thing Name"**, a **"Description"** and select your **"Domain"**.
+   * You must then add a **"Thing Name"**, a **"Description"** and select your **"Domain"** from the drop-down menu.
    * Choose **"MQTT"** as the protocol for your Thing.
 
 The image shows an example of what it should look like.
