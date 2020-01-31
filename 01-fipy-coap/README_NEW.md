@@ -136,6 +136,8 @@ lte.send_at_cmd("AT+CIMI")
 lte.send_at_cmd("AT+CGSN")
 ```
 
+![IMSI and IMEI](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/07-imsi-imei.png)
+
 
 ### 3.6 Upgrade the Pycom Firmware 
 
