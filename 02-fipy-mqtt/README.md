@@ -78,7 +78,7 @@ You will assemble these components to make your dev-kit operable:
 
 The connector for the antenna is located on the right-hand side once the FiPy is turned with its pins upwards. It might be a little hard to connect the antenna, but just press it on like a snap-button. 
 
-![LTE antenna](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/02-Antenna.png)
+![LTE antenna](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/02-Antenna.PNG)
 
 
 The SIM card goes into the slot on the *bottom-left* side of the FiPy.
