@@ -3,7 +3,7 @@
 > Works with NB-IoT and LTE-M
 
 
-This tutorial gives you step by step instructions on how to get started with your FiPy dev-kit. You will learn how to program your dev-kit and send data with the MQTT protocol using TLS 1.2 encryption directly to Telenor Managed IoT Cloud (MIC) over the LTE-M (Cat M1) or NB-IoT (NB1) network.
+This tutorial gives you step by step instructions on how to get started with your FiPy dev-kit. You will learn how to program your dev-kit and send data with the MQTT protocol using TLS 1.2 encryption directly to Telenor Managed IoT Cloud (MIC) over the LTE-M (Cat M1) network.
 
 You will learn how to:
 
@@ -196,14 +196,9 @@ You are now finished registering your thing in MIC, and you can start working wi
 
 ## 5. Flash FiPy for NB-IoT or Update the LTE-M Firmware
 
-**NB:** This step is only necessary if you are going to use the NB-IoT network. If you plan to use the LTE-M network this step is voluntary.
+The FiPy is configured with the LTE-M (Cat M1) modem firmware as default from the factory, which means that when you are using the LTE-M network you do not have to flash the modem with new firmware and you can skip this chapter. It could however be a good idea to upgrade the LTE-M firmware when new versions are released.
 
-The modem is the part of your dev-kit that enables it to communicate with different networks. Currently the FiPy comes with two separate modem firmware images. One image is for NB-IoT (NB1) and the other image is for LTE-M (Cat M1). Unfortunately only one of the modem images can be used at a time. This means that you need to make sure the right modem firmware image is flashed to the FiPy according to which network you want to use. In the future we hope that this will change and that it will be possible to switch between the two network types in your own program for the FiPy without having to flash the modem. However, for the time being this needs to be done manually.
-
-The FiPy is configured with the LTE-M (Cat M1) modem firmware as default from the factory, so if you want to use the LTE-M network you do not have to flash the modem with new firmware and you can skip this chapter.
-
-It could however be a good idea to upgrade the LTE-M firmware when new versions are released. If you intend to use NB-IoT network you must flash the modem firmware, as the factory image of the FiPy modem is configured for LTE-M (Cat M1).
-Detailed instructions on how to update the LTE-M firmware or switch to NB-IoT firmware can be found here: https://docs.pycom.io/tutorials/lte/firmware.html
+If you have previousely changed the modem firmware to another image you will have to change it back before continuing. Detailed instructions on how to update modem firmware can be found here: https://docs.pycom.io/tutorials/lte/firmware.html
 
 **Note:** We recommend using an SD card in this process, but feel free to follow the method most convenient to you. 
 
@@ -211,7 +206,7 @@ Once you have the right modem firmware on your dev-kit you can start programming
 
 ## 6. Program the FiPy Using MQTT 
 
-In this chapter you will learn how to program the FiPy dev-kit to send data using MQTT directly to MIC. The chapter will teach you how to use the provided example code to connect the FiPy to the LTE-M or NB-IoT networks and publish dummy messages directly to Telenor Managed IoT Cloud.
+In this chapter you will learn how to program the FiPy dev-kit to send data using MQTT directly to MIC. The chapter will teach you how to use the provided example code to connect the FiPy to the LTE-M network and publish dummy messages directly to Telenor Managed IoT Cloud.
 
 The chapter will take you through these steps:
    1. Download and save the example code from GitHUB 
@@ -281,35 +276,11 @@ Note your Thing ID (00000XXX) then open the main.py file in the VSCode and chang
 THING_ID = '00000XXX'
 ```
 
-### 6.5 Modify the Program's Network Configuration
+**Make sure you have saved your code after writing the modifications. You save by pressing (ctrl+s).**
 
-Note: If you are using the LTE-M network, you do not have to change the network configurations
-
-The program you downloaded is by default configured to use the LTE-M (Cat M1) network. If you open the [main.py](https://github.com/TelenorStartIoT/fipy-dev-kit-mqtt/blob/master/main.py) file you will se the following code at line 27-32:
-
-``` python
-# Create a new Telenor Start IoT object using the LTE-M network.
-# Change the `network` parameter if you want to use the NB-IoT
-# network like this: iot = StartIoT(network='nb-iot')
-# You must flash the correct Sequans modem firmware before
-# changing network protocol!
-iot = StartIoT(network='lte-m')
-```
-
-As described in the code comments, if you are using the NB-IoT network you must change the `network` parameter to `nb-iot`:
-
-``` python
-iot = StartIoT(network='nb-iot')
-```
-**If you are using MQTT you do not have to change anything in this file and can go straight to uploading the program to your FiPy.** 
-
-Note: Remember that if you want to use the NB-IoT network you will also have to flash the Sequans modem on the FiPy with the NB-IoT firmware as described in previous chapters.
-
-### 6.6 Upload the Program to Your FiPy
+### 6.5 Upload the Program to Your FiPy
 
 Connect the FiPy that is mounted on the expansion board to your computer (if not already). Make sure that the SIM and LTE antenna is connected. The Pymakr plugin in VSCode will automatically detect the dev-kit.
-
-**Make sure you have saved your code after writing the modifications. You save by pressing (ctrl+s).**
 
 To upload and run the program on your FiPy, simply click the "Upload" button located at the bottom bar in VSCode. This will first upload the code and the certificate and key, then it will reset your FiPy and run the uploaded code.
 
@@ -324,7 +295,7 @@ Tips and tricks if you get errors:
    * Check the Start IoT forum for more advanced troubleshooting.
 
 
-### 6.7 Check the Output From the Program
+### 6.6 Check the Output From the Program
 
 If everything succeeds you should see output from the program in the Pycom Console window in VSCode (bottom part of the window). The image shows what it could look like (the output from the program might be different).
 
@@ -363,7 +334,7 @@ Note: When sending MQTT data to MIC it will be possible to view the separate val
 
 ### 6.9 Happy Hacking!
 
-This concludes the "Get Started With the FiPy Dev-Kit (MQTT over NB-IoT or LTE-M)" tutorial. Your next step could be to connect the supplied DHT11 sensor to the FiPy and to modify the "dummy" payload string with values from the DHT11 sensor.
+This concludes the "Get Started With the FiPy Dev-Kit (MQTT over LTE-M)" tutorial. Your next step could be to connect the supplied DHT11 sensor to the FiPy and to modify the "dummy" payload string with values from the DHT11 sensor.
 
 A god starting point would be to use the library code supplied here:
 
