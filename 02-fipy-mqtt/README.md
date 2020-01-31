@@ -17,7 +17,7 @@ You will learn how to:
 
 You can also find a lot of info related to the FiPy on Pycom's own documentation site: https://docs.pycom.io/gettingstarted/
 
-## 1 Sign Up For a MIC Platform Account
+## 1. Sign Up For a MIC Platform Account
 
 If you already have a MIC account you can start directly at step 2. 
 
@@ -332,7 +332,7 @@ If everything succeeds you should see output from the program in the Pycom Conso
 
 If you have trouble with connecting to the network, revisit the tips in the previous section or visit our [forum](https://startiot.telenor.com/forums/forum/end-devices/pycom-fipy/) where many solutions are posted. Here you can ask questions or learn from other users' questions and answers.  
 
-## 7 Visualise Your Data in MIC
+## 7. Visualise Your Data in MIC
 
 Now your dev-kit is sending dummy data on temperature and humidity over the chosen cellular network. The next step is to view and organise your data in MIC. 
 
