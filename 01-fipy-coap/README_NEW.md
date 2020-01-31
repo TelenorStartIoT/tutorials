@@ -23,7 +23,7 @@ If you already have a MIC account you can start directly at step 2.
 
 You can **Sign-up** for a MIC account here: https://demonorway.mic.telenorconnexion.com
 
-![Login](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-coap/assets/08-login-mic.png)
+![Login](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/08-login-mic.png)
 
 Click on the "Sign Up" button in the upper right corner and follow the instructions in order to sign up. It is important that you fill out at least the **six first fields** in addition to **company**. This is a prerequisite for being verified as a user. 
 
@@ -44,7 +44,7 @@ If you already have these programs on your computer you can jump straight to ste
 
 VSCode editor is a program that allows you to write your code and easily upload (flash) it to your dev-kit. You can download the VSCode editor for Windows, Linux and MacOS here: https://code.visualstudio.com/download. Choose the right option for your operating system and download and install the program. 
 
-![Download VSCode](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-coap/assets/00-download-vscode.png)
+![Download VSCode](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/00-download-vscode.png)
 
 ### 2.2 Pymakr Plugin for VSCode
 
@@ -56,7 +56,7 @@ To install 'pymakr' plugin:
    3. Find the extention by typing 'pymakr' in search bar. 
    4. Click on install
 
-![VSCode Pymakr plugin](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-coap/assets/20-install_pymakr_extension.png)
+![VSCode Pymakr plugin](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/20-install_pymakr_extension.png)
 
 When both the VSCode editor and the Pymakr plugin have been successfully installed you are ready to connect and start programming your FiPy. The next chapter will show you how to assemble your FiPy dev-kit. 
 
@@ -76,13 +76,13 @@ You will assemble these components to make your dev-kit operable:
 
 The connector for the antenna is located on the right-hand side once the FiPy is turned with its pins upwards. It might be a little hard to connect the antenna, but just press it on like a snap-button. 
 
-![LTE antenna](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-coap/assets/02-Antenna.PNG)
+![LTE antenna](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/02-Antenna.PNG)
 
 
 The SIM card goes into the slot on the *bottom-left* side of the FiPy.
 Insert the *Nano SIM* card. 
 
-![Insert SIM](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-coap/assets/03SIM.png)
+![Insert SIM](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/03SIM.png)
 
   **Notice the cut-corner of the SIM card to get the correct orientation. If you do not have the SIM inserted it will be impossible to connect to a cellular network.**
 
@@ -97,7 +97,7 @@ You should also check that all the PINs on the FiPy are matching the open connec
 
 The image below shows you what it should look like. 
 
-![Expansion board 3.0](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-coap/assets/04ExpansionBoard.png)
+![Expansion board 3.0](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/04ExpansionBoard.png)
 
 You now have a device that can communicate with the VSCode editor.
 
@@ -108,11 +108,11 @@ The next step is to connect your device to your computer and the VSCode editor.
 
 Open VSCode on your computer and connect your device using a USB cable. The Pymakr plugin will automatically detect your dev-kit and connect VSCode to it. 
 
-![FiPy connected to VSCode and Pymakr](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-coap/assets/05-fipy-connected.png)
+![FiPy connected to VSCode and Pymakr](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/05-fipy-connected.png)
 
 If your dev-kit is not automatically detected you can do it manually. Either by pressing **"Pycom Console"** to the left on the blue line or via the menu **"All Commands" > "Pymakr > Connect"**. 
 
-![Connect FiPy manually](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-coap/assets/Troubleshoot-connect-FiPy.png)
+![Connect FiPy manually](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/Troubleshoot-connect-FiPy.png)
 
 
 If you don't see the Pycom Console window you can open it though the window menu **"Window" > "New Terminal"** and switch to **"Pycom Console"** in the drop-down menu.
@@ -122,7 +122,7 @@ If you don't see the Pycom Console window you can open it though the window menu
 
 If you select the **"All commands"** button (located at the bottom bar) and then select "Get board version" in the VSCode Pymakr menu you should able to see the version number of the underlying Pycom Firmware. 
 
-![FiPy board version](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-coap/assets/06-pymakr-board-version.png)
+![FiPy board version](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/06-pymakr-board-version.png)
 
 
 ### 3.5 Get IMSI and IMEI
@@ -188,7 +188,7 @@ Your **Thing Types** will be visible to you in the panel on the left hand side o
 
 To add a new Thing, click on the **"+ THINGS"** button.
 
-![Add new Thing to Thing Type](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-coap/assets/10-new-thing.png)
+![Add new Thing to Thing Type](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/10-new-thing.png)
 
 A pop-up window will appear. 
    * De-select the **"Create batch"** slider in the pop-up window.
@@ -197,11 +197,11 @@ A pop-up window will appear.
 
 The image shows an example of what it should look like.
 
-![Configure new Thing in Thing Type](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-coap/assets/11-thing.png)
+![Configure new Thing in Thing Type](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/11-thing.png)
 
 The things list will now show the Thing that you just created.
 
-![New Thing in MIC](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-coap/assets/13-thing-list.png)
+![New Thing in MIC](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/13-thing-list.png)
 
 You are now finished registering your thing in MIC, and you can start working with the dev-kit again.
 
@@ -238,7 +238,7 @@ You can download the example code from here: https://github.com/TelenorStartIoT/
 
 You should choose the "Download ZIP" option in the "Clone or Download" button pop-up. This will download a ZIP archive with the example code.
 
-![Download ZIP](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-coap/assets/14-download-zip.png)
+![Download ZIP](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/14-download-zip.png)
 
 Unzip the example code. How to do this varies depending on your computer system. Most systems will unzip it if you double click on the zip file.
 
@@ -252,17 +252,17 @@ The folder you created in the previous step contains everything you need for you
 
 First, open VSCode and then open your folder using the "File > Open Folder" ("File > Open" on MacOS) option.
 
-![Open project in VSCode](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-coap/assets/15-open-project.png)
+![Open project in VSCode](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/15-open-project.png)
 
 You can now see your folder in the panel on the left hand side of the VSCode window. The main code is in the main.py file, which calls upon configurations that are located other places in the folder. 
 
-![Open project in VSCode](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-coap/assets/16-open-project.png)
+![Open project in VSCode](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/16-open-project.png)
 
 ### 6.5 Modify the Program's Network Configuration
 
 Note: If you are using the LTE-M network, you do not have to change the network configurations
 
-The program you downloaded is by default configured to use the LTE-M (Cat M1) network. If you open the [main.py](https://github.com/TelenorStartIoT/fipy-dev-kit-mqtt/blob/master/main.py) file you will se the following code at line 27-32:
+The program you downloaded is by default configured to use the LTE-M (Cat M1) network. If you open the [main.py](https://github.com/TelenorStartIoT/fipy-dev-kit-coap/blob/master/main.py) file you will se the following code at line 27-32:
 
 ``` python
 # Create a new Telenor Start IoT object using the LTE-M network.
@@ -303,7 +303,7 @@ Tips and tricks if you get errors:
 
 If everything succeeds you should see output from the program in the Pycom Console window in VSCode (bottom part of the window). The image shows what it could look like (the output from the program might be different).
 
-![Program output](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-coap/assets/17-program-output.png)
+![Program output](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/17-program-output.png)
 
 If you have trouble with connecting to the network, revisit the tips in the previous section or visit our [forum](https://startiot.telenor.com/forums/forum/end-devices/pycom-fipy/) where many solutions are posted. Here you can ask questions or learn from other users' questions and answers.  
 
@@ -317,22 +317,22 @@ If you click on the name of your *Thing* in the list you will open the dashboard
 
 To edit your dashboard you have to press the *move* button in the top right corner. This will enable edit mode where you can move things around and create new widgets. 
 
-![Edit mode](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-coap/assets/22-Edit-dashboard.PNG)
+![Edit mode](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/22-Edit-dashboard.PNG)
 
 Once you are in edit mode you can create new widgets and tailor the dashboard to your use-case. **Remember to press save** when you have done new changes, otherwise the edits will be lost. 
 
-![Create and save](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-coap/assets/23-Add-Widget-And_Save.PNG)
+![Create and save](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/23-Add-Widget-And_Save.PNG)
 
 
 ### 7.2 Create Widgets
 
 You should now be able to view your data in the MIC dashboard. Try to add a time series widget by clicking the “+WIDGET” button in MIC and set the type to be "Time Series". Images below shows some sample screenshots on how to do it.
 
-![Timeseries widget](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-coap/assets/18-timeseries-widget.png)
+![Timeseries widget](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/18-timeseries-widget.png)
 
 The image below shows an example of how a very simple dashboard can look like. The MIC platform have many advanced options for widgets so your dashboard can be tailored very spesifically to your use case and data.
 
-![Dashboard](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-coap/assets/13-sample-dashboard.png)
+![Dashboard](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/13-sample-dashboard.png)
 
 ### 6.9 Happy Hacking!
 
