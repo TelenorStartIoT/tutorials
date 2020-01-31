@@ -172,7 +172,7 @@ For use cases where other protocols than MQTT is used, the uplink and downlink t
 
 Once you have established a **Thing Type** you can add your dev-kit as a **Thing**.
 
-Your *"Thing Types"* will be visible to you in the panel on the left hand side of the window. When creating a new *"Thing"* it will automatically belong to the selected *"Thing Type"*.
+Your **Thing Types** will be visible to you in the panel on the left hand side of the window. When creating a new **Thing** it will automatically belong to the selected **Thing Type**.
 
 To add a new Thing, click on the **"+ THINGS"** button.
 
