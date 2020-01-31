@@ -78,13 +78,13 @@ You will assemble these components to make your dev-kit operable:
 
 The connector for the antenna is located on the right-hand side once the FiPy is turned with its pins upwards. It might be a little hard to connect the antenna, but just press it on like a snap-button. 
 
-![LTE antenna](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/02-lte-ant-fipy_new.png)
+![LTE antenna](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/02-Antenna.png)
 
 
 The SIM card goes into the slot on the *bottom-left* side of the FiPy.
 Insert the *Nano SIM* card. 
 
-![Insert SIM](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/03-sim-fipy-new1.png)
+![Insert SIM](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/03SIM.png)
 
   **Notice the cut-corner of the SIM card to get the correct orientation. If you do not have the SIM inserted it will be impossible to connect to a cellular network.**
 
@@ -99,7 +99,7 @@ You should also check that all the PINs on the FiPy are matching the open connec
 
 The image below shows you what it should look like. 
 
-![Expansion board 3.0](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/04-expansion-board-3-new-fipy.png)
+![Expansion board 3.0](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/04ExpansionBoard.png)
 
 You now have a device that can communicate with the VSCode editor.
 
