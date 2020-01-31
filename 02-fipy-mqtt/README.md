@@ -28,7 +28,7 @@ You can **Sign-up** for a MIC account here: https://demonorway.mic.telenorconnex
 Click on the "Sign Up" button in the upper right corner and follow the instructions in order to sign up. It is important that you fill out at least the **six first fields** in addition to **company**. This is a prerequisite for being verified as a user. 
 
 **Note:** You should be aware that the signup is two-phased, and after you have confirmed your email address it may take some time before your user account is activated. This is a manual verification process and may take up to 24 hours outside normal business hours. Once your account is ready for use you will receive an email stating that your account has been activated. 
-You can however continue
+You can however continue.
 
 
 ## 2. Download the software you need
@@ -50,7 +50,7 @@ VSCode editor is a program that allows you to write your code and easily upload 
 
 When you have successfully installed VSCode editor you need to install the plugin 'Pymakr'. This plugin enables you to connect the FiPy dev-kit to the VSCode editor over USB. 
 
-To install 'pymakr' plugin 
+To install 'pymakr' plugin:
    1. Open VSCode
    2. Click on extension icon (as marked in picture below) 
    3. Find the extention by typing 'pymakr' in search bar. 
@@ -93,7 +93,7 @@ Insert the *Nano SIM* card.
 
 You can now mount the FiPy module to the provided Expansion Board. 
 
-The USB connector on the expansion board must be on the same side as the reset button on the FiPy module. (see picture below) 
+The USB connector on the expansion board must be on the same side as the reset button on the FiPy module (see picture below).
 
 You should also check that all the PINs on the FiPy are matching the open connectors on the expansion board (i.e. that it is aligned correctly) before you push the FiPy module into the expansion board.
 
@@ -112,15 +112,15 @@ Open VSCode on your computer and connect your device using a USB cable. The Pyma
 
 ![FiPy connected to VSCode and Pymakr](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/05-fipy-connected.png)
 
-If your dev-kit is not automatically detected you can do it manually. Either by pressing "Pycom Console" to the left on the blue line or via the menu "all commands" > "Pymakr>Connect". 
+If your dev-kit is not automatically detected you can do it manually. Either by pressing **"Pycom Console"** to the left on the blue line or via the menu **"All Commands" > "Pymakr > Connect"**. 
 
 ![Connect FiPy manually](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/Troubleshoot-connect-FiPy.png)
 
 
-If you don't see the Pycom Console window you can open it though the window menu *"Window" > "New Terminal"* and switch to *"Pycom Console"* in the drop-down menu.
+If you don't see the Pycom Console window you can open it though the window menu **"Window" > "New Terminal"** and switch to **"Pycom Console"** in the drop-down menu.
 
 
-### 3.4 Find board firmware version
+### 3.4 Find Board Firmware Version
 
 If you select the **"All commands"** button (located at the bottom bar) and then select "Get board version" in the VSCode Pymakr menu you should able to see the version number of the underlying Pycom Firmware. 
 
@@ -131,9 +131,9 @@ If you select the **"All commands"** button (located at the bottom bar) and then
 
 In most cases it is ok to use the firmware that is pre-installed on your FiPy but we recommend you upgrade it to the newest version to make sure everything is up to date. 
 
-New versions and explenations of how to do the upgrade are made available on Pycom's own site here: https://docs.pycom.io/gettingstarted/installation/firmwaretool.html
+New versions and explanations of how to do the upgrade are made available on Pycom's own site here: https://docs.pycom.io/gettingstarted/installation/firmwaretool.html
 
-You are now ready to start creating your use case and register your device as a 'thing' in the IoT platform Telenor Managed IoT Cloud.
+You are now ready to start creating your use case and register your device as a 'Thing' in the IoT platform Telenor Managed IoT Cloud.
 
 
 ## 4. Register Your FiPy Dev-Kit in Telenor Managed IoT Cloud as an MQTT Thing
@@ -143,8 +143,9 @@ You are now finished using VSCode for a little while and in this next section yo
 In this chapter you will learn how to use the Telenor Managed IoT Cloud (MIC) platform. 
 
 These are the steps chapter 4 will take you through:
-4.1 Create a "Thing Type" for your dev-kit
-4.2 Add a "Thing" representing your dev-kit
+
+   * 4.1 Create a **Thing Type** for your dev-kit
+   * 4.2 Add a **Thing** representing your dev-kit
 
 When you have completed this chapter you are ready to start programming your dev-kit and visualise the data in MIC. 
 
@@ -152,24 +153,24 @@ When you have completed this chapter you are ready to start programming your dev
 
 Once your MIC account is activated, you will be able to login to your MIC account with your user id and password.
 
-When you log in for the first time you can start by creating a new "Thing Type". 
-   * A "Thing Type" is a method of organising multiple "Things" that report on the same data resources. 
-   * A "Thing" must always belong to a "Thing Type", this is why we have to make this before registering a "Thing".
+When you log in for the first time you can start by creating a new **Thing Type**. 
+   * A **Thing Type** is a method of organising multiple "Things" that report on the same data resources. 
+   * A **Thing** must always belong to a **Thing Type**, this is why we have to make this before registering a "Thing".
 
 
-To add a *new* **"Thing Type"** click on the **"+NEW THING TYPE"** button and give it a name and a description. 
+To add a *new* **Thing Typ** click on the **+NEW THING TYPE** button and give it a name and a description. 
 * Assign it to your domain in the drop-down menu.  
 
 Note: For things that will communicate with the **MQTT protocol** it is **not necessary to add uplink or downlink transformations** since the thing will send data following the MIC MQTT shadow update format. This format is directly understood by MIC. 
 
 ![Create Thing Type](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/08-thing-type.png)
 
-For use cases where other protocols than MQTT is used, the uplink and downlink transforms will decide the payload handeling of all the *Things* within a *Thing Type*. This however is not relevant for this tutorial. 
+For use cases where other protocols than MQTT is used, the uplink and downlink transforms will decide the payload handeling of all the **Things** within a **Thing Type**. This however is not relevant for this tutorial. 
 
 
 ### 4.2 Add a "Thing" Representing Your Dev-Kit
 
-Once you have established a *"Thing Type"* you can add your dev-kit as a *"Thing"*.
+Once you have established a **Thing Type** you can add your dev-kit as a **Thing**.
 
 Your *"Thing Types"* will be visible to you in the panel on the left hand side of the window. When creating a new *"Thing"* it will automatically belong to the selected *"Thing Type"*.
 
@@ -280,7 +281,6 @@ Note your Thing ID (00000XXX) then open the main.py file in the VSCode and chang
 THING_ID = '00000XXX'
 ```
 
-
 ### 6.5 Modify the Program's Network Configuration
 
 Note: If you are using the LTE-M network, you do not have to change the network configurations
@@ -305,7 +305,7 @@ iot = StartIoT(network='nb-iot')
 
 Note: Remember that if you want to use the NB-IoT network you will also have to flash the Sequans modem on the FiPy with the NB-IoT firmware as described in previous chapters.
 
-### 6.6 Upload the Program to your FiPy
+### 6.6 Upload the Program to Your FiPy
 
 Connect the FiPy that is mounted on the expansion board to your computer (if not already). Make sure that the SIM and LTE antenna is connected. The Pymakr plugin in VSCode will automatically detect the dev-kit.
 
@@ -317,11 +317,11 @@ To upload and run the program on your FiPy, simply click the "Upload" button loc
 
 Tips and tricks if you get errors: 
    * Check that your certificate files are located in the cert folder.
-   * Put your device in safe boot mode right before uploading the code. You can put your FiPy in safe boot mode by holding down the "Safe Boot" button on the expansion board while pressing the reset button (the only buttonon the top of the FiPy). The light should flash orange. Try again to press upload. Try this a couple of times if it doesn't work the first time. Sometimes the fith or sixth time's the charm. 
-   * Disconnect and re-connect the dev-kit in VSCode. Try again with the previous tip. 
-   * Take the USB out of the computer and put it back in. 
+   * Put your device in safe boot mode right before uploading the code. You can put your FiPy in safe boot mode by holding down the "Safe Boot" button on the expansion board while pressing the reset button (the only buttonon the top of the FiPy). The light should flash orange. Try again to press upload. Try this a couple of times if it doesn't work the first time. Sometimes the fifth or sixth time's the charm.
+   * Disconnect and re-connect the dev-kit in VSCode. Try again with the previous tip.
+   * Take the USB out of the computer and put it back in.
    * Try again (and again...)
-   * Check the Start IoT forum for more advanced troubleshooting. 
+   * Check the Start IoT forum for more advanced troubleshooting.
 
 
 ### 6.7 Check the Output From the Program
@@ -332,11 +332,11 @@ If everything succeeds you should see output from the program in the Pycom Conso
 
 If you have trouble with connecting to the network, revisit the tips in the previous section or visit our [forum](https://startiot.telenor.com/forums/forum/end-devices/pycom-fipy/) where many solutions are posted. Here you can ask questions or learn from other users' questions and answers.  
 
-## 7 Visualise your data in MIC
+## 7 Visualise Your Data in MIC
 
 Now your dev-kit is sending dummy data on temperature and humidity over the chosen cellular network. The next step is to view and organise your data in MIC. 
 
-### 7.1 View and edit your Dashboard
+### 7.1 View and Edit Your Dashboard
 
 If you click on the name of your *Thing* in the list you will open the dashboard for your Thing. This dashboard will be mainly empty until the first payload from your dev-kit arrives. The dashboard is configurable and you can add widgets that represents values sent from your dev-kit. The diferent values are called resources. For example: Temperature can be a resource. 
 
@@ -363,7 +363,7 @@ Note: When sending MQTT data to MIC it will be possible to view the separate val
 
 ### 6.9 Happy Hacking!
 
-This concludes the "Get Started With the FiPy Dev-Kit (UDP over NB-IoT or LTE-M)" tutorial. Your next step could be to connect the supplied DHT11 sensor to the FiPy and to modify the "dummy" payload string with values from the DHT11 sensor.
+This concludes the "Get Started With the FiPy Dev-Kit (MQTT over NB-IoT or LTE-M)" tutorial. Your next step could be to connect the supplied DHT11 sensor to the FiPy and to modify the "dummy" payload string with values from the DHT11 sensor.
 
 A god starting point would be to use the library code supplied here:
 
