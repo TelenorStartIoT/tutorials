@@ -145,7 +145,7 @@ New versions and explanations of how to do the upgrade are made available on Pyc
 
 You are now ready to start creating your use case and register your device as a 'Thing' in the IoT platform Telenor Managed IoT Cloud.
 
-## 4. Register Your FiPy Dev-Kit in Telenor Managed IoT Cloud as an MQTT Thing
+## 4. Register Your FiPy Dev-Kit in Telenor Managed IoT Cloud as a CoAP Thing
 
 You are now finished using VSCode for a little while and in this next section you just need to log in to your MIC account in an internet browser. 
 
@@ -336,7 +336,7 @@ The image below shows an example of how a very simple dashboard can look like. T
 
 ### 6.9 Happy Hacking!
 
-This concludes the "Get Started With the FiPy Dev-Kit (MQTT over NB-IoT or LTE-M)" tutorial. Your next step could be to connect the supplied DHT11 sensor to the FiPy and to modify the "dummy" payload string with values from the DHT11 sensor.
+This concludes the "Get Started With the FiPy Dev-Kit (CoAP over NB-IoT or LTE-M)" tutorial. Your next step could be to connect the supplied DHT11 sensor to the FiPy and to modify the "dummy" payload string with values from the DHT11 sensor.
 
 A god starting point would be to use the library code supplied here:
 
