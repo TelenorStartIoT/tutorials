@@ -286,13 +286,14 @@ The example code requires the Arduino MKRNB library. Add it to your sketch (Sket
 
 Compile and run the example code on the MKR1500 device by clicking on the upload arrow symbol or choosing “Sketch->Upload..” from the menu. Open the Serial Monitor (Tools->Serial Monitor…) and see the log output from your program.
 
-![RunExampleProgram](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/09B-AddMKRNBLibrary.jpg)
+![RunExampleProgram](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/17-run-program.png)
+![RunExampleProgram2](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/18-run-program2.png)
 
 ### See your data displayed in MIC
 
 Open the MIC dashboard and see your data displayed in MIC.
 
-![MICDashBoard](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/09D-MICDashBoard.jpg)
+![MICDashBoard](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/19-example-dashboard.png)
 
 ## Happy hacking!
 This concludes the Get started with the Arduino dev kit tutorial. Your next step could be to connect the supplied DHT11 sensor to the Arduino dev kit and to modify the “dummy” payload string with values from the DHT11 sensor.
