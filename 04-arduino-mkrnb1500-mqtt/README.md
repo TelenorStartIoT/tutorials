@@ -14,60 +14,64 @@ You will learn:
 * How to program the dev kit and send data to MIC over MQTT/TLS1.2 on Telenor’s excellent 4G LTE IoT Cat M1 network
 * How to view your data in MIC
 
-You can also find a lot of info related to the Arduino MKR on Arduino´s own documentation site: https://www.arduino.cc/en/Guide/MKRNB1500
-     
+You can also find a lot of info related to the Arduino MKR NB 1500 on Arduino's own documentation site:
+https://www.arduino.cc/en/Guide/MKRNB1500Introduction
 
-## 1. Preparations for Arduino dev kit, part one
+## 1. Download and Install the Arduino Desktop IDE and Add Board Support
 
-This lesson will show you how to download and install the Arduino Desktop IDE. The Arduino Desktop IDE is what you will use to connect to and program your dev kit.
+This lesson will show you how to download and install the Arduino Desktop IDE and add board support for the Arduino MKR NB 1500 dev-kit. The Arduino Desktop IDE is what you will use to connect to and program your dev-kit.
 
-### Download and install the Arduino Desktop IDE
+### 1.1 Download the Arduino Desktop IDE
 
-The easiest way to program the Arduino MKR1500 dev kit is to use the Arduino Desktop IDE. You can download the Arduino IDE from https://www.arduino.cc/en/Guide/HomePage. Scroll down to the “Install the Arduino Desktop IDE” and select the link that is appropriate for your computers operating system and follow the instructions there.
+The easiest way to program the Arduino MKR NB 1500 dev-kit is to use the Arduino Desktop IDE. You can download the Arduino IDE for Windows, Linux and MacOS here: https://www.arduino.cc/en/Main/software.
 
-![Download Aurduino desktop](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/01-%20Arduinohomepage.jpg)
+![Download Aurduino Desktop IDE](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/00-download-arduino-ide.png)
 
-When the Arduino Desktop IDE has been successfully installed you are ready to connect to the dev kit and start programming your own firmware for the Arduino. The next lesson will show you how to connect your dev kit to the Arduino IDE.
+### 1.2 Add Board Support for the Dev-Kit in the IDE
 
-## 2. Assemble the Arduino dev kit
+Open the Arduino Desktop IDE. The first thing you need to do before you connect your board to the computer is to add the Atmel SAMD Core to the IDE. This simple procedure is done by selecting "Tools" menu, then "Boards" and "Boards Manager". When the boards manager is displayed (see image), search for "MKR NB" and install the SAMD core by clicking the install button.
 
-In this lesson you will learn how to assemble and connect the Arduino dev kit to the Arduino Desktop IDE. You will also communicate with the dev kit in order to check the firmware revision and retrieve the IMSI and IMEI numbers that you will need to register you dev kit in the Managed IoT Cloud platform. More on that in a later lesson, let us first connect the dev kit to the Arduino IDE.
+![Add board support](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/01-add-board-support.png)
 
-### Connect the antenna and insert the SIM card
+### 1.3 Add the MKRNB Library
 
-Before you connect the Arduino MKR1500 to your computer you need to make sure that the LTE antenna and the SIM card is installed onto the MKR1500 board. The antenna that comes with the dev kit should be mounted on the small UFL connector on the left side of the UBlox modem on the front side of the board. 
+The example code that we will later run requires the Arduino MKRNB library. Add it to your sketch (Sketch > Include Library...), search for MKR NB and click install.
 
-![ConnectingAntenna](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/02-Connecting-Antenna1.jpg)
+![Add MKRNB library](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/02-add-library.png)
+
+## 2. Assemble the Arduino Dev-Kit
+
+In this chapter you will learn how to assemble and connect the Arduino dev-kit to the Arduino Desktop IDE. You will also communicate with the dev-kit in order to retrieve the IMSI and IMEI numbers that you will need to register you dev-kit in the MIC platform. More on that in a later chapter, let us first assemble the dev-kit.
+
+### 2.1 Attach the Antenna and Insert the SIM Card
+
+Before you connect the Arduino MKR NB 1500 to your computer you need to make sure that the LTE antenna and the SIM card is installed on the board. The antenna that comes with the dev-kit should be mounted on the small UFL connector on the left side of the UBlox modem on the front side of the board. 
+
+![LTE antenna](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/03-connect-antenna.png)
 
 The SIM card should be inserted in the SIM card slot located on the back side of the board. The small symbol on the SIM card slot shows the direction the SIM card should be inserted.
 
-![SIMCardslot](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/03-SimCardSlot.jpg)
+![SIM card slot](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/04-sim-card-slot.png)
 
-* Please also remove the black conductive foam from the MKR board pins before usage. If you don’t remove it, the board may behave erratically.*
+Please also remove the black conductive foam from the board pins before usage. If you don't remove it, the board may behave erratically.
 
-### Add board support for the dev kit in the IDE
+### 2.2 Select the Board Type in the IDE
 
-Open the Arduino Desktop IDE. Before you connect your board to the computer, the first thing you need to do is to add the Atmel SAMD Core to the IDE. This simple procedure is done selecting Tools menu, then Boards and last Boards Manager. When the boards manager is displayed *(see image)*, search for NB 1500 and install the SAMD core by clicking the install button.
+If the SAMD Core is installed you can connect the board to the computer using a standard micro USB cable. In the IDE, from "Tools" menu select the Board "Arduino MKR NB 1500".
 
-![AddBoardSupport](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/04-AddBoardSupport.jpg)
+![Select board](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/05-select-board.png)
 
-### Select the board type in the IDE
+### 2.3 Select the Port in the IDE
 
-Now that the SAMD Core is installed, you can connect the board to the computer using a standard micro USB cable. In the IDE, from Tools select the Board Arduino MKR NB 1500.
+Now it is time to finally select the port that the Arduino MKR NB 1500 is connected to. This will look slightly different depending on the operating system your computer is using. The example image shows what it typically looks like on MacOS.
 
-![SelectingBoard](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/05-SelectingBoard.jpg)
+![Select port](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/06-select-port.png)
 
-### Select the port in the IDE
-
-Now it is time to finally select the port the Arduino MKR1500 is connected to. This will look slightly different depending on the operating system your computer is using. The example image shows what it typically looks like on a Windows OS.
-
-![SelectPortIDE](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/06-SelectPortID.jpg)
-
-### Get the IMSI and IMEI number of your dev kit
+### 2.4 Get IMSI and IMEI
 
 Create a new sketch in the IDE and copy the following code into the sketch:
 
-```cpp
+``` cpp
 // baud rate used for both Serial ports
 unsigned long baud = 115200;
 
@@ -96,15 +100,19 @@ void loop() {
 }
 ```
 
-![GettingIMSInumber](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/07A-GettingIMSInumber.jpg)
+This will allow us to send commands from the PC directly to the modem on the Arduino board. We will do this to get the IMSI and IMEI numbers that we'll need later on. 
 
+![Serial passthrough sketch](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/07-serial-passthrough.png)
+
+Open the serial monitor (Tools > Serial Monitor). Make sure that the "Both NL & CR" option is selected and that the baud rate is set to "115200 baud". Then, type the following command in the input field to get the IMSI and IMEI numbers:
+
+```
 AT+CIMI;+CGSN
+```
 
-![SerialMonitor](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/07B-GettingIMSInumber.jpg)
+Leave the serial monitor open. You'll need to copy these numbers when we provision the device in Telenor Managed IoT Cloud in the next chapter.
 
-Leave the serial monitor open. You’ll need to copy these numbers when we provision the device in Telenor Start IoT Managed IoT Cloud in the next lesson.
-
-In the next lesson you will register and connect your dev kit to Telenor Start IoT Managed IoT Cloud
+![Serial monitor](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/08-get-imsi-imei.png)
 
 
 ## 3.Register your Arduino dev kit in Telenor StartIoT Managed IoT Cloud
