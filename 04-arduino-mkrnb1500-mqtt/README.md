@@ -211,6 +211,7 @@ MAC/Linux:
 Windows (you may have to download and install the openssl package found [here](http://slproweb.com/download/Win64OpenSSL_Light-1_1_1d.exe)):
 
 `& 'C:\Program Files\OpenSSL-Win64\bin\openssl.exe' rsa -inform PEM -in privkey.pem -outform DER -out privkey.dat`
+
 where the first filepath is where the openssl package is installed, this is usually as in the example or 'C:\OpenSSL-Win64\'
 
 Open the resulting certDER.c file and scroll down to the “unsigned char the_certificate[xxx]” part of the file. Copy the Hex for the certificate into your MICCertificates——–.h file and add the number (xxx) at the bottom of the definition (this is the size).
