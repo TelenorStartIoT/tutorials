@@ -1,6 +1,6 @@
 # FiPy Dev-Kit - MQTT/TLS 1.2
 
-> Works with NB-IoT and LTE-M
+> For LTE-M
 
 
 This tutorial gives you step by step instructions on how to get started with your FiPy dev-kit. You will learn how to program your dev-kit and send data with the MQTT protocol using TLS 1.2 encryption directly to Telenor Managed IoT Cloud (MIC) over the LTE-M (Cat M1) network.
