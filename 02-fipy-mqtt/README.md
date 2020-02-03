@@ -256,11 +256,13 @@ You can now see your folder in the panel on the left hand side of the VSCode win
 
 ![Open project in VSCode](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/16-open-project.png)
 
-Check that the cert-folder contains the three certificates and keys you downloaded from MIC in addittion to the root certificate. If it doesn't you must go back to step two and make sure the certificates are saved in the cert folder. 
+Check that the cert-folder contains the three certificates and keys you downloaded from MIC in addition to the root certificate like pictured below. If it doesn't you must go back to step two and make sure the certificates are saved in the cert folder. 
+
+![Certificates file](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/Certificates.PNG)
 
 ### 6.4 Modify the Program's MQTT Configuration
 
-You are now going to write/change some parameters in the code to make it spesific to your "Thing" (dev-kit). 
+You are now going to write/change some parameters in the code to make it specific toF your "Thing" (dev-kit). 
 Make sure you save your changes by pressing (ctrl+s).
 
 The first parameter you have to add to your code is a "Thing ID". You can find this in MIC.  
@@ -288,7 +290,7 @@ To upload and run the program on your FiPy, simply click the "Upload" button loc
 
 Tips and tricks if you get errors: 
    * Check that your certificate files are located in the cert folder.
-   * Put your device in safe boot mode right before uploading the code. You can put your FiPy in safe boot mode by holding down the "Safe Boot" button on the expansion board while pressing the reset button (the only buttonon the top of the FiPy). The light should flash orange. Try again to press upload. Try this a couple of times if it doesn't work the first time. Sometimes the fifth or sixth time's the charm.
+   * Put your device in safe boot mode right before uploading the code. You can put your FiPy in safe boot mode by holding down the "Safe Boot" button on the expansion board while pressing the reset button (the only button the top of the FiPy). The light should flash orange when you let go of the reset button. Try again to press upload. Try this a couple of times if it doesn't work the first time. Often the fifth or sixth time's the charm.
    * Disconnect and re-connect the dev-kit in VSCode. Try again with the previous tip.
    * Take the USB out of the computer and put it back in.
    * Try again (and again...)
@@ -309,7 +311,7 @@ Now your dev-kit is sending dummy data on temperature and humidity over the chos
 
 ### 7.1 View and Edit Your Dashboard
 
-If you click on the name of your *Thing* in the list you will open the dashboard for your Thing. This dashboard will be mainly empty until the first payload from your dev-kit arrives. The dashboard is configurable and you can add widgets that represents values sent from your dev-kit. The diferent values are called resources. For example: Temperature can be a resource. 
+If you click on the name of your *Thing* in the list you will open the dashboard for your Thing. This dashboard will be mainly empty until the first payload from your dev-kit arrives. The dashboard is configurable and you can add widgets that represents values sent from your dev-kit. The different values are called resources. For example: Temperature can be a resource. 
 
 To edit your dashboard you have to press the *move* button in the top right corner. This will enable edit mode where you can move things around and create new widgets. 
 
@@ -326,7 +328,7 @@ You should now be able to view your data in the MIC dashboard. Try to add a time
 
 ![Timeseries widget](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/19-timeseries-widget.png)
 
-The image below shows an example of how a very simple dashboard can look like. The MIC platform have many advanced options for widgets so your dashboard can be tailored very spesifically to your use case and data.
+The image below shows an example of how a very simple dashboard can look like. The MIC platform have many advanced options for widgets so your dashboard can be tailored very specifically to your use case and data.
 
 Note: When sending MQTT data to MIC it will be possible to view the separate values in the MQTT publish packet in MIC widgets. In cases where other protocols are used the resources have to be defined in the uplink transform before they are available to the widgets. 
 
