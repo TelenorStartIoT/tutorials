@@ -193,7 +193,7 @@ The goal is to create a MICCertificates——–.h file containing your things c
 
 ## Transform the PEM client certificate
 
-The certificate and private key downloaded from MIC is in PEM format. The UBlox R410 modem expects the certificate and key to be in DER format. To transform the content of your thing´s PEM certificate to DER Hex format you can use the following command:
+The certificate and private key downloaded from MIC is in PEM format. The UBlox R410 modem expects the certificate and key to be in DER format. To transform the content of your thing´s PEM certificate to DER Hex format you can use the following command (you may have to download and install the openssl package found ![here](http://slproweb.com/download/Win64OpenSSL_Light-1_1_1d.exe) if using Windows):
 
 openssl x509 -C -in cert.pem > certDER.c
 
