@@ -100,10 +100,11 @@ void loop() {
 
 AT+CIMI;+CGSN
 
+![SerialMonitor](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/07B-GettingIMSInumber.jpg)
+
 Leave the serial monitor open. You’ll need to copy these numbers when we provision the device in Telenor Start IoT Managed IoT Cloud in the next lesson.
 
 In the next lesson you will register and connect your dev kit to Telenor Start IoT Managed IoT Cloud
-![SerialMonitor](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/07B-GettingIMSInumber.jpg)
 
 
 ## 3.Register your Arduino dev kit in Telenor StartIoT Managed IoT Cloud
@@ -123,7 +124,7 @@ Click on the “Sign Up” button in the upper right corner and follow the instr
 
 You will now have to login to your MIC account when it is ready for use. When logged in you must create a new “thing type” for your dev kit. To add a new “thing type” click on the “+NEW THING TYPE button and fill in the form. Add the following code in the “Uplink transform” field:
 
-return JSON.parse(payload.toString("utf-8"));
+`return JSON.parse(payload.toString("utf-8"));`
 
 This code is just one simple example of what the uplink transform can look like. In this case it will transform JSON formatted payloads into its separate parts. For each part a resource in MIC will be created. A resource is an MQTT endpoint. Do not worry about the details now, this was just for your information. It is possible to create uplink transformations for payloads formatted in basically any format (hex, binary, text, JSON, etc). The uplink transform is just a snippet of Javascript code that MIC will use when doing transformations on your payload.
 
