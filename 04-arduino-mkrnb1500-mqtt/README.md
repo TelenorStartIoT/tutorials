@@ -258,15 +258,14 @@ To find the size (number of bytes) you can either count them manually 🙂 or us
 
 In the above case, the size is 1193.
 
-Your source code should now be ready for execution on the Arduino but you need to add the MKR1500 library before you compile and download it for execution on your device.
-
 ![StartFormat](https://github.com/TelenorStartIoT/tutorials/blob/master/04-arduino-mkrnb1500-mqtt/assets/08A-TransformPEMPrivateKey.jpg)
 The start of the formatted privkey bytes in the MICCertificates——–.h file.
 
-Your source code should now be ready for execution on the Arduino but you need to add the MKR1500 library before you compile and download it for execution on your device.
-
 ![EndFormat](https://github.com/TelenorStartIoT/tutorials/blob/master/04-arduino-mkrnb1500-mqtt/assets/08B-TransformPEMPrivateKey.jpg)
 The end of the formatted privkey bytes in the MICCertificates——–.h file. Note where the size is placed and that trailing 0x0 has been removed.
+
+
+Your source code should now be ready for execution on the Arduino but you need to add the MKR1500 library before you compile and download it for execution on your device.
 
 ## Add the MKRNB IoT library
 
