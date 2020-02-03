@@ -262,7 +262,6 @@ To find the size (number of bytes) you can either count them manually 🙂 or us
 
 ```
 > ls -l privkey.dat
--rw-------@ 1 testuser  staff  1193 Apr 24 12:56 privkey.dat
 ```
 
 In the above case, the size is 1193.
@@ -273,14 +272,6 @@ The start of the formatted privkey bytes in the MICCertificates——–.h file.
 ![EndFormat](https://github.com/TelenorStartIoT/tutorials/blob/master/04-arduino-mkrnb1500-mqtt/assets/08B-TransformPEMPrivateKey.jpg)
 The end of the formatted privkey bytes in the MICCertificates——–.h file. Note where the size is placed and that trailing 0x0 has been removed.
 
-
-Your source code should now be ready for execution on the Arduino but you need to add the MKR1500 library before you compile and download it for execution on your device.
-
-## Add the MKRNB IoT library
-
-The example code requires the Arduino MKRNB library. Add it to your sketch (Sketch->Include Library…), search for MKR NB and click install.
-
-![AddMKRNBLibrary](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/09B-AddMKRNBLibrary.jpg)
 
 ### Run the example program
 
