@@ -263,6 +263,7 @@ To find the size (number of bytes) you can either count them manually 🙂 or us
 ```
 > ls -l privkey.dat
 ```
+![Length](https://github.com/TelenorStartIoT/tutorials/blob/master/04-arduino-mkrnb1500-mqtt/assets/Length.png)
 
 In the above case, the size is 1193.
 
