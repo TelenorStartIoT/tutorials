@@ -172,7 +172,7 @@ The needed certificate and key for your thing can be downloaded from Managed IoT
 
 Download the source code as a zip file from here:
 
-https://github.com/TelenorStartIoT/Arduino_M1_MQTT
+https://github.com/TelenorStartIoT/arduino-dev-kit-mqtt
 
 Unzip the source code. How to do the unzipping will vary depending on your operating system but on many systems it is enough to double click the zip file
 
