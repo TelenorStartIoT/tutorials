@@ -117,35 +117,66 @@ Leave the serial monitor open. You'll need to copy these numbers when we provisi
 
 ## 3.Register your Arduino dev kit in Telenor StartIoT Managed IoT Cloud
 
-In this lesson you will learn how to register your dev kit to Telenor StartIoT Managed IoT Cloud (MIC). You will also learn ho to get the IMSI and IMEI number from the Arduino device. Using the IMSI and IMEI information you will learn how to add a new 4G NB-IoT thing in MIC. You will also learn how to add a transformation of your payload and to how to create a dashboard. The payload transformation makes it possible for you to view the individual parts of the payload in different type of widgets in the dashboard. Widget types ranges from simple textual widgets to graphical representations of your data.
+In this lesson you will learn how to register for an account in the Managed IoT Cloud (MIC) platform and register your device. 
 
 ### Sign up for a MIC platform account
 
-You will have to register for a MIC account in order to register your dev kit. You can do that here:
-https://startiot.mic.telenorconnexion.com
+If you already have a MIC account you can start directly at the next step. 
+
+You can **Sign-up** for a MIC account here: https://demonorway.mic.telenorconnexion.com
+
+![Login](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/07-login-mic.png)
 
 ![MICSIGNUP](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/08-MICsignup.jpg)
 
-Click on the “Sign Up” button in the upper right corner and follow the instructions in order to sign up. You should be aware that the signup is a two phased sign up. It therefore requires that you, in phase one, verify your email. We will send a link to the email you register and you will have to use the link to verify your email address. In phase two, we will manually register your private MIC domain and activate your account. You will then receive a second email stating that your account has been activated. Because of this procedure it may take up to 24 hours before your account is ready to use.
+Click on the "Sign Up" button in the upper right corner and follow the instructions in order to sign up. It is important that you fill out at least the **six first fields** in addition to **company**. This is a prerequisite for being verified as a user. 
+
+**Note:** You should be aware that the signup is two-phased, and after you have confirmed your email address it may take some time before your user account is activated. This is a manual verification process and may take up to 24 hours outside normal business hours. Once your account is ready for use you will receive an email stating that your account has been activated. 
 
 ### Add a new thing type
 
-You will now have to login to your MIC account when it is ready for use. When logged in you must create a new “thing type” for your dev kit. To add a new “thing type” click on the “+NEW THING TYPE button and fill in the form. Add the following code in the “Uplink transform” field:
+Once your MIC account is activated, you will be able to login to your MIC account with your user id and password.
 
-`return JSON.parse(payload.toString("utf-8"));`
+When you log in for the first time you can start by creating a new **Thing Type**. 
+   * A **Thing Type** is a method of organising multiple "Things" that report on the same data resources. 
+   * A **Thing** must always belong to a **Thing Type**, this is why we have to make this before registering a "Thing".
 
-This code is just one simple example of what the uplink transform can look like. In this case it will transform JSON formatted payloads into its separate parts. For each part a resource in MIC will be created. A resource is an MQTT endpoint. Do not worry about the details now, this was just for your information. It is possible to create uplink transformations for payloads formatted in basically any format (hex, binary, text, JSON, etc). The uplink transform is just a snippet of Javascript code that MIC will use when doing transformations on your payload.
 
-![AddingnewThing](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/08A-Addingnewthing.jpg)
+To add a *new* **Thing Typ** click on the **+NEW THING TYPE** button and give it a name and a description. 
+* Assign it to your domain in the drop-down menu.  
+
+Note: For things that will communicate with the **MQTT protocol** it is **not necessary to add uplink or downlink transformations** since the thing will send data following the MIC MQTT shadow update format. This format is directly understood by MIC. 
+
+![Create Thing Type](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/08-thing-type.png)
+
+For use cases where other protocols than MQTT is used, the uplink and downlink transforms will decide the payload handeling of all the **Things** within a **Thing Type**. This however is not relevant for this tutorial. 
+
 
 ### Add a thing representing your dev kit
 
-You should now add a new “thing” for your dev kit. The “thing type” and “thing” together is a representation of your dev kit in MIC. It is possible to have more than one thing in a thing type and this will make the things in the thing type to behave in the same manner with respect to how payloads from the things are handled. The handling of the payload is described in your uplink transform. You must click on the +THINGS button to create a new thing. In the create new thing form, deselect the “Create batch” slider. You must then add a “Thing Name”, a “Description” and select your “Domain” and choose “Protocol” for your thing. When you select nbiot as protocol you will also have to add the IMSI and IMEI number of your dev kit. The IMSI and IMEI was obtained in a previous lesson. The image on the right shows an example of what it should look like.
+Once you have established a **Thing Type** you can add your dev-kit as a **Thing**.
 
-![Addthing](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/08A-Addingnewthing.jpg)
+Your **Thing Types** will be visible to you in the panel on the left hand side of the window. When creating a new **Thing** it will automatically belong to the selected **Thing Type**.
+
+To add a new Thing, click on the **"+ THINGS"** button.
+
+![Add new Thing to Thing Type](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/09-new-thing.png)
+
+A pop-up window will appear. 
+   * De-select the **"Create batch"** slider in the pop-up window.
+   * You must then add a **"Thing Name"**, a **"Description"** and select your **"Domain"** from the drop-down menu.
+   * Choose **"MQTT"** as the protocol for your Thing.
+
+The image shows an example of what it should look like.
+
+![Configure new Thing in Thing Type](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/10-thing.png)
+
+The things list will now show the Thing that you just created.
+
+![New Thing in MIC](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/12-thing-list.png)
+
 
 ### See your thing
-
 
 You can look at and access your thing if you click the “List” tab. The image on the right shows an example list of devices reflecting a single dev kit thing.
 
