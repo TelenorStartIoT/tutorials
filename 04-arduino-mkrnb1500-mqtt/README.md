@@ -216,8 +216,27 @@ Add the size number at the bottom of the MIC_CLIENT_CERTIFICATE definition in th
 To change the private key (privkey.pem) from PEM to DER format that is suitable in the MICCertificates——–.h is a little bit more tricky. Start by using this openssl command:
 `openssl rsa -inform PEM -in privkey.pem -outform DER -out privkey.dat`
 
+MAC/Linux:
+
 Use this command to transform the binary file to the appropriate textual hex format:
 `hexdump -e '16/1 "0x%02x, " "\n"' privkey.dat > privkey.hex`
+
+Windows:
+
+As the hexdump command is not native to Windows, we use a workaround by making a function that does the same thing, then call said function:
+```
+function Get-HexDump($path,$width=16, $bytes=-1) {
+$OFS=""
+Get-Content -Encoding byte $path -ReadCount $width `
+-totalcount $bytes | Foreach-Object {
+$byte = $_
+if (($byte -eq 0).count -ne $width) {
+$hex = $byte | Foreach-Object {
+"0x" + ("{0:x}" -f $_).PadLeft(2,"0") + ", "}
+"$hex"
+} } }
+set-content -path privkey.hex -value (get-hexdump privkey.dat)
+```
 
 You now have the format you need in the privkey.hex file but be aware that there could be some trailing 0x0 at the end of the file. If that is the case, they need to be removed when you copy this into the MICCertificates——–.h file.
 
