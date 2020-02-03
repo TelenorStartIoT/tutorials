@@ -25,7 +25,7 @@ This lesson will show you how to download and install the Arduino Desktop IDE. T
 
 The easiest way to program the Arduino MKR1500 dev kit is to use the Arduino Desktop IDE. You can download the Arduino IDE from https://www.arduino.cc/en/Guide/HomePage. Scroll down to the “Install the Arduino Desktop IDE” and select the link that is appropriate for your computers operating system and follow the instructions there.
 
-![Download Aurduino desktop](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/01-%20Arduinohomepage.jpg)
+![Download Aurduino desktop](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/01-%20Arduinohomepage.jpg)
 
 When the Arduino Desktop IDE has been successfully installed you are ready to connect to the dev kit and start programming your own firmware for the Arduino. The next lesson will show you how to connect your dev kit to the Arduino IDE.
 
@@ -37,11 +37,11 @@ In this lesson you will learn how to assemble and connect the Arduino dev kit to
 
 Before you connect the Arduino MKR1500 to your computer you need to make sure that the LTE antenna and the SIM card is installed onto the MKR1500 board. The antenna that comes with the dev kit should be mounted on the small UFL connector on the left side of the UBlox modem on the front side of the board. 
 
-![ConnectingAntenna](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/02-Connecting-Antenna1.jpg)
+![ConnectingAntenna](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/02-Connecting-Antenna1.jpg)
 
 The SIM card should be inserted in the SIM card slot located on the back side of the board. The small symbol on the SIM card slot shows the direction the SIM card should be inserted.
 
-![SIMCardslot](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/03-SimCardSlot.jpg)
+![SIMCardslot](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/03-SimCardSlot.jpg)
 
 * Please also remove the black conductive foam from the MKR board pins before usage. If you don’t remove it, the board may behave erratically.*
 
@@ -49,19 +49,19 @@ The SIM card should be inserted in the SIM card slot located on the back side of
 
 Open the Arduino Desktop IDE. Before you connect your board to the computer, the first thing you need to do is to add the Atmel SAMD Core to the IDE. This simple procedure is done selecting Tools menu, then Boards and last Boards Manager. When the boards manager is displayed *(see image)*, search for NB 1500 and install the SAMD core by clicking the install button.
 
-![AddBoardSupport](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/04-AddBoardSupport.jpg)
+![AddBoardSupport](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/04-AddBoardSupport.jpg)
 
 ### Select the board type in the IDE
 
 Now that the SAMD Core is installed, you can connect the board to the computer using a standard micro USB cable. In the IDE, from Tools select the Board Arduino MKR NB 1500.
 
-![SelectingBoard](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/05-SelectingBoard.jpg)
+![SelectingBoard](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/05-SelectingBoard.jpg)
 
 ### Select the port in the IDE
 
 Now it is time to finally select the port the Arduino MKR1500 is connected to. This will look slightly different depending on the operating system your computer is using. The example image shows what it typically looks like on a Windows OS.
 
-![SelectPortIDE](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/06-SelectPortID.jpg)
+![SelectPortIDE](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/06-SelectPortID.jpg)
 
 ### Get the IMSI and IMEI number of your dev kit
 
@@ -96,14 +96,14 @@ void loop() {
 }
 ```
 
-![GettingIMSInumber](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/07A-GettingIMSInumber.jpg)
+![GettingIMSInumber](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/07A-GettingIMSInumber.jpg)
 
 AT+CIMI;+CGSN
 
 Leave the serial monitor open. You’ll need to copy these numbers when we provision the device in Telenor Start IoT Managed IoT Cloud in the next lesson.
 
 In the next lesson you will register and connect your dev kit to Telenor Start IoT Managed IoT Cloud
-![SerialMonitor](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/07B-GettingIMSInumber.jpg)
+![SerialMonitor](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/07B-GettingIMSInumber.jpg)
 
 
 ## 3.Register your Arduino dev kit in Telenor StartIoT Managed IoT Cloud
@@ -115,7 +115,7 @@ In this lesson you will learn how to register your dev kit to Telenor StartIoT M
 You will have to register for a MIC account in order to register your dev kit. You can do that here:
 https://startiot.mic.telenorconnexion.com
 
-![MICSIGNUP](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/08-MICsignup.jpg)
+![MICSIGNUP](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/08-MICsignup.jpg)
 
 Click on the “Sign Up” button in the upper right corner and follow the instructions in order to sign up. You should be aware that the signup is a two phased sign up. It therefore requires that you, in phase one, verify your email. We will send a link to the email you register and you will have to use the link to verify your email address. In phase two, we will manually register your private MIC domain and activate your account. You will then receive a second email stating that your account has been activated. Because of this procedure it may take up to 24 hours before your account is ready to use.
 
@@ -127,27 +127,27 @@ return JSON.parse(payload.toString("utf-8"));
 
 This code is just one simple example of what the uplink transform can look like. In this case it will transform JSON formatted payloads into its separate parts. For each part a resource in MIC will be created. A resource is an MQTT endpoint. Do not worry about the details now, this was just for your information. It is possible to create uplink transformations for payloads formatted in basically any format (hex, binary, text, JSON, etc). The uplink transform is just a snippet of Javascript code that MIC will use when doing transformations on your payload.
 
-![AddingnewThing](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/08A-Addingnewthing.jpg)
+![AddingnewThing](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/08A-Addingnewthing.jpg)
 
 ### Add a thing representing your dev kit
 
 You should now add a new “thing” for your dev kit. The “thing type” and “thing” together is a representation of your dev kit in MIC. It is possible to have more than one thing in a thing type and this will make the things in the thing type to behave in the same manner with respect to how payloads from the things are handled. The handling of the payload is described in your uplink transform. You must click on the +THINGS button to create a new thing. In the create new thing form, deselect the “Create batch” slider. You must then add a “Thing Name”, a “Description” and select your “Domain” and choose “Protocol” for your thing. When you select nbiot as protocol you will also have to add the IMSI and IMEI number of your dev kit. The IMSI and IMEI was obtained in a previous lesson. The image on the right shows an example of what it should look like.
 
-![Addthing](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/08A-Addingnewthing.jpg)
+![Addthing](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/08A-Addingnewthing.jpg)
 
 ### See your thing
 
 
 You can look at and access your thing if you click the “List” tab. The image on the right shows an example list of devices reflecting a single dev kit thing.
 
-![SeeYourThing](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/08C-Seething.jpg)
+![SeeYourThing](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/08C-Seething.jpg)
 
 
 ### Example dashboard
 
 If you click on the “Thing name” in the list you will create a dashboard for your thing. The dashboard will be mainly empty until the first payload for your thing arrives. The dashboard is configurable and you can add widgets that represents values sent from your dev kit (called resources). The image on the right side shows a very simply dashboard for the dummy payload sent from your device. It is possible to add more advanced widgets. Play around!
 
-![ExampleDashBoard](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/08D-ExampleDashBoard.jpg)
+![ExampleDashBoard](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/08D-ExampleDashBoard.jpg)
 
 ### Start Programming
 
@@ -167,25 +167,25 @@ https://github.com/TelenorStartIoT/Arduino_M1_MQTT
 
 Unzip the source code. How to do the unzipping will vary depending on your operating system but on many systems it is enough to double click the zip file
 
-![DownloadSourceCode](https://github.com/TelenorStartIoT/tutorials/blob/master/04-arduino-mkrnb1500-mqtt/01-DownloadSourcecode.jpg)
+![DownloadSourceCode](https://github.com/TelenorStartIoT/tutorials/blob/master/04-arduino-mkrnb1500-mqtt/assets/01-DownloadSourcecode.jpg)
 
 ## Add (open) the example code in the Arduino Desktop IDE
 
 Add the example code to the Arduino Desktop IDE (File->Open…) and select the Arduino_MIC_MQTT.ino file. We do want to change the content of the MICCertificates——–.h file with the certificate and private key for your thing in MIC. Let us first download the certificate and key from MIC.
 
-![AddExampleSourceCode](https://github.com/TelenorStartIoT/tutorials/blob/master/04-arduino-mkrnb1500-mqtt/02-ExampleCode.jpg)
+![AddExampleSourceCode](https://github.com/TelenorStartIoT/tutorials/blob/master/04-arduino-mkrnb1500-mqtt/assets/02-ExampleCode.jpg)
 
 ## Download MIC certificate and keys
 
 You will have to download the MIC certificate for your thing. It will be downloaded as a zip file. Unzip the zip file. Unzipping the zip file creates a folder with the certificates and keys. You will have to transform the certificates and the private key to DER Hex format since this is the only format the UBlox R410 modem understands. In order to facilitate for mutual authentication between the dev kit and the platform you will also need the AWS IoT root certificate. This certificate is already included the Arduino source code.
 
-![MICCertifiacted](https://github.com/TelenorStartIoT/tutorials/blob/master/04-arduino-mkrnb1500-mqtt/03-MICCertificated.jpg)
+![MICCertifiacted](https://github.com/TelenorStartIoT/tutorials/blob/master/04-arduino-mkrnb1500-mqtt/assets/03-MICCertificated.jpg)
 
 ## Change file name and include statement in the .ino file
 
 The goal is to create a MICCertificates——–.h file containing your things certificates and keys. The file MICCertificatesYOUR_THING_ID.h is just a template. As a start, rename this file to match your things thing id by changing the YOUR_THING_ID part of the file name with your things id (e.g. MICCertificates00001234.h). Also change the include statement in the .ino file accordingly. If your SIM card has a PIN you will also have to add that in the .ino file.
 
-![ChangeFileName](https://github.com/TelenorStartIoT/tutorials/blob/master/04-arduino-mkrnb1500-mqtt/04-ChangeFileName.jpg)
+![ChangeFileName](https://github.com/TelenorStartIoT/tutorials/blob/master/04-arduino-mkrnb1500-mqtt/assets/04-ChangeFileName.jpg)
 
 ## Transforming the certificate and key
 
@@ -193,23 +193,30 @@ The goal is to create a MICCertificates——–.h file containing your things c
 
 ## Transform the PEM client certificate
 
-The certificate and private key downloaded from MIC is in PEM format. The UBlox R410 modem expects the certificate and key to be in DER format. To transform the content of your thing´s PEM certificate to DER Hex format you can use the following command (you may have to download and install the openssl package found [here](http://slproweb.com/download/Win64OpenSSL_Light-1_1_1d.exe) if using Windows):
+The certificate and private key downloaded from MIC is in PEM format. The UBlox R410 modem expects the certificate and key to be in DER format. To transform the content of your thing´s PEM certificate to DER Hex format you can use the following command:
 
-openssl x509 -C -in cert.pem > certDER.c
+MAC/Linux:
+
+`openssl x509 -C -in cert.pem > certDER.c`
+
+Windows (you may have to download and install the openssl package found [here](http://slproweb.com/download/Win64OpenSSL_Light-1_1_1d.exe)):
+
+`& 'C:\Program Files\OpenSSL-Win64\bin\openssl.exe' rsa -inform PEM -in privkey.pem -outform DER -out privkey.dat`
+where the first filepath is where the openssl package is installed, this is usually as in the example or 'C:\OpenSSL-Win64\'
 
 Open the resulting certDER.c file and scroll down to the “unsigned char the_certificate[xxx]” part of the file. Copy the Hex for the certificate into your MICCertificates——–.h file and add the number (xxx) at the bottom of the definition (this is the size).
 
 Copy the certificate hex code from the generated certDER.c
 
-![CopyHexCode](https://github.com/TelenorStartIoT/tutorials/blob/master/04-arduino-mkrnb1500-mqtt/05-CopyHexCode.jpg)
+![CopyHexCode](https://github.com/TelenorStartIoT/tutorials/blob/master/04-arduino-mkrnb1500-mqtt/assets/05-CopyHexCode.jpg)
 
 Copy the certificate hex code to the MIC_CLIENT_CERTIFICATE part of the MICCertificates——–.h file
 
-![CopyHexCodeCertToMIC](https://github.com/TelenorStartIoT/tutorials/blob/master/04-arduino-mkrnb1500-mqtt/06-CopyHexCodeCertToMIC.jpg)
+![CopyHexCodeCertToMIC](https://github.com/TelenorStartIoT/tutorials/blob/master/04-arduino-mkrnb1500-mqtt/assets/06-CopyHexCodeCertToMIC.jpg)
 
 Add the size number at the bottom of the MIC_CLIENT_CERTIFICATE definition in the MICCertificates——–.h file
 
-![AddSizeNumber](https://github.com/TelenorStartIoT/tutorials/blob/master/04-arduino-mkrnb1500-mqtt/07-AddSizeNumber.jpg)
+![AddSizeNumber](https://github.com/TelenorStartIoT/tutorials/blob/master/04-arduino-mkrnb1500-mqtt/assets/07-AddSizeNumber.jpg)
 
 ## Transform the PEM private key
 
@@ -253,31 +260,31 @@ In the above case, the size is 1193.
 
 Your source code should now be ready for execution on the Arduino but you need to add the MKR1500 library before you compile and download it for execution on your device.
 
-![StartFormat](https://github.com/TelenorStartIoT/tutorials/blob/master/04-arduino-mkrnb1500-mqtt/08A-TransformPEMPrivateKey.jpg)
+![StartFormat](https://github.com/TelenorStartIoT/tutorials/blob/master/04-arduino-mkrnb1500-mqtt/assets/08A-TransformPEMPrivateKey.jpg)
 The start of the formatted privkey bytes in the MICCertificates——–.h file.
 
 Your source code should now be ready for execution on the Arduino but you need to add the MKR1500 library before you compile and download it for execution on your device.
 
-![EndFormat](https://github.com/TelenorStartIoT/tutorials/blob/master/04-arduino-mkrnb1500-mqtt/08B-TransformPEMPrivateKey.jpg)
+![EndFormat](https://github.com/TelenorStartIoT/tutorials/blob/master/04-arduino-mkrnb1500-mqtt/assets/08B-TransformPEMPrivateKey.jpg)
 The end of the formatted privkey bytes in the MICCertificates——–.h file. Note where the size is placed and that trailing 0x0 has been removed.
 
 ## Add the MKRNB IoT library
 
 The example code requires the Arduino MKRNB library. Add it to your sketch (Sketch->Include Library…), search for MKR NB and click install.
 
-![AddMKRNBLibrary](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/09B-AddMKRNBLibrary.jpg)
+![AddMKRNBLibrary](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/09B-AddMKRNBLibrary.jpg)
 
 ### Run the example program
 
 Compile and run the example code on the MKR1500 device by clicking on the upload arrow symbol or choosing “Sketch->Upload..” from the menu. Open the Serial Monitor (Tools->Serial Monitor…) and see the log output from your program.
 
-![RunExampleProgram](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/09B-AddMKRNBLibrary.jpg)
+![RunExampleProgram](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/09B-AddMKRNBLibrary.jpg)
 
 ### See your data displayed in MIC
 
 Open the MIC dashboard and see your data displayed in MIC.
 
-![MICDashBoard](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/09D-MICDashBoard.jpg)
+![MICDashBoard](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/09D-MICDashBoard.jpg)
 
 ## Happy hacking!
 This concludes the Get started with the Arduino dev kit tutorial. Your next step could be to connect the supplied DHT11 sensor to the Arduino dev kit and to modify the “dummy” payload string with values from the DHT11 sensor.
