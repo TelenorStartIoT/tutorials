@@ -46,6 +46,8 @@ If you already have these programs on your computer you can jump straight to ste
 Node.ha is a JavaScript runtime that is needed in order for the Pymakr plugin in VSCode to work. 
 You can download the program here: https://nodejs.org/en/download/. Choose the right option for your operating system and download and install the program.  
 
+![Download Nodejs](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/Install_nodejs.PNG)
+
 ### 2.2 Visual Studio Code Editor (VSCode editor)
 
 VSCode editor is a program that allows you to write your code and easily upload (flash) it to your dev-kit. You can download the VSCode editor for Windows, Linux and MacOS here: https://code.visualstudio.com/download. Choose the right option for your operating system and download and install the program. 
