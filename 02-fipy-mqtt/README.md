@@ -35,18 +35,24 @@ You can however continue with the tutorial while waiting for your account to be 
 
 To connect and program the FiPy dev-kit you need to download and install:
 
+   * Node.js
    * Visual Studio Code editor (VSCode editor)
    * Pymakr plugin in VSCode editor
    
 If you already have these programs on your computer you can jump straight to step 3. 
 
-### 2.1 Visual Studio Code Editor (VSCode editor)
+### 2.1 Node.js
+
+Node.ha is a JavaScript runtime that is needed in order for the Pymakr plugin in VSCode to work. 
+You can download the program here: https://nodejs.org/en/download/. Choose the right option for your operating system and download and install the program.  
+
+### 2.2 Visual Studio Code Editor (VSCode editor)
 
 VSCode editor is a program that allows you to write your code and easily upload (flash) it to your dev-kit. You can download the VSCode editor for Windows, Linux and MacOS here: https://code.visualstudio.com/download. Choose the right option for your operating system and download and install the program. 
 
 ![Download VSCode](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/00-download-vscode.png)
 
-### 2.2 Pymakr Plugin for VSCode
+### 2.3 Pymakr Plugin for VSCode
 
 When you have successfully installed VSCode editor you need to install the plugin 'Pymakr'. This plugin enables you to connect the FiPy dev-kit to the VSCode editor over USB. 
 
@@ -58,7 +64,7 @@ To install 'pymakr' plugin:
 
 ![VSCode Pymakr plugin](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/01-instal_pymakr_plugin.png)
 
-When both the VSCode editor and the Pymakr plugin have been successfully installed you are ready to connect and start programming your FiPy. The next chapter will show you how to assemble your FiPy dev-kit. 
+When Node.js, VSCode editor and the Pymakr plugin have been successfully installed you are ready to connect and start programming your FiPy. The next chapter will show you how to assemble your FiPy dev-kit. 
 
 
 ## 3. Assemble the FiPy Dev-Kit
