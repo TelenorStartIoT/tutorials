@@ -6,13 +6,13 @@ This tutorial gives brief instructions on how to get started with the FiPy dev-k
 
 You will learn how to:
 
-   * download and install the VSCode editor and the Pymakr plugin
-   * assemble the dev-kit and connect it to the VSCode editor
-   * create a Telenor Managed IoT Cloud (MIC) platform account
-   * register your dev-kit in MIC and create payload transformations
-   * flash the modem firmware on the FiPy (to support either LTE-M or NB-IoT)
-   * program the dev-kit and send data to MIC over Telenor's excellent 4G LTE-M or NB-IoT network
-   * view your data in MIC
+   1. Sign up for a Managed IoT Cloud (MIC) platform account
+   2. Download the software you need
+   3. Assemble the FiPy dev-kit
+   4. Register your dev-kit in MIC as a CoAP "Thing"
+   5. Flash FiPy for NB-IoT or update the LTE-M firmware
+   6. Program the FiPy using CoAP
+   7. Visualise your data in MIC
 
 You can also find a lot of info related to the FiPy on Pycom's own documentation site: https://docs.pycom.io/gettingstarted/
 
@@ -30,23 +30,28 @@ Click on the "Sign Up" button in the upper right corner and follow the instructi
 **Note:** You should be aware that the signup is two-phased, and after you have confirmed your email address it may take some time before your user account is activated. This is a manual verification process and may take up to 24 hours outside normal business hours. Once your account is ready for use you will receive an email stating that your account has been activated. 
 You can however continue.
 
-
 ## 2. Download the software you need
 
 To connect and program the FiPy dev-kit you need to download and install:
 
+   * Node.js
    * Visual Studio Code editor (VSCode editor)
    * Pymakr plugin in VSCode editor
    
 If you already have these programs on your computer you can jump straight to step 3. 
 
-### 2.1 Visual Studio Code Editor (VSCode editor)
+### 2.1 Node.js
+
+Node.ha is a JavaScript runtime that is needed in order for the Pymakr plugin in VSCode to work. 
+You can download the program here: https://nodejs.org/en/download/. Choose the right option for your operating system and download and install the program.  
+
+### 2.2 Visual Studio Code Editor (VSCode editor)
 
 VSCode editor is a program that allows you to write your code and easily upload (flash) it to your dev-kit. You can download the VSCode editor for Windows, Linux and MacOS here: https://code.visualstudio.com/download. Choose the right option for your operating system and download and install the program. 
 
 ![Download VSCode](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/00-download-vscode.png)
 
-### 2.2 Pymakr Plugin for VSCode
+### 2.3 Pymakr Plugin for VSCode
 
 When you have successfully installed VSCode editor you need to install the plugin 'Pymakr'. This plugin enables you to connect the FiPy dev-kit to the VSCode editor over USB. 
 
@@ -58,7 +63,8 @@ To install 'pymakr' plugin:
 
 ![VSCode Pymakr plugin](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/20-install_pymakr_extension.png)
 
-When both the VSCode editor and the Pymakr plugin have been successfully installed you are ready to connect and start programming your FiPy. The next chapter will show you how to assemble your FiPy dev-kit. 
+When Node.js, VSCode editor and the Pymakr plugin have been successfully installed you are ready to connect and start programming your FiPy. The next chapter will show you how to assemble your FiPy dev-kit. 
+
 
 ## 3. Assemble the FiPy Dev-Kit
 
