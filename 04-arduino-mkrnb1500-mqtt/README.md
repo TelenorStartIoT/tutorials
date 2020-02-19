@@ -100,7 +100,7 @@ void loop() {
 }
 ```
 
-This will allow us to send commands from the PC directly to the modem on the Arduino board. We will do this to get the IMSI and IMEI numbers that we'll need later on. 
+This will allow us to send commands from the PC directly to the modem on the Arduino board. We will do this to get the IMSI and IMEI numbers that we'll need later on. Press the "check" sign in the top left corner to verify the code, then press the arrow next to it to upload the code to your device.
 
 ![Serial passthrough sketch](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/07-serial-passthrough.png)
 
