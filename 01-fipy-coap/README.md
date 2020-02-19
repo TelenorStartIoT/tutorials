@@ -272,7 +272,7 @@ You can now see your folder in the panel on the left hand side of the VSCode win
 
 Note: If you are using the LTE-M network, you do not have to change the network configurations
 
-The program you downloaded is by default configured to use the LTE-M (Cat M1) network. If you open the [main.py](https://github.com/TelenorStartIoT/fipy-dev-kit-coap/blob/master/main.py) file you will se the following code at line 27-32:
+The program you downloaded is by default configured to use the LTE-M (Cat M1) network. If you open the [main.py](https://github.com/TelenorStartIoT/fipy-dev-kit-coap/blob/master/main.py) file you will se the following code at line 9-14:
 
 ``` python
 # Create a new Telenor Start IoT object using the LTE-M network.
