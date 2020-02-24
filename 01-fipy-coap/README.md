@@ -348,8 +348,8 @@ The image below shows an example of how a very simple dashboard can look like. T
 
 This concludes the "Get Started With the FiPy Dev-Kit (CoAP over NB-IoT or LTE-M)" tutorial. Your next step could be to connect the supplied DHT11 sensor to the FiPy and to modify the "dummy" payload string with values from the DHT11 sensor.
 
-A god starting point would be to use the library code supplied here:
+The following guide will describe how to connect the sensor to the Expansion Board:
 
-https://github.com/JurassicPork/DHT_PyCom/tree/pulses_get
+https://startiot.telenor.com/tutorials/fipy-dev-kit-dht11/
 
 Happy hacking!
