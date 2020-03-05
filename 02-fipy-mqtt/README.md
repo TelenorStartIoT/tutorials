@@ -10,7 +10,7 @@ You will learn how to:
    1. Sign up for a MIC platform account
    2. Download the software you need
    3. Assemble the dev-kit
-   4. Upgrade device firmware if needed
+   4. Upgrade modem firmware if needed
    5. Register your FyPy dev-kit as a thing in MIC
    6. Program your FyPy dev-kit
    7. Visualise your data in MIC and tailor your dashboard
