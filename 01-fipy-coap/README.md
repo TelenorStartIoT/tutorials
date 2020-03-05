@@ -37,6 +37,7 @@ To connect and program the FiPy dev-kit you need to download and install:
    * Node.js
    * Visual Studio Code editor (VSCode editor)
    * Pymakr plugin in VSCode editor
+   + Make two changes in Global Settings in VSCode
    
 If you already have these programs on your computer you can jump straight to step 3. 
 
@@ -65,7 +66,22 @@ To install 'pymakr' plugin:
 
 ![VSCode Pymakr plugin](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/20-install_pymakr_extension.png)
 
-When Node.js, VSCode editor and the Pymakr plugin have been successfully installed you are ready to connect and start programming your FiPy. The next chapter will show you how to assemble your FiPy dev-kit. 
+
+### 2.4 Changes in Global Settings
+
+For the device to be able to read the certificate files and upload the code you have to make two simple changes in Global Settings. 
+
+You enter the global settings by pressing "all commands" on the bottom tab, then selecting "global setting" like the picture below shows. 
+
+![VSCode Pymakr plugin](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/Global-settings.PNG)
+
+
+In the global settings you have to change line 7 "safe boot on upload" from "false" to "true" and add ",pem" to "sync file types" on line 18 like shown in the picture below. When this is ok press "ctrl+s". 
+
+![VSCode Pymakr plugin](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/Global-settings-2.PNG)
+
+
+You now have everything in place to connect and start programming your FiPy. The next chapter will show you how to assemble your FiPy dev-kit. 
 
 
 ## 3. Assemble the FiPy Dev-Kit
