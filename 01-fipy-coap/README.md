@@ -9,8 +9,8 @@ You will learn how to:
    1. Sign up for a Managed IoT Cloud (MIC) platform account
    2. Download the software you need
    3. Assemble the FiPy dev-kit
-   4. Register your dev-kit in MIC as a CoAP "Thing"
    5. Flash FiPy for NB-IoT or update the LTE-M firmware
+   4. Register your dev-kit in MIC as a CoAP "Thing"
    6. Program the FiPy using CoAP
    7. Visualise your data in MIC
 
@@ -169,11 +169,23 @@ In most cases it is ok to use the firmware that is pre-installed on your FiPy bu
 
 New versions and explanations of how to do the upgrade are made available on Pycom's own site here: https://docs.pycom.io/gettingstarted/installation/firmwaretool.html
 
-You are now ready to start creating your use case and register your device as a 'Thing' in the IoT platform Telenor Managed IoT Cloud.
 
+## 4. Flash FiPy modem for NB-IoT or Update the LTE-M Firmware
 
+**NB:** This step is only necessary if you are going to use the NB-IoT network. If you plan to use the LTE-M network this step is voluntary.
 
-## 4. Register Your FiPy Dev-Kit in Telenor Managed IoT Cloud as a CoAP Thing
+The modem is the part of your dev-kit that enables it to communicate with different networks. Currently the FiPy comes with two separate modem firmware images. One image is for NB-IoT (NB1) and the other image is for LTE-M (Cat M1). Unfortunately only one of the modem images can be used at a time. This means that you need to make sure the right modem firmware image is flashed to the FiPy according to which network you want to use. In the future we hope that this will change and that it will be possible to switch between the two network types in your own program for the FiPy without having to flash the modem. However, for the time being this needs to be done manually.
+
+The FiPy is configured with the LTE-M (Cat M1) modem firmware as default from the factory, so if you want to use the LTE-M network you do not have to flash the modem with new firmware and you can skip this chapter.
+
+It could however be a good idea to upgrade the LTE-M firmware when new versions are released. If you intend to use NB-IoT network you must flash the modem firmware, as the factory image of the FiPy modem is configured for LTE-M (Cat M1).
+Detailed instructions on how to update the LTE-M firmware or switch to NB-IoT firmware can be found here: https://docs.pycom.io/tutorials/lte/firmware.html
+
+**Note:** We recommend using an SD card in this process, but feel free to follow the method most convenient to you. 
+
+Once you have the right modem firmware on your dev-kit you are ready to start creating your use case and register your device as a 'Thing' in the IoT platform Telenor Managed IoT Cloud.
+
+## 5. Register Your FiPy Dev-Kit in Telenor Managed IoT Cloud as a CoAP Thing
 
 You are now finished using VSCode for a little while and in this next section you just need to log in to your MIC account in an internet browser. 
 
@@ -181,12 +193,12 @@ In this chapter you will learn how to use the Telenor Managed IoT Cloud (MIC) pl
 
 These are the steps chapter 4 will take you through:
 
-   * 4.1 Create a **Thing Type** for your dev-kit
-   * 4.2 Add a **Thing** representing your dev-kit
+   * 5.1 Create a **Thing Type** for your dev-kit
+   * 5.2 Add a **Thing** representing your dev-kit
 
 When you have completed this chapter you are ready to start programming your dev-kit and visualise the data in MIC. 
 
-### 4.1 Create a "Thing Type" for your dev-kit
+### 5.1 Create a "Thing Type" for your dev-kit
 
 Once your MIC account is activated, you will be able to login to your MIC account with your user id and password.
 
@@ -208,7 +220,7 @@ Do not worry about the details for now, this was just for your information. It i
 The uplink transform is just a snippet of JavaScript code that MIC will use when doing transformations on your payload, and is generally used to unpack compressed payloads into understandable resources.
 
 
-### 4.2 Add a "Thing" Representing Your Dev-Kit
+### 5.2 Add a "Thing" Representing Your Dev-Kit
 
 Once you have established a **Thing Type** you can add your dev-kit as a **Thing**.
 
@@ -233,21 +245,6 @@ The things list will now show the Thing that you just created.
 
 You are now finished registering your thing in MIC, and you can start working with the dev-kit again.
 
-
-## 5. Flash FiPy modem for NB-IoT or Update the LTE-M Firmware
-
-**NB:** This step is only necessary if you are going to use the NB-IoT network. If you plan to use the LTE-M network this step is voluntary.
-
-The modem is the part of your dev-kit that enables it to communicate with different networks. Currently the FiPy comes with two separate modem firmware images. One image is for NB-IoT (NB1) and the other image is for LTE-M (Cat M1). Unfortunately only one of the modem images can be used at a time. This means that you need to make sure the right modem firmware image is flashed to the FiPy according to which network you want to use. In the future we hope that this will change and that it will be possible to switch between the two network types in your own program for the FiPy without having to flash the modem. However, for the time being this needs to be done manually.
-
-The FiPy is configured with the LTE-M (Cat M1) modem firmware as default from the factory, so if you want to use the LTE-M network you do not have to flash the modem with new firmware and you can skip this chapter.
-
-It could however be a good idea to upgrade the LTE-M firmware when new versions are released. If you intend to use NB-IoT network you must flash the modem firmware, as the factory image of the FiPy modem is configured for LTE-M (Cat M1).
-Detailed instructions on how to update the LTE-M firmware or switch to NB-IoT firmware can be found here: https://docs.pycom.io/tutorials/lte/firmware.html
-
-**Note:** We recommend using an SD card in this process, but feel free to follow the method most convenient to you. 
-
-Once you have the right modem firmware on your dev-kit you can start programming. 
 
 ## 6. Program the FiPy Using CoAP 
 
