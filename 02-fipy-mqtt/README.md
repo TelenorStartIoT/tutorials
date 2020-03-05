@@ -10,8 +10,8 @@ You will learn how to:
    1. Sign up for a MIC platform account
    2. Download the software you need
    3. Assemble the dev-kit
-   4. Register your FyPy dev-kit as a thing in MIC
-   5. Upgrade device firmware if needed
+   4. Upgrade device firmware if needed
+   5. Register your FyPy dev-kit as a thing in MIC
    6. Program your FyPy dev-kit
    7. Visualise your data in MIC and tailor your dashboard
 
@@ -157,8 +157,17 @@ New versions and explanations of how to do the upgrade are made available on Pyc
 
 You are now ready to start creating your use case and register your device as a 'Thing' in the IoT platform Telenor Managed IoT Cloud.
 
+## 4. Flash FiPy modem to Update the LTE-M Firmware (Voluntary step)
 
-## 4. Register Your FiPy Dev-Kit in Telenor Managed IoT Cloud as an MQTT Thing
+The FiPy modem is configured with the LTE-M (Cat M1) modem firmware as default from the factory, which means that when you are using the LTE-M network you do not have to flash the modem with new firmware and you can skip this chapter. It could however be a good idea to upgrade the LTE-M firmware when new versions are released.
+
+If you have previousely changed the modem firmware to another image you will have to change it back before continuing. Detailed instructions on how to update modem firmware can be found here: https://docs.pycom.io/tutorials/lte/firmware.html
+
+**Note:** We recommend using an SD card in this process, but feel free to follow the method most convenient to you. 
+
+Once you have the right modem firmware on your dev-kit you can start programming. 
+
+## 5. Register Your FiPy Dev-Kit in Telenor Managed IoT Cloud as an MQTT Thing
 
 You are now finished using VSCode for a little while and in this next section you just need to log in to your MIC account in an internet browser. 
 
@@ -171,7 +180,7 @@ These are the steps chapter 4 will take you through:
 
 When you have completed this chapter you are ready to start programming your dev-kit and visualise the data in MIC. 
 
-### 4.1 Create a "Thing Type" for your dev-kit
+### 5.1 Create a "Thing Type" for your dev-kit
 
 Once your MIC account is activated, you will be able to login to your MIC account with your user id and password.
 
@@ -190,7 +199,7 @@ Note: For things that will communicate with the **MQTT protocol** it is **not ne
 For use cases where other protocols than MQTT is used, the uplink and downlink transforms will decide the payload handeling of all the **Things** within a **Thing Type**. This however is not relevant for this tutorial. 
 
 
-### 4.2 Add a "Thing" Representing Your Dev-Kit
+### 5.2 Add a "Thing" Representing Your Dev-Kit
 
 Once you have established a **Thing Type** you can add your dev-kit as a **Thing**.
 
@@ -215,16 +224,6 @@ The things list will now show the Thing that you just created.
 
 You are now finished registering your thing in MIC, and you can start working with the dev-kit again. 
 
-
-## 5. Flash FiPy modem for NB-IoT or Update the LTE-M Firmware
-
-The FiPy modem is configured with the LTE-M (Cat M1) modem firmware as default from the factory, which means that when you are using the LTE-M network you do not have to flash the modem with new firmware and you can skip this chapter. It could however be a good idea to upgrade the LTE-M firmware when new versions are released.
-
-If you have previousely changed the modem firmware to another image you will have to change it back before continuing. Detailed instructions on how to update modem firmware can be found here: https://docs.pycom.io/tutorials/lte/firmware.html
-
-**Note:** We recommend using an SD card in this process, but feel free to follow the method most convenient to you. 
-
-Once you have the right modem firmware on your dev-kit you can start programming. 
 
 ## 6. Program the FiPy Using MQTT 
 
