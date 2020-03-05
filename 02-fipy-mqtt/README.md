@@ -149,7 +149,7 @@ If you select the **"All commands"** button (located at the bottom bar) and then
 ![FiPy board version](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/06-pymakr-board-version.png)
 
 
-### 3.5 Upgrade the Pycom Firmware 
+### 3.5 Upgrade the Pycom Board Firmware 
 
 In most cases it is ok to use the firmware that is pre-installed on your FiPy but we recommend you upgrade it to the newest version to make sure everything is up to date. 
 
@@ -216,9 +216,9 @@ The things list will now show the Thing that you just created.
 You are now finished registering your thing in MIC, and you can start working with the dev-kit again. 
 
 
-## 5. Flash FiPy for NB-IoT or Update the LTE-M Firmware
+## 5. Flash FiPy modem for NB-IoT or Update the LTE-M Firmware
 
-The FiPy is configured with the LTE-M (Cat M1) modem firmware as default from the factory, which means that when you are using the LTE-M network you do not have to flash the modem with new firmware and you can skip this chapter. It could however be a good idea to upgrade the LTE-M firmware when new versions are released.
+The FiPy modem is configured with the LTE-M (Cat M1) modem firmware as default from the factory, which means that when you are using the LTE-M network you do not have to flash the modem with new firmware and you can skip this chapter. It could however be a good idea to upgrade the LTE-M firmware when new versions are released.
 
 If you have previousely changed the modem firmware to another image you will have to change it back before continuing. Detailed instructions on how to update modem firmware can be found here: https://docs.pycom.io/tutorials/lte/firmware.html
 
