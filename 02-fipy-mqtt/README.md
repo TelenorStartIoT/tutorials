@@ -155,7 +155,6 @@ In most cases it is ok to use the firmware that is pre-installed on your FiPy bu
 
 New versions and explanations of how to do the upgrade are made available on Pycom's own site here: https://docs.pycom.io/gettingstarted/installation/firmwaretool.html
 
-You are now ready to start creating your use case and register your device as a 'Thing' in the IoT platform Telenor Managed IoT Cloud.
 
 ## 4. Flash FiPy modem to Update the LTE-M Firmware (Voluntary step)
 
@@ -165,7 +164,8 @@ If you have previousely changed the modem firmware to another image you will hav
 
 **Note:** We recommend using an SD card in this process, but feel free to follow the method most convenient to you. 
 
-Once you have the right modem firmware on your dev-kit you can start programming. 
+Once you have the right modem firmware on your dev-kit you can start programming and register your device as a 'Thing' in the IoT platform Telenor Managed IoT Cloud.
+
 
 ## 5. Register Your FiPy Dev-Kit in Telenor Managed IoT Cloud as an MQTT Thing
 
@@ -175,8 +175,8 @@ In this chapter you will learn how to use the Telenor Managed IoT Cloud (MIC) pl
 
 These are the steps chapter 4 will take you through:
 
-   * 4.1 Create a **Thing Type** for your dev-kit
-   * 4.2 Add a **Thing** representing your dev-kit
+   * 5.1 Create a **Thing Type** for your dev-kit
+   * 5.2 Add a **Thing** representing your dev-kit
 
 When you have completed this chapter you are ready to start programming your dev-kit and visualise the data in MIC. 
 
