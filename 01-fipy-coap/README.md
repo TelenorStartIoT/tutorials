@@ -163,13 +163,15 @@ lte.send_at_cmd("AT+CGSN")
 ![IMSI and IMEI](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/07-imsi-imei.png)
 
 
-### 3.6 Upgrade the Pycom Firmware 
+### 3.6 Upgrade the Pycom Board Firmware 
 
 In most cases it is ok to use the firmware that is pre-installed on your FiPy but we recommend you upgrade it to the newest version to make sure everything is up to date. 
 
 New versions and explanations of how to do the upgrade are made available on Pycom's own site here: https://docs.pycom.io/gettingstarted/installation/firmwaretool.html
 
 You are now ready to start creating your use case and register your device as a 'Thing' in the IoT platform Telenor Managed IoT Cloud.
+
+
 
 ## 4. Register Your FiPy Dev-Kit in Telenor Managed IoT Cloud as a CoAP Thing
 
@@ -232,7 +234,7 @@ The things list will now show the Thing that you just created.
 You are now finished registering your thing in MIC, and you can start working with the dev-kit again.
 
 
-## 5. Flash FiPy for NB-IoT or Update the LTE-M Firmware
+## 5. Flash FiPy modem for NB-IoT or Update the LTE-M Firmware
 
 **NB:** This step is only necessary if you are going to use the NB-IoT network. If you plan to use the LTE-M network this step is voluntary.
 
