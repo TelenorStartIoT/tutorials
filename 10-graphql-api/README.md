@@ -87,6 +87,7 @@ Add the following code within the script-block (where it says "Your code goes he
 ```js
 // Init with username and password
 MIC.init({
+  stack: 'demonorway.mic.telenorconnexion.com',
   username: '<MIC username>',
   password: '<MIC password>'
 }).then(() => {
@@ -121,6 +122,7 @@ MIC.init({
 
 ```js
 MIC.init({
+  stack: 'demonorway.mic.telenorconnexion.com',
   username: '<MIC username>',
   password: '<MIC password>'
 })
