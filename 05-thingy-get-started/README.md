@@ -8,7 +8,7 @@ If you already have a MIC account you can start directly at step 2.
 
 You can **Sign-up** for a MIC account here: https://demonorway.mic.telenorconnexion.com
 
-![Login](https://github.com/TelenorStartIoT/tutorials/blob/master/05-thingy/assets/01-login-mic.png)
+![Login](https://github.com/TelenorStartIoT/tutorials/blob/master/05-thingy-get-started/assets/01-login-mic.png)
 
 Click on the "Sign Up" button in the upper right corner and follow the instructions in order to sign up. It is important that you fill out at least the **six first fields** in addition to **company**. This is a prerequisite for being verified as a user. 
 
