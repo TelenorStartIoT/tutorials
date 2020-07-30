@@ -233,7 +233,7 @@ To add a new Thing, click on the **"+ THINGS"** button.
 A pop-up window will appear. 
    * De-select the **"Create batch"** slider in the pop-up window.
    * You must then add a **"Thing Name"**, a **"Description"** and select your **"Domain"** from the drop-down menu.
-   * Choose **"nbiot"** (or LPWAN/CoAP) as the protocol for your Thing. You will also have to add the IMSI and IMEI numbers that we got earlier.
+   * Choose **"Telenor IoT Gateway (NB-IoT/LTE-M)"** as the network integration for your Thing. You will also have to add the IMSI and IMEI numbers that we got earlier.
 
 The image shows an example of what it should look like.
 
