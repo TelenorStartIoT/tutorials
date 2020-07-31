@@ -237,7 +237,7 @@ A pop-up window will appear.
 
 The image shows an example of what it should look like.
 
-![Configure new Thing in Thing Type](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/11-thing.png)
+![Configure new Thing in Thing Type](https://github.com/TelenorStartIoT/tutorials/blob/master/01-fipy-coap/assets/11-thing.PNG)
 
 The things list will now show the Thing that you just created.
 
