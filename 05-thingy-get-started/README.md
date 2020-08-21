@@ -1,4 +1,6 @@
-# Configure your Thingy:91 in MIC and flash with a pre-compiled .hex file
+# Configure your Thingy:91 in MIC
+
+After completing this tutorial you will be able to see the data from Thingy:91 in your dashboard in Telenor Managed IoT Cloud (MIC). 
 
 Start by downloading the nRF Connect software from Nordic Semiconductors here: https://www.nordicsemi.com/Software-and-tools/Development-Tools/nRF-Connect-for-desktop
 
@@ -6,9 +8,7 @@ Open nRF Connect and press the install button to the right of the applications "
 
 ![](https://github.com/TelenorStartIoT/tutorials/blob/master/05-thingy-get-started/assets/1.1-nrf-link-monitor.png)
 
-## Configuring your Thingy:91 in MIC
-
-### 1. Retreiving the IMSI and IMEI numbers
+## 1. Retreiving the IMSI and IMEI numbers
 For your Thingy:91 to send data to the Managed IoT Cloud platform, it needs to be registered and configured correctly. To do this you need the IMSI number of the SIM card and the IMEI number of the Thingy:91. Both these numbers can be retreived by sending AT commands to the Thingy. In the "LTE Link Monitor" application there is a terminal that allows you to send AT commands to your Thingy:91. Plug in your Thingy and open the "LTE Link Monitor", make sure the Thingy is turned on. 
 
 Choose your device in the drop-down menu in the top left corner. 
@@ -19,7 +19,7 @@ You should then be able to see the datastream in the terminal window. In the wri
 
 ![](https://github.com/TelenorStartIoT/tutorials/blob/master/05-thingy-get-started/assets/1.3-at-commands.png)
 
-### 2. Setting up device in MIC
+## 2. Setting up device in MIC
 2.1 Log in to MIC with your username and password.
 
 - If you do not have a user yet you can sign up using this link: https://demonorway.mic.telenorconnexion.com/ 
@@ -122,7 +122,7 @@ To add a new Thing, click on the **"+ THINGS"** button in the top right corner o
 
 You are now finished registering your thing in MIC, and should be able to see some data coming in. The next step for you is to create widgets displaying your data and tailor your dashboard.
 
-### 3 View and edit your dashboard
+## 3 View and edit your dashboard
 If you click on the name of your *Thing* in the list you will open the dashboard for your Thing. This dashboard will be mainly empty until the first payload from your dev-kit arrives. The dashboard is configurable and you can add widgets that represents values sent from your dev-kit. The diferent values are called resources. For example: Temperature can be a resource. 
 
 To edit your dashboard you have to press the *move* button in the top right corner. This will enable edit mode where you can move things around and create new widgets. 
