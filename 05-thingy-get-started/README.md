@@ -13,11 +13,11 @@ For your Thingy:91 to send data to the Managed IoT Cloud platform, it needs to b
 
 Choose your device in the drop-down menu in the top left corner. 
 
-Insert picture 1.2
+![](https://github.com/TelenorStartIoT/tutorials/blob/master/05-thingy-get-started/assets/1.2-select-device.png)
 
 You should then be able to see the datastream in the terminal window. In the writing field below the terminal you can write AT commands to the Thingy. AT+CIMI will give you the IMSI number of the SIM card, and AT+CGSN will return the IMEI number of the Thingy. You should note these numbers somewhere as you will need them in the next step. 
 
-Insert picture 1.3
+![](https://github.com/TelenorStartIoT/tutorials/blob/master/05-thingy-get-started/assets/1.3-at-commands.png)
 
 ### 2. Setting up device in MIC
 2.1 Log in to MIC with your username and password.
@@ -34,7 +34,8 @@ Once logged in to the platform, the first thing you have to do is make a new *Th
    * A *Thing Type* is a method of organising multiple "Things" that report on the same data resources. 
    * A *Thing* must always belong to a *Thing Type*, this is why we have to make this before registering a "Thing".
 
-Insert picture 1.4
+
+![](https://github.com/TelenorStartIoT/tutorials/blob/master/05-thingy-get-started/assets/1.4-new-thing-type.PNG)
 
 Give your *Thing Type* a label and a description of your choice. 
 
@@ -102,7 +103,7 @@ return {
 
     The uplink transform is just a snippet of JavaScript code that MIC will use when doing transformations on your payload, and is generally used to unpack compressed payloads into understandable resources.
 
-Insert picture 1.5
+![](https://github.com/TelenorStartIoT/tutorials/blob/master/05-thingy-get-started/assets/1.5-thing-type.PNG)
 
 Now that you have your *Thing Type* you can create your *Thing*. 
 
@@ -110,14 +111,14 @@ Now that you have your *Thing Type* you can create your *Thing*.
 
 Your *Thing Types* will be visible to you in the panel on the left hand side of the window. When creating a new *Thing* it will automatically belong to the selected *Thing Type*.
 
-Insert picture 1.6
+![](https://github.com/TelenorStartIoT/tutorials/blob/master/05-thingy-get-started/assets/1.6-new-thing.PNG)
 
 To add a new Thing, click on the **"+ THINGS"** button in the top right corner of your screen. A pop-up window will appear. 
    * De-select the **"Create batch"** slider in the pop-up window.
    * You must then add a **"Thing Name"**, a **"Description"** and select your **"Domain"** from the drop-down menu.
    * Choose **"Telenor IoT Gateway (NB-IoT/LTE-M)"** as the network integration for your Thing. You will also have to add the IMSI and IMEI numbers that we got earlier.
 
-Insert picture 1.7
+![](https://github.com/TelenorStartIoT/tutorials/blob/master/05-thingy-get-started/assets/1.7-thing.PNG)
 
 You are now finished registering your thing in MIC, and should be able to see some data coming in. The next step for you is to create widgets displaying your data and tailor your dashboard.
 
@@ -126,14 +127,14 @@ If you click on the name of your *Thing* in the list you will open the dashboard
 
 To edit your dashboard you have to press the *move* button in the top right corner. This will enable edit mode where you can move things around and create new widgets. 
 
-Insert picture 1.8
+![](https://github.com/TelenorStartIoT/tutorials/blob/master/05-thingy-get-started/assets/1.8-move.PNG)
 
 Once you are in edit mode you can create new widgets and tailor the dashboard to your use-case. Press the button **"+Widgets"** to create a new widget. 
 
-Insert picture 1.9
+![](https://github.com/TelenorStartIoT/tutorials/blob/master/05-thingy-get-started/assets/1.9-new-widget.png)
 
 In the drop down menu labeled "Resources" you will find a drop-down menu displaying the different data your *Thing* is sending. These can be viewed in a number of different widgets and I reccomend you to play around a bit with them to find an optimal solution for your use-case. Also, **remember to press save** when you have done new changes, otherwise the edits will be lost. 
 
-Insert picture 1.10
+![](https://github.com/TelenorStartIoT/tutorials/blob/master/05-thingy-get-started/assets/1.10-widget.PNG)
 
-Insert picture 1.11
+![](https://github.com/TelenorStartIoT/tutorials/blob/master/05-thingy-get-started/assets/1.11-save.png)
