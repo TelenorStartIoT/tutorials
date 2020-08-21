@@ -1,4 +1,4 @@
-﻿# Configure your Thingy:91 in MIC and flash with a pre-compiled .hex file
+# Configure your Thingy:91 in MIC and flash with a pre-compiled .hex file
 
 Start by downloading the nRF Connect software from Nordic Semiconductors here: https://www.nordicsemi.com/Software-and-tools/Development-Tools/nRF-Connect-for-desktop
 
