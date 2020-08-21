@@ -1,6 +1,6 @@
 # Flash your Thingy:91 with new code (pre-compiled .hex file)
 
-This is a continuation of tutorial "05-thingy-get-started", and we strongly reccomend going throug that before starting this tutorial. 
+This is a continuation of tutorial [05-thingy-get-started](https://github.com/TelenorStartIoT/tutorials/tree/master/05-thingy-get-started), and we strongly reccomend completing that before starting this tutorial. 
 
 To flash your Thingy you need to install the "programmer" in nRF Connect application. 
 Once installed, open the programmer. At the right hand side you find a panel with all the necessary functionality for flashing your .hex file.
