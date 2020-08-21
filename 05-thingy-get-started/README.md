@@ -4,7 +4,7 @@ Start by downloading the nRF Connect software from Nordic Semiconductors here: h
 
 Open nRF Connect and press the install button to the right of the applications "LTE Link Monitor". 
 
-Insert picture 1.1
+![](https://github.com/TelenorStartIoT/tutorials/blob/master/05-thingy-get-started/assets/1.1-nrf-link-monitor.png)
 
 ## Configuring your Thingy:91 in MIC
 
