@@ -158,7 +158,7 @@ Your **Thing Types** will be visible to you in the panel on the left hand side o
 
 To add a new Thing, click on the **"+ THINGS"** button.
 
-![Add new Thing to Thing Type](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/09-new-thing.png)
+![Add new Thing to Thing Type](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/09-add-new-thing.png)
 
 A pop-up window will appear. 
    * De-select the **"Create batch"** slider in the pop-up window.
@@ -167,7 +167,7 @@ A pop-up window will appear.
 
 The image shows an example of what it should look like.
 
-![Configure new Thing in Thing Type](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/10-thing.png)
+![Configure new Thing in Thing Type](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/10-thing.PNG)
 
 The things list will now show the Thing that you just created.
 
