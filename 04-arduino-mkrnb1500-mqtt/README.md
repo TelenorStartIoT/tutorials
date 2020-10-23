@@ -174,18 +174,11 @@ The things list will now show the Thing that you just created.
 ![New Thing in MIC](https://github.com/TelenorStartIoT/tutorials/blob/master/02-fipy-mqtt/assets/12-thing-list.png)
 
 
-### See your thing
-
-You can look at and access your thing if you click the “List” tab. The image on the right shows an example list of devices reflecting a single dev kit thing.
-
-![SeeYourThing](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-coap/assets/08C-Seething.jpg)
-
-
 ### Example dashboard
 
 If you click on the “Thing name” in the list you will create a dashboard for your thing. The dashboard will be mainly empty until the first payload for your thing arrives. The dashboard is configurable and you can add widgets that represents values sent from your dev kit (called resources). The image on the right side shows a very simply dashboard for the dummy payload sent from your device. It is possible to add more advanced widgets. Play around!
 
-![ExampleDashBoard](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-coap/assets/08D-ExampleDashBoard.jpg)
+![ExampleDashBoard](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-coap/assets/14-sample-dashboard.png)
 
 ### Start Programming
 
