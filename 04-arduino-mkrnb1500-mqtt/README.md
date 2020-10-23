@@ -25,7 +25,7 @@ This lesson will show you how to download and install the Arduino Desktop IDE an
 
 The easiest way to program the Arduino MKR NB 1500 dev-kit is to use the Arduino Desktop IDE. You can download the Arduino IDE for Windows, Linux and MacOS here: https://www.arduino.cc/en/Main/software.
 
-![Download Aurduino Desktop IDE](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/00-download-arduino-ide.png)
+![Download Aurduino Desktop IDE](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-coap/assets/00-download-arduino-ide.png)
 
 ### 1.2 Add Board Support for the Dev-Kit in the IDE
 
