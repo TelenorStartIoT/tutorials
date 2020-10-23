@@ -31,13 +31,13 @@ The easiest way to program the Arduino MKR NB 1500 dev-kit is to use the Arduino
 
 Open the Arduino Desktop IDE. The first thing you need to do before you connect your board to the computer is to add the Atmel SAMD Core to the IDE. This simple procedure is done by selecting "Tools" menu, then "Boards" and "Boards Manager". When the boards manager is displayed (see image), search for "MKR NB" and install the SAMD core by clicking the install button.
 
-![Add board support](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/01-add-board-support.png)
+![Add board support](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-coap/assets/01-add-board-support.png)
 
 ### 1.3 Add the MKRNB Library
 
 The example code that we will later run requires the Arduino MKRNB library. Add it to your sketch (Sketch > Include Library...), search for MKR NB and click install.
 
-![Add MKRNB library](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/02-add-library.png)
+![Add MKRNB library](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-coap/assets/02-add-library.png)
 
 ## 2. Assemble the Arduino Dev-Kit
 
@@ -47,11 +47,11 @@ In this chapter you will learn how to assemble and connect the Arduino dev-kit t
 
 Before you connect the Arduino MKR NB 1500 to your computer you need to make sure that the LTE antenna and the SIM card is installed on the board. The antenna that comes with the dev-kit should be mounted on the small UFL connector on the left side of the UBlox modem on the front side of the board. 
 
-![LTE antenna](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/03-connect-antenna.png)
+![LTE antenna](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-coap/assets/03-connect-antenna.png)
 
 The SIM card should be inserted in the SIM card slot located on the back side of the board. The small symbol on the SIM card slot shows the direction the SIM card should be inserted.
 
-![SIM card slot](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/04-sim-card-slot.png)
+![SIM card slot](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-coap/assets/04-sim-card-slot.png)
 
 Please also remove the black conductive foam from the board pins before usage. If you don't remove it, the board may behave erratically.
 
@@ -59,13 +59,13 @@ Please also remove the black conductive foam from the board pins before usage. I
 
 If the SAMD Core is installed you can connect the board to the computer using a standard micro USB cable. In the IDE, from "Tools" menu select the Board "Arduino MKR NB 1500".
 
-![Select board](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/05-select-board.png)
+![Select board](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-coap/assets/05-select-board.png)
 
 ### 2.3 Select the Port in the IDE
 
 Now it is time to finally select the port that the Arduino MKR NB 1500 is connected to. This will look slightly different depending on the operating system your computer is using. The example image shows what it typically looks like on MacOS.
 
-![Select port](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/06-select-port.png)
+![Select port](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-coap/assets/06-select-port.png)
 
 ### 2.4 Get IMSI and IMEI
 
@@ -102,7 +102,7 @@ void loop() {
 
 This will allow us to send commands from the PC directly to the modem on the Arduino board. We will do this to get the IMSI and IMEI numbers that we'll need later on. Press the "check" sign in the top left corner to verify the code, then press the arrow next to it to upload the code to your device.
 
-![Serial passthrough sketch](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/07-serial-passthrough.png)
+![Serial passthrough sketch](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-coap/assets/07-serial-passthrough.png)
 
 Open the serial monitor (Tools > Serial Monitor). Make sure that the "Both NL & CR" option is selected and that the baud rate is set to "115200 baud". Then, type the following command in the input field to get the IMSI and IMEI numbers:
 
@@ -112,7 +112,7 @@ AT+CIMI;+CGSN
 
 Leave the serial monitor open. You'll need to copy these numbers when we provision the device in Telenor Managed IoT Cloud in the next chapter.
 
-![Serial monitor](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/08-get-imsi-imei.png)
+![Serial monitor](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-coap/assets/08-get-imsi-imei.png)
 
 
 ## 3.Register your Arduino dev kit in Telenor StartIoT Managed IoT Cloud
@@ -178,14 +178,14 @@ The things list will now show the Thing that you just created.
 
 You can look at and access your thing if you click the “List” tab. The image on the right shows an example list of devices reflecting a single dev kit thing.
 
-![SeeYourThing](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/08C-Seething.jpg)
+![SeeYourThing](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-coap/assets/08C-Seething.jpg)
 
 
 ### Example dashboard
 
 If you click on the “Thing name” in the list you will create a dashboard for your thing. The dashboard will be mainly empty until the first payload for your thing arrives. The dashboard is configurable and you can add widgets that represents values sent from your dev kit (called resources). The image on the right side shows a very simply dashboard for the dummy payload sent from your device. It is possible to add more advanced widgets. Play around!
 
-![ExampleDashBoard](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/08D-ExampleDashBoard.jpg)
+![ExampleDashBoard](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-coap/assets/08D-ExampleDashBoard.jpg)
 
 ### Start Programming
 
@@ -308,14 +308,14 @@ The end of the formatted privkey bytes in the MICCertificates——–.h file. N
 
 Compile and run the example code on the MKR1500 device by clicking on the upload arrow symbol or choosing “Sketch->Upload..” from the menu. Open the Serial Monitor (Tools->Serial Monitor…) and see the log output from your program.
 
-![RunExampleProgram](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/17-run-program.png)
-![RunExampleProgram2](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/18-run-program2.png)
+![RunExampleProgram](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-coap/assets/17-run-program.png)
+![RunExampleProgram2](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-coap/assets/18-run-program2.png)
 
 ### See your data displayed in MIC
 
 Open the MIC dashboard and see your data displayed in MIC.
 
-![MICDashBoard](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-udp/assets/19-example-dashboard.png)
+![MICDashBoard](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-coap/assets/19-example-dashboard.png)
 
 ## Happy hacking!
 This concludes the Get started with the Arduino dev kit tutorial. Your next step could be to connect the supplied DHT11 sensor to the Arduino dev kit and to modify the “dummy” payload string with values from the DHT11 sensor.
