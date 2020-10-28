@@ -1,4 +1,4 @@
-# Configure your Thingy:91 in MIC
+# Get started with Thingy:91 in MIC
 
 After completing this tutorial you will be able to see the data from Thingy:91 in your dashboard in Telenor Managed IoT Cloud (MIC). 
 
@@ -20,7 +20,7 @@ You should then be able to see the datastream in the terminal window. In the wri
 ![](https://github.com/TelenorStartIoT/tutorials/blob/master/05-thingy-get-started/assets/1.3-at-commands.png)
 
 ## 2. Setting up device in MIC
-2.1 Log in to MIC with your username and password.
+**2.1 Log in to MIC with your username and password**
 
 - If you do not have a user yet you can sign up using this link: https://demonorway.mic.telenorconnexion.com/ 
 
@@ -28,7 +28,7 @@ You should then be able to see the datastream in the terminal window. In the wri
 
     **Note:** You should be aware that the signup is two-phased, and after you have confirmed your email address it may take some time before your user account is activated. This is a manual verification process and may take up to 24 hours outside normal business hours. Once your account is ready for use you will receive an email stating that your account has been activated. 
 
-2.2 Create a *Thing Type*
+**2.2 Create a *Thing Type***
 
 Once logged in to the platform, the first thing you have to do is make a new *Thing Type*. You do so by pressing the blue button "New Thing Type" in the top left corner.  
    * A *Thing Type* is a method of organising multiple "Things" that report on the same data resources. 
@@ -107,7 +107,7 @@ return {
 
 Now that you have your *Thing Type* you can create your *Thing*. 
 
-2.3 Create your *Thing*
+**2.3 Create your *Thing***
 
 Your *Thing Types* will be visible to you in the panel on the left hand side of the window. When creating a new *Thing* it will automatically belong to the selected *Thing Type*.
 
