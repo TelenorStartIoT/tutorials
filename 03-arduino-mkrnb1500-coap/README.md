@@ -6,14 +6,14 @@ This tutorial gives brief instructions on how to get started with the Arduino MK
 
 You will learn how to:
 
-  1. Sign up for a Managed IoT Cloud (MIC) platform account
-  2. Download the software you need
+1. Sign up for a Managed IoT Cloud (MIC) platform account
+2. Download the software you need
+3. Assemble the dev-kit and connect it to the Arduino Desktop IDE
 
-  * assemble the dev-kit and connect it to the Arduino Desktop IDE
-  * create a Telenor Managed IoT Cloud (MIC) platform account
-  * register your dev-kit in MIC and create payload transformations
-  * program the dev-kit and send data to MIC over Telenor's excellent 4G LTE-M or NB-IoT network
-  * view your data in MIC
+- create a Telenor Managed IoT Cloud (MIC) platform account
+- register your dev-kit in MIC and create payload transformations
+- program the dev-kit and send data to MIC over Telenor's excellent 4G LTE-M or NB-IoT network
+- view your data in MIC
 
 You can also find a lot of info related to the Arduino MKR NB 1500 on Arduino's own documentation site: https://www.arduino.cc/en/Guide/MKRNB1500
 
@@ -25,18 +25,18 @@ You can **Sign-up** for a MIC account here: https://demonorway.mic.telenorconnex
 
 ![Login](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-coap/assets/09-login-mic.png)
 
-Click on the "Sign Up" button in the upper right corner and follow the instructions in order to sign up. It is important that you fill out at least the **six first fields** in addition to **company**. This is a prerequisite for being verified as a user. 
+Click on the "Sign Up" button in the upper right corner and follow the instructions in order to sign up. It is important that you fill out at least the **six first fields** in addition to **company**. This is a prerequisite for being verified as a user.
 
-**Note:** You should be aware that the signup is two-phased, and after you have confirmed your email address it may take some time before your user account is activated. This is a manual verification process and may take up to 24 hours outside normal business hours. Once your account is ready for use you will receive an email stating that your account has been activated. 
+**Note:** You should be aware that the signup is two-phased, and after you have confirmed your email address it may take some time before your user account is activated. This is a manual verification process and may take up to 24 hours outside normal business hours. Once your account is ready for use you will receive an email stating that your account has been activated.
 You can however continue.
 
 ## 2. Download the software you need
 
 To connect and program the Arduino MKR NB 1500 dev-kit you need to download and install:
 
-  * Arduino Desktop IDE
-  * Add Board Support
-  * Add MKRNB Library
+- Arduino Desktop IDE
+- Add Board Support
+- Add MKRNB Library
 
 If you already have these programs on your computer you can jump straight to step 3.
 
@@ -60,13 +60,13 @@ The example code that we will later run requires the Arduino MKRNB library. Add 
 
 You now have everything in place to connect and start programming your Arduino MKR NB 1500. The next chapter will show you how to assemble your Arduino dev-kit.
 
-## 2. Assemble the Arduino Dev-Kit
+## 3. Assemble the Arduino Dev-Kit
 
 In this chapter you will learn how to assemble and connect the Arduino dev-kit to the Arduino Desktop IDE. You will also communicate with the dev-kit in order to retrieve the IMSI and IMEI numbers that you will need to register you dev-kit in the MIC platform. More on that in a later chapter, let us first assemble the dev-kit.
 
-### 2.1 Attach the Antenna and Insert the SIM Card
+### 3.1 Attach the Antenna and Insert the SIM Card
 
-Before you connect the Arduino MKR NB 1500 to your computer you need to make sure that the LTE antenna and the SIM card is installed on the board. The antenna that comes with the dev-kit should be mounted on the small UFL connector on the left side of the UBlox modem on the front side of the board. 
+Before you connect the Arduino MKR NB 1500 to your computer you need to make sure that the LTE antenna and the SIM card is installed on the board. The antenna that comes with the dev-kit should be mounted on the small UFL connector on the left side of the UBlox modem on the front side of the board.
 
 ![LTE antenna](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-coap/assets/03-connect-antenna.png)
 
@@ -76,23 +76,23 @@ The SIM card should be inserted in the SIM card slot located on the back side of
 
 Please also remove the black conductive foam from the board pins before usage. If you don't remove it, the board may behave erratically.
 
-### 2.2 Select the Board Type in the IDE
+### 3.2 Select the Board Type in the IDE
 
 If the SAMD Core is installed you can connect the board to the computer using a standard micro USB cable. In the IDE, from "Tools" menu select the Board "Arduino MKR NB 1500".
 
 ![Select board](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-coap/assets/05-select-board.png)
 
-### 2.3 Select the Port in the IDE
+### 3.3 Select the Port in the IDE
 
 Now it is time to finally select the port that the Arduino MKR NB 1500 is connected to. This will look slightly different depending on the operating system your computer is using. The example image shows what it typically looks like on MacOS.
 
 ![Select port](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-coap/assets/06-select-port.png)
 
-### 2.4 Get IMSI and IMEI
+### 3.4 Get IMSI and IMEI
 
 Create a new sketch in the IDE and copy the following code into the sketch:
 
-``` cpp
+```cpp
 // baud rate used for both Serial ports
 unsigned long baud = 115200;
 
@@ -121,7 +121,7 @@ void loop() {
 }
 ```
 
-This will allow us to send commands from the PC directly to the modem on the Arduino board. We will do this to get the IMSI and IMEI numbers that we'll need later on. 
+This will allow us to send commands from the PC directly to the modem on the Arduino board. We will do this to get the IMSI and IMEI numbers that we'll need later on.
 
 ![Serial passthrough sketch](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-coap/assets/07-serial-passthrough.png)
 
@@ -135,22 +135,22 @@ Leave the serial monitor open. You'll need to copy these numbers when we provisi
 
 ![Serial monitor](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-coap/assets/08-get-imsi-imei.png)
 
-## 3. Register Your Arduino Dev-Kit in Telenor Managed IoT Cloud as a CoAP Thing
+## 4. Register Your Arduino Dev-Kit in Telenor Managed IoT Cloud as a CoAP Thing
 
 In this chapter you will learn how to register your dev-kit to Telenor Managed IoT Cloud (MIC). Using the IMSI and IMEI information you will learn how to add a new "Thing" in MIC. You will also learn how to add a transformation of your payload and how to create a dashboard. The payload transformation makes it possible for you to unpack data packets and view the individual parts of the payload in different types of widgets in the dashboard. Widget types ranges from simple textual widgets to graphical representations of your data.
 
-### 3.1 Create a "Thing Type" for Your Dev-Kit
+### 4.1 Create a "Thing Type" for Your Dev-Kit
 
 Once your MIC account is activated, you will be able to login to your MIC account with your user id and password.
 
 When you log in for the first time you can start by creating a new **Thing Type**.
 
-  * A **Thing Type** is a method of organising multiple "Things" that report on the same data resources.
-  * A **Thing** must always belong to a **Thing Type**, this is why we have to make this before registering a "Thing".
-  * In the "Uplink Transform" add the following code:
+- A **Thing Type** is a method of organising multiple "Things" that report on the same data resources.
+- A **Thing** must always belong to a **Thing Type**, this is why we have to make this before registering a "Thing".
+- In the "Uplink Transform" add the following code:
 
-``` js
-return JSON.parse(payload.toString('utf-8'));
+```js
+return JSON.parse(payload.toString("utf-8"));
 ```
 
 ![Create Thing Type](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-coap/assets/10-thing-type.png)
@@ -161,7 +161,7 @@ Do not worry about the details for now, this was just for your information. It i
 
 The uplink transform is just a snippet of JavaScript code that MIC will use when doing transformations on your payload, and is generally used to unpack compressed payloads into understandable resources.
 
-### 3.2 Add a "Thing" Representing Your Dev-Kit
+### 4.2 Add a "Thing" Representing Your Dev-Kit
 
 Once you have established a **Thing Type** you can add your dev-kit as a **Thing**.
 
@@ -169,14 +169,13 @@ Your **Thing Types** will be visible to you in the panel on the left hand side o
 
 To add a new Thing, click on the "+ THINGS" button.
 
-
 ![Add new Thing to Thing Type](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-coap/assets/11-new-thing.png)
 
 A pop-up window will appear.
 
-  * De-select the "**Create batch**" slider in the pop-up window.
-  * You must then add a "**Thing Name**", a "**Description**" and select your "**Domain**" from the drop-down menu.
-  * Choose "**nbiot**" (or LPWAN/CoAP) as the protocol for your Thing. You will also have to add the IMSI and IMEI numbers that we got earlier.
+- De-select the "**Create batch**" slider in the pop-up window.
+- You must then add a "**Thing Name**", a "**Description**" and select your "**Domain**" from the drop-down menu.
+- Choose "**nbiot**" (or LPWAN/CoAP) as the protocol for your Thing. You will also have to add the IMSI and IMEI numbers that we got earlier.
 
 The image shows an example of what it should look like.
 
@@ -188,31 +187,29 @@ The things list will now show the Thing that you just created.
 
 You are now finished registering your thing in MIC, and you can start working with the dev-kit again.
 
-
-
-### 3.5 Example Dashboard
+### 4.3 Example Dashboard
 
 If you click on the "Thing name" in the list you will create a dashboard for your Thing. The dashboard will be mainly empty until the first payload for your Thing arrives. The dashboard is configurable and you can add widgets that represents values sent from your dev-kit (called resources). The image shows a very simple dashboard for what it could look like. It is possible to add more advanced widgets.
 
 ![Sample Dashboard](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-coap/assets/14-sample-dashboard.png)
 
-### 3.6 Start Programming!
+### 4.4 Start Programming!
 
 It is now time to start programming the dev-kit. In the next chapters we will show you how.
 
-## 4. Program the Arduino Using CoAP
+## 5. Program the Arduino Using CoAP
 
 In this chapter you will learn how to program the Arduino dev-kit to send data using CoAP directly to MIC. The chapter will teach you how to use the provided example code to connect the Arduino to the LTE-M or NB-IoT networks and publish dummy messages directly to Telenor Managed IoT Cloud.
 
 The chapter will take you through these steps:
 
-  * Download and Save the Example Code from GitHub
-  * Open the code in VSCode
-  * Modify the Program's Network Configuration
-  * Upload the Program to Your Arduino
-  * Check the Output of the Program
+- Download and Save the Example Code from GitHub
+- Open the code in VSCode
+- Modify the Program's Network Configuration
+- Upload the Program to Your Arduino
+- Check the Output of the Program
 
-### 4.1 Download Example Code
+### 5.1 Download Example Code
 
 You can download the example code from here: https://github.com/TelenorStartIoT/arduino-dev-kit-udp
 
@@ -222,9 +219,9 @@ You should choose the "Download ZIP" option in the "Clone or Download" button po
 
 Unzip the example code. How to do this varies depending on your computer system. Most systems will unzip it if you double click on the zip file.
 
-Give the folder a "*name you can remember*" and save it to someplace you can find back to it.
+Give the folder a "_name you can remember_" and save it to someplace you can find back to it.
 
-### 4.2 Open the Code in Arduino Desktop IDE
+### 5.2 Open the Code in Arduino Desktop IDE
 
 The folder you created in the previous step contains everything you need for your project code. Add the example code to the Arduino Desktop IDE (File > Open...) and select the main.ino file.
 
@@ -232,11 +229,11 @@ The folder you created in the previous step contains everything you need for you
 
 ![Open project in Arduino Desktop IDE](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-coap/assets/16-open-project2.png)
 
-### 4.3 Modify the Program's Network Configuration
+### 5.3 Modify the Program's Network Configuration
 
 The program you downloaded is by default configured to use the LTE-M network. If you open the [arduino_secrets.h](https://github.com/TelenorStartIoT/arduino-dev-kit-udp/blob/master/arduino_secrets.h) file you will se the following code:
 
-``` cpp
+```cpp
 // Network related configuration
 #define SECRET_PINNUMBER     ""              // SIM card PIN number
 #define SECRET_GPRS_APN      "telenor.iotgw" // Telenor IoT Gateway APN
@@ -249,11 +246,11 @@ The program you downloaded is by default configured to use the LTE-M network. If
 
 As described in the code comments, if you are using the NB-IoT network you must change the `SECRET_RAT` define to `8`:
 
-``` cpp
+```cpp
 #define SECRET_RAT           8               // Radio Access Technology (7 is for LTE-M and 8 is for NB-IoT)
 ```
 
-### 4.4 Run the Program
+### 5.4 Run the Program
 
 Compile and run the example code on the Arduino MKR NB 1500 device by clicking on the upload arrow symbol or choosing "Sketch" > "Upload..." from the menu. Open the Serial Monitor (Tools > Serial Monitor...) and see the log output from your program.
 
@@ -261,13 +258,13 @@ Compile and run the example code on the Arduino MKR NB 1500 device by clicking o
 
 ![Run the program](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-coap/assets/18-run-program2.png)
 
-### 4.5 Visualize Your Data in MIC
+### 5.5 Visualize Your Data in MIC
 
 Open the MIC dashboard and see your data displayed in MIC.
 
 ![Example dashboard](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-coap/assets/19-example-dashboard.png)
 
-### 4.6 Happy Hacking!
+### 5.6 Happy Hacking!
 
 This concludes the "Get Started With the Arduino Dev-Kit (CoAP over NB-IoT or LTE-M)" tutorial. our next step could be to connect the supplied DHT11 sensor to the Arduino and to modify the "dummy" payload string with values from the DHT11 sensor.
 
