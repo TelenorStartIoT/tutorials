@@ -258,13 +258,13 @@ Compile and run the example code on the Arduino MKR NB 1500 device by clicking o
 
 ![Run the program](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-coap/assets/18-run-program2.png)
 
-### 5.5 Visualize Your Data in MIC
+## 6. Visualize Your Data in MIC
 
 Open the MIC dashboard and see your data displayed in MIC.
 
 ![Example dashboard](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-coap/assets/19-example-dashboard.png)
 
-### 5.6 Happy Hacking!
+### 6.1 Happy Hacking!
 
 This concludes the "Get Started With the Arduino Dev-Kit (CoAP over NB-IoT or LTE-M)" tutorial. our next step could be to connect the supplied DHT11 sensor to the Arduino and to modify the "dummy" payload string with values from the DHT11 sensor.
 
