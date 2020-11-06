@@ -9,11 +9,9 @@ You will learn how to:
 1. Sign up for a Managed IoT Cloud (MIC) platform account
 2. Download the software you need
 3. Assemble the dev-kit and connect it to the Arduino Desktop IDE
-
-- create a Telenor Managed IoT Cloud (MIC) platform account
-- register your dev-kit in MIC and create payload transformations
-- program the dev-kit and send data to MIC over Telenor's excellent 4G LTE-M or NB-IoT network
-- view your data in MIC
+4. Register your dev-kit in MIC and create payload transformations
+5. Program the dev-kit and send data to MIC over Telenor's excellent 4G LTE-M or NB-IoT network
+6. View your data in MIC
 
 You can also find a lot of info related to the Arduino MKR NB 1500 on Arduino's own documentation site: https://www.arduino.cc/en/Guide/MKRNB1500
 
