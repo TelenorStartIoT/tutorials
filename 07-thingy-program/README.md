@@ -139,7 +139,7 @@ You will find the final product under `build/zephyr/`. Depending on which device
 
 ### 4.1 Flash Thingy:91
 
-Use the nRF Connect Programmer desktop application to flash Thingy:91 in MCUboot mode with the `app_signed.hex` file. You can follow the [/tutorials/thingy91-flash-with-new-code-hex/](Flash your Thingy:91 with New Firmware (pre-compiled .hex file)) tutorial for instructions.
+Use the nRF Connect Programmer desktop application to flash Thingy:91 in MCUboot mode with the `app_signed.hex` file. You can follow the [Flash your Thingy:91 with New Firmware (pre-compiled .hex file)](/tutorials/thingy91-flash-with-new-code-hex/) tutorial for instructions.
 
 ### 4.2 Flash nRF9160 DK
 
