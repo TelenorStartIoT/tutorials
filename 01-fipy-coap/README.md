@@ -158,7 +158,7 @@ lte.send_at_cmd("AT+CGSN")
 
 In most cases it is ok to use the firmware that is pre-installed on your FiPy but we recommend you upgrade it to the newest version to make sure everything is up to date.
 
-New versions and explanations of how to do the upgrade are made available on Pycom's own site here: https://docs.pycom.io/gettingstarted/installation/firmwaretool.html
+New versions and explanations of how to do the upgrade are made available on Pycom's own site here: https://docs.pycom.io/updatefirmware/device/
 
 ## 4. Flash FiPy modem for NB-IoT or Update the LTE-M Firmware
 
@@ -169,7 +169,7 @@ The modem is the part of your dev-kit that enables it to communicate with differ
 The FiPy is configured with the LTE-M (Cat M1) modem firmware as default from the factory, so if you want to use the LTE-M network you do not have to flash the modem with new firmware and you can skip this chapter.
 
 It could however be a good idea to upgrade the LTE-M firmware when new versions are released. If you intend to use NB-IoT network you must flash the modem firmware, as the factory image of the FiPy modem is configured for LTE-M (Cat M1).
-Detailed instructions on how to update the LTE-M firmware or switch to NB-IoT firmware can be found here: https://docs.pycom.io/tutorials/lte/firmware.html
+Detailed instructions on how to update the LTE-M firmware or switch to NB-IoT firmware can be found here: https://docs.pycom.io/updatefirmware/ltemodem/
 
 **Note:** We recommend using an SD card in this process, but feel free to follow the method most convenient to you.
 

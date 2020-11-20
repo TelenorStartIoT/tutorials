@@ -145,13 +145,13 @@ If you select the **"All commands"** button (located at the bottom bar) and then
 
 In most cases it is ok to use the firmware that is pre-installed on your FiPy but we recommend you upgrade it to the newest version to make sure everything is up to date.
 
-New versions and explanations of how to do the upgrade are made available on Pycom's own site here: https://docs.pycom.io/gettingstarted/installation/firmwaretool.html
+New versions and explanations of how to do the upgrade are made available on Pycom's own site here: https://docs.pycom.io/updatefirmware/device/
 
 ## 4. Flash FiPy modem to Update the LTE-M Firmware (Voluntary step)
 
 The FiPy modem is configured with the LTE-M (Cat M1) modem firmware as default from the factory, which means that when you are using the LTE-M network you do not have to flash the modem with new firmware and you can skip this chapter. It could however be a good idea to upgrade the LTE-M firmware when new versions are released.
 
-If you have previousely changed the modem firmware to another image you will have to change it back before continuing. Detailed instructions on how to update modem firmware can be found here: https://docs.pycom.io/tutorials/lte/firmware.html
+If you have previousely changed the modem firmware to another image you will have to change it back before continuing. Detailed instructions on how to update modem firmware can be found here: https://docs.pycom.io/updatefirmware/ltemodem/
 
 **Note:** We recommend using an SD card in this process, but feel free to follow the method most convenient to you.
 
