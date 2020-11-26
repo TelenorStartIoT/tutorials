@@ -1,10 +1,10 @@
-# Get started with Thingy:91 in MIC
+# Get started with Nordic Thingy:91 in MIC
 
 After completing this tutorial you will be able to see the data from Thingy:91 in your dashboard in Telenor Managed IoT Cloud (MIC).
 
-Start by downloading the nRF Connect software from Nordic Semiconductors here: https://www.nordicsemi.com/Software-and-tools/Development-Tools/nRF-Connect-for-desktop
+Start by downloading the nRF Connect for Desktop software from Nordic Semiconductor here: https://www.nordicsemi.com/Software-and-tools/Development-Tools/nRF-Connect-for-desktop
 
-Open nRF Connect and press the install button to the right of the application "LTE Link Monitor".
+Open nRF Connect for Desktop and press the install button to the right of the application "LTE Link Monitor".
 
 ![](https://github.com/TelenorStartIoT/tutorials/blob/master/05-thingy-get-started/assets/1.1-nrf-link-monitor.png)
 
