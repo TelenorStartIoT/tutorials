@@ -1,8 +1,8 @@
-# Flash your Thingy:91 with New Firmware (pre-compiled .hex file)
+# Flash your Nordic Thingy:91 with New Firmware (pre-compiled .hex file)
 
-This is a continuation of tutorial [Thingy:91 Dev-Kit - Get Started](/tutorials/thingy91-get-started/), and we strongly recommend completing that before starting this tutorial.
+This is a continuation of tutorial [Nordic Thingy:91 - Get Started](/tutorials/thingy91-get-started/), and we strongly recommend completing that before starting this tutorial.
 
-To flash your Thingy:91 you need to install the "Programmer" application in nRF Connect for desktop. Once installed, open the programmer. At the right hand side you find a panel with all the necessary functionality for flashing your .hex file.
+To flash your Thingy:91 you need to install the "Programmer" application in nRF Connect for Desktop. Once installed, open the programmer. At the right hand side you find a panel with all the necessary functionality for flashing your .hex file.
 
 1. Start by adding the file into the programmer application. You press the “Add HEX file” and select the hex file you would like to flash to your Thingy:91.
 
