@@ -184,9 +184,9 @@ If you click on the “Thing name” in the list you will create a dashboard for
 
 It is now time to start programming the dev kit to send data over the LTE IoT network to MIC. In the next lesson we will show you how.
 
-## Programming the Arduino for MQTT over TLS 1.2 (M1 only)
+## Programming the Arduino for MQTT over TLS 1.2
 
-Telenor StartIoT Managed IoT Cloud (our platform) is capable of handling MQTT publish/subscribe over a secure TLS 1.2 connection. The TLS 1.2 connection must be created with the usage of X.509 certificates and key. The Arduino MKR1500 dev kit modem (UBlox R410) has an onboard TLS stack and by using this stack it is possible to send data securely directly to MIC over the M1 network. Note that we have not been able to make it work on the NB1 network yet.
+Telenor StartIoT Managed IoT Cloud (our platform) is capable of handling MQTT publish/subscribe over a secure TLS 1.2 connection. The TLS 1.2 connection must be created with the usage of X.509 certificates and key. The Arduino MKR1500 dev kit modem (UBlox Sara R410) has an onboard TLS stack and by using this stack it is possible to send data securely directly to MIC over the M1 network.
 
 The needed certificate and key for your thing can be downloaded from Managed IoT Cloud and transformed into a configuration file for the Arduino sketch. Let us start with downloading the example code and adding it to the Arduino IDE.
 
@@ -202,19 +202,90 @@ Unzip the source code. How to do the unzipping will vary depending on your opera
 
 ## Add (open) the example code in the Arduino Desktop IDE
 
-Add the example code to the Arduino Desktop IDE (File->Open…) and select the Arduino_MIC_MQTT.ino file. We do want to change the content of the MICCertificates——–.h file with the certificate and private key for your thing in MIC. Let us first download the certificate and key from MIC.
+Add the example code to the Arduino Desktop IDE (File->Open…) and select the `Arduino_MIC_MQTT.ino` file. 
 
 ![AddExampleSourceCode](https://github.com/TelenorStartIoT/tutorials/blob/master/04-arduino-mkrnb1500-mqtt/assets/02-ExampleCode.jpg)
 
 ## Download MIC certificate and keys
+You will have to download the MIC certificate for your thing. It will be downloaded as a zip file. Unzip the zip file. Unzipping the zip file creates a folder with the certificates and keys. 
 
-You will have to download the MIC certificate for your thing. It will be downloaded as a zip file. Unzip the zip file. Unzipping the zip file creates a folder with the certificates and keys. You will have to transform the certificates and the private key to DER Hex format since this is the only format the UBlox R410 modem understands. In order to facilitate for mutual authentication between the dev kit and the platform you will also need the AWS IoT root certificate. This certificate is already included the Arduino source code.
+### Certificates
+There are two choices you need to make in order to authenticate against MIC.
+
+First of all there are two certificate and key formats supported, older versions of this tutorial used the binary `DER` format but as the format provided by MIC is in the base64 encoded `PEM` format and is significantly easier to preprocess we will use this format. The process of converting from `PEM` to `DER` will be appended to the end of this tutorial for posterity.
+
+Secondly is the matter of the root certificate. As you can see in the `MICcertificates_YOUR_THING_ID.*.h` file, `MIC_ROOT_CERT` is by default `AmazonRootCA1` ([DER](https://www.amazontrust.com/repository/AmazonRootCA1.cer)|[PEM](https://www.amazontrust.com/repository/AmazonRootCA1.pem)), which you can also download from https://www.amazontrust.com/repository/.
+
+As documented at https://docs.aws.amazon.com/iot/latest/developerguide/server-authentication.html
+>If you are experiencing server certificate validation issues, your device may need to explicitly trust the root CA. Try adding the Starfield Root CA Certificate to your trust store.
+
+This has been the case on some devkits for us, and a working solution has been to replace the `MIC_ROOT_CERT` with the `SFSRootCAG2` ([DER](https://www.amazontrust.com/repository/SFSRootCAG2.cer)|[PEM](https://www.amazontrust.com/repository/SFSRootCAG2.pem)) certificate also available from the amazon trust repo linked above.
+
+Regardless of your choice, start by downloading the certificate and key specific to your device from MIC 
+![MICCertifiacted](https://github.com/TelenorStartIoT/tutorials/blob/master/04-arduino-mkrnb1500-mqtt/assets/03-MICCertificated.jpg)
+
+### PEM
+To use certificates and keys in the `PEM` format, start by uncomment the include statment in the `Arduino_MIC_MQTT.ino` file. Open `MICcertificates_YOUR_THING_ID.pem.h` file and replace `MIC_CLIENT_CERTIFICATE` and `MIC_SECRET_PRIVKEY_PEM` with the keys downloaded from the MIC dashboard for your device. You need to newline escape these `\n` to put them into a string, but take note that you do not modify the size value for the escaped newlines, you still use the value of the unmodified key as reported by the filesystem.
+
+#### Linux/MacOS newline escape
+```bash
+sed ':a;N;$!ba;s/\n/\\n/g' file.pem
+```
+You can then pipe this to a new file
+```bash
+  sed ':a;N;$!ba;s/\n/\\n/g' file.pem > newfile.pem
+```
+or do a copy paste.
+
+#### Windows newline escape
+Probably the easiest way to do this in Windows is to use a search and replace function in a code editor like `notepad++` or `visual studio code`, make sure regex (or its full name Regular Expressions) is enabled and search for `\n` and replace with `\\n`. That or install `WSL` letting you run Linux tools on your Windows machine.
+
+![VSCSearchAndReplace](https://github.com/TelenorStartIoT/tutorials/blob/master/04-arduino-mkrnb1500-mqtt/assets/10-escape-newline-vsc.png)
+
+#### Filesize
+Make sure you keep the filesize reported unchanged despite newline escaping the certs and key
+
+![CertSize](https://github.com/TelenorStartIoT/tutorials/blob/master/04-arduino-mkrnb1500-mqtt/assets/09-cert_size.png)
+
+### Run the example program
+
+Compile and run the example code on the MKR1500 device by clicking on the upload arrow symbol or choosing “Sketch->Upload..” from the menu. Open the Serial Monitor (Tools->Serial Monitor…) and see the log output from your program.
+
+![RunExampleProgram](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-coap/assets/17-run-program.png)
+![RunExampleProgram2](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-coap/assets/18-run-program2.png)
+
+### See your data displayed in MIC
+
+Open the MIC dashboard and see your data displayed in MIC.
+
+![MICDashBoard](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-coap/assets/19-example-dashboard.png)
+
+## Happy hacking!
+This concludes the Get started with the Arduino dev kit tutorial. Your next step could be to connect the supplied DHT11 sensor to the Arduino dev kit and to modify the “dummy” payload string with values from the DHT11 sensor.
+
+A god starting point would be to find out how to use the DHT library code supplied here:
+
+https://github.com/winlinvip/SimpleDHT
+
+Happy hacking!
+
+
+# Notes
+In `Arduino_M1_MQTT.ino` there's a line where we setup the serial connection and wait
+```C
+while (!Serial);
+```
+It can't be stressed enough that this is for debugging purposes and will halt the execution of the program if no serial connection is available. In other words if you disconnect from usb to run off a battery your device is likely to not execute code past this point and thus you shouldn't include this in production.
+
+
+# DER format conversion conserved for posterity
+We do want to change the content of the `MICCertificates——–.*.h` file with the certificate and private key for your thing in MIC. Let us first download the certificate and key from MIC. You will have to transform the certificates and the private key to DER Hex format. In order to facilitate for mutual authentication between the dev kit and the platform you will also need the AWS IoT root certificate. This certificate is already included the Arduino source code.
 
 ![MICCertifiacted](https://github.com/TelenorStartIoT/tutorials/blob/master/04-arduino-mkrnb1500-mqtt/assets/03-MICCertificated.jpg)
 
 ## Change file name and include statement in the .ino file
 
-The goal is to create a MICCertificates——–.h file containing your things certificates and keys. The file MICCertificatesYOUR_THING_ID.h is just a template. As a start, rename this file to match your things thing id by changing the YOUR_THING_ID part of the file name with your things id (e.g. MICCertificates00001234.h). Also change the include statement in the .ino file accordingly. If your SIM card has a PIN you will also have to add that in the .ino file.
+The goal is to create a `MICCertificates——–.der.h` file containing your things certificates and keys. The file `MICCertificatesYOUR_THING_ID.der.h` is just a template. As a start, rename this file to match your things thing id by changing the YOUR_THING_ID part of the file name with your things id (e.g. `MICCertificates00001234.der.h`). Also change the include statement in the .ino file accordingly. If your SIM card has a PIN you will also have to add that in the .ino file.
 
 ![ChangeFileName](https://github.com/TelenorStartIoT/tutorials/blob/master/04-arduino-mkrnb1500-mqtt/assets/04-ChangeFileName.jpg)
 
@@ -295,33 +366,6 @@ The start of the formatted privkey bytes in the MICCertificates——–.h file.
 
 ![EndFormat](https://github.com/TelenorStartIoT/tutorials/blob/master/04-arduino-mkrnb1500-mqtt/assets/08B-TransformPEMPrivateKey.jpg)
 The end of the formatted privkey bytes in the MICCertificates——–.h file. Note where the size is placed and that trailing 0x0 has been removed.
-
-
-### Run the example program
-
-Compile and run the example code on the MKR1500 device by clicking on the upload arrow symbol or choosing “Sketch->Upload..” from the menu. Open the Serial Monitor (Tools->Serial Monitor…) and see the log output from your program.
-
-![RunExampleProgram](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-coap/assets/17-run-program.png)
-![RunExampleProgram2](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-coap/assets/18-run-program2.png)
-
-### See your data displayed in MIC
-
-Open the MIC dashboard and see your data displayed in MIC.
-
-![MICDashBoard](https://github.com/TelenorStartIoT/tutorials/blob/master/03-arduino-mkrnb1500-coap/assets/19-example-dashboard.png)
-
-## Happy hacking!
-This concludes the Get started with the Arduino dev kit tutorial. Your next step could be to connect the supplied DHT11 sensor to the Arduino dev kit and to modify the “dummy” payload string with values from the DHT11 sensor.
-
-A god starting point would be to find out how to use the DHT library code supplied here:
-
-https://github.com/winlinvip/SimpleDHT
-
-Happy hacking!
-
-
-
-
 
 
 
