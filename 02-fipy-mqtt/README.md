@@ -11,7 +11,7 @@ You will learn how to:
 1.  Sign up for a MIC platform account
 2.  Download the software you need
 3.  Assemble the dev-kit
-4.  Upgrade modem firmware if needed
+4.  Upgrade modem firmware
 5.  Register your FyPy dev-kit as a thing in MIC
 6.  Program your FyPy dev-kit
 7.  Visualise your data in MIC and tailor your dashboard
@@ -151,13 +151,18 @@ New versions and explanations of how to do the upgrade are made available on Pyc
 
 ## 4. Flash FiPy modem to Update the LTE-M Firmware (Voluntary step)
 
-The FiPy modem is configured with the LTE-M (Cat M1) modem firmware as default from the factory, which means that when you are using the LTE-M network you do not have to flash the modem with new firmware and you can skip this chapter. It could however be a good idea to upgrade the LTE-M firmware when new versions are released.
+**In order to secure your device from known vulnerabilities we strongly recommend flashing to the latest version of the modem firmware**
 
-If you have previousely changed the modem firmware to another image you will have to change it back before continuing. Detailed instructions on how to update modem firmware can be found here: https://docs.pycom.io/updatefirmware/ltemodem/
+The modem is the part of your dev-kit that enables it to communicate with different networks. Currently the FiPy comes with two separate modem firmware images. One image is for NB-IoT (NB1) and the other image is for LTE-M (Cat M1). Only one of the modem images can be used at a time. This means that you need to make sure the right modem firmware image is flashed to the FiPy according to which network you want to use. In the future we hope that this will change and that it will be possible to switch between the two network types in your own program for the FiPy without having to flash the modem. However, for the time being this needs to be done manually.
+
+The FiPy is configured with the LTE-M (Cat M1) modem firmware as default from the factory, but we still recommend updating to the newest version to get patches and protect your device from known vulnerabilities. 
+
+Detailed instructions on how to update the LTE-M firmware or switch to NB-IoT firmware can be found here: https://docs.pycom.io/updatefirmware/ltemodem/
 
 **Note:** We recommend using an SD card in this process, but feel free to follow the method most convenient to you.
 
-Once you have the right modem firmware on your dev-kit you can start programming and register your device as a 'Thing' in the IoT platform Telenor Managed IoT Cloud.
+Once you have the right modem firmware on your dev-kit you are ready to start programming and register your device as a 'Thing' in the IoT platform Telenor Managed IoT Cloud.
+
 
 ## 5. Register Your FiPy Dev-Kit in Telenor Managed IoT Cloud as an MQTT Thing
 
