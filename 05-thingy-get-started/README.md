@@ -1,5 +1,7 @@
 # Get started with Nordic Thingy:91 in MIC
 
+**NB! This code example is for prototyping only. Not for deployment in production.**
+
 After completing this tutorial you will be able to see the data from Thingy:91 in your dashboard in Telenor Managed IoT Cloud (MIC).
 
 Start by downloading the nRF Connect for Desktop software from Nordic Semiconductor here: https://www.nordicsemi.com/Software-and-tools/Development-Tools/nRF-Connect-for-desktop
