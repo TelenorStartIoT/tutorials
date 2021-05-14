@@ -1,6 +1,6 @@
 # Compile and Build for Thingy:91 and nRF9160 DK
 
-**NB! This code example is for prototyping only. Not for deployment in production.**
+**NB! This code example is for prototyping only. Not for deployment in production. We also strongly recommend you update the modem firmware to the newest version [Modem Firmware Upgrade](https://startiot.telenor.com/tutorials/thingy91-modem-firmware-upgrade/)**
 
 This tutorial will guide you how to setup your environment for programming and building your own firmware for the Thingy:91 or nRF9160 DK.
 
