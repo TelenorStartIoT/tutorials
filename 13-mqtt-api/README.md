@@ -6,6 +6,8 @@ Telenor Managed IoT Cloud has several API's to query data and interact with the 
   * Use the MQTT client to subscribe to topics and get live data
   * Create a gauge that is updated live
 
+**NB! This code example is for prototyping only. Not for deployment in production.**
+
 ## 1. Setup HTML Page and Fetch Necessary Libraries
 
 The gauge chart will be created in a static HTML page that you can open in any web browser of your choice. We will use the C3.js JavaScript library for creating the gauge chart and a [JavaScript MIC SDK](https://github.com/TelenorStartIoT/mic-sdk-js). The MIC SDK will do most of the "heavy work" for us so that we can focus on creating the application.
