@@ -1,5 +1,7 @@
 # Compile and Build for Thingy:91 and nRF9160 DK
 
+**NB! This code example is for prototyping only. Not for deployment in production.**
+
 This tutorial will guide you how to setup your environment for programming and building your own firmware for the Thingy:91 or nRF9160 DK.
 
 ## 1. Prerequisites
