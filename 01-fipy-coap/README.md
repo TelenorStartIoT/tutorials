@@ -1,9 +1,10 @@
 # FiPy Dev-Kit - CoAP
 
-> Works with NB-IoT or LTE-M
+> Works with NB-IoT or LTE-M 
+
+**NB! This code example is for prototyping only. Not for deployment in production.**
 
 This tutorial gives brief instructions on how to get started with the FiPy dev-kit. This tutorial will send JSON formatted data in a CoAP packet over the LTE-M (Cat M1) or NB-IoT (NB1) network.  
-**NB! This code example is for prototyping only. Not for deployment in production.**
 
 You will learn how to:
 
