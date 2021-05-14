@@ -6,17 +6,18 @@ This tutorial will show you how to upgrade the modem firmware on your Nordic Sem
 
 Go to https://www.nordicsemi.com/Software-and-tools/Prototyping-platforms/Nordic-Thingy-91/Download#infotabs and download the newest "Precompiled application and modem firmware". 
 
-![Download FW](08-Thingy-modem-fw-upgrade/assets/01_Firmware_Thingy.png)
+![Download FW](https://github.com/TelenorStartIoT/tutorials/blob/master/08-Thingy-modem-fw-upgrade/assets/01_Firmware_Thingy.PNG)
+
 
 Unzip the downloaded folder. You should now have a regular folder with the following contents. Do not unzip the mfwnrf9160xx folder. 
 
-INSERT picture 2
+![Unzip folder](https://github.com/TelenorStartIoT/tutorials/blob/master/08-Thingy-modem-fw-upgrade/assets/02_Firmware_Thingy.PNG)
+
 
 ## 2. Flash your Thingy:91 with the downloaded firmware
 
-Open the Programmer app in nRF Connect. Connect your Thingy in MCU Boot mode by connecting it to the USB and press the middle button while turning the power on. Then scroll down the right-hand menu and press **Update modem** in the bottom of the menu. 
+Open the Programmer app in nRF Connect. Connect your Thingy in MCU Boot mode by connecting it to the USB and press the middle button while turning the power on. Then scroll down the right-hand menu and press **Update modem** in the bottom of the menu. Then choose the mfwnrf9160xx.zip folder as shown below and press open. Then write to the Thingy and you are good to go.
 
-INSERT picture 3
+![Open in nRF Connect](https://github.com/TelenorStartIoT/tutorials/blob/master/08-Thingy-modem-fw-upgrade/assets/03_Firmware_Thingy.PNG)
 
-Then choose the mfwnrf9160xx.zip folder as shown below and press open. Then write to the Thingy and you are good to go.
-
+![Chose folder](https://github.com/TelenorStartIoT/tutorials/blob/master/08-Thingy-modem-fw-upgrade/assets/04_Firmware_Thingy.PNG)
