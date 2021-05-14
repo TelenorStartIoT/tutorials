@@ -2,6 +2,8 @@
 
 > Works with NB-IoT or LTE-M
 
+**NB! This code example is for prototyping only. Not for deployment in production.**
+
 This tutorial gives brief instructions on how to get started with the Arduino MKR NB 1500 dev-kit. This tutorial will send JSON formatted data in a CoAP packet over the LTE-M (Cat M1) or NB-IoT (NB1) network.
 
 You will learn how to:
