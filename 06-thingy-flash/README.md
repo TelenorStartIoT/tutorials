@@ -1,8 +1,8 @@
 # Flash your Nordic Thingy:91 with New Firmware (pre-compiled .hex file)
 
-**NB! This code example is for prototyping only. Not for deployment in production. We also strongly recommend that you update the modem firmware as described in tutorial [Thingy-modem-firmware-upgrade](/tutorials/08-Thingy-modem-firmware-upgrade/)**
+**NB! This code example is for prototyping only. Not for deployment in production. We also strongly recommend that you update the modem firmware as described in tutorial [Thingy-modem-firmware-upgrade](https://github.com/TelenorStartIoT/tutorials/tree/master/08-Thingy-modem-fw-upgrade)**
 
-This is a continuation of tutorial [Nordic Thingy:91 - Get Started](/tutorials/thingy91-get-started/), and we strongly recommend completing that before starting this tutorial.
+This is a continuation of tutorial [Nordic Thingy:91 - Get Started](https://github.com/TelenorStartIoT/tutorials/blob/master/05-thingy-get-started/README.md), and we strongly recommend completing that before starting this tutorial.
 
 To flash your Thingy:91 you need to install the "Programmer" application in nRF Connect for Desktop. Once installed, open the programmer. At the right hand side you find a panel with all the necessary functionality for flashing your .hex file.
 
