@@ -1,6 +1,6 @@
 # Flash your Nordic Thingy:91 with New Firmware (pre-compiled .hex file)
 
-**NB! This code example is for prototyping only. Not for deployment in production. We also strongly recommend that you update the modem firmware as described in tutorial [Thingy-modem-firmware-upgrade](https://github.com/TelenorStartIoT/tutorials/tree/master/08-Thingy-modem-fw-upgrade)**
+**NB! This code example is for prototyping only. Not for deployment in production. We also strongly recommend that you update the modem firmware as described in tutorial [Thingy-modem-firmware-upgrade](https://startiot.telenor.com/tutorials/thingy91-modem-firmware-upgrade/)**
 
 This is a continuation of tutorial [Nordic Thingy:91 - Get Started](https://startiot.telenor.com/tutorials/thingy91-get-started/), and we strongly recommend completing that before starting this tutorial.
 
