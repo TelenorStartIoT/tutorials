@@ -1,6 +1,8 @@
 # Get Started With the Arduino MKR NB 1500 Dev-Kit (MQTT/TLS 1.2 over LTE-M)
 
-> Reading time: 45 minutes
+> LTE-M
+
+**NB! This code example is for prototyping only. Not for deployment in production.**
 
 # Arduino MKR1500 MQTT/TLS 1.2 over M1
 This tutorial gives brief instructions on how to get started with the Arduino MKR1500 dev kit. This tutorial will send data from the Arduino MKR1500 dev kit using secure (TLS 1.2) MQTT packet over the M1 (LTE Cat M1) network.
