@@ -4,7 +4,9 @@ The Managed IoT Cloud App Board is great for creating dashboards to visualize da
 
   * Use the MIC Elasticsearch API to query historical data from a device
   * Plot the data in a timeseries chart
-  * Display it in a static HTML page
+  * Display it in a static HTML page  
+ 
+**NB! This code example is for prototyping only. Not for deployment in production.** 
 
 ## 1. Setup HTML Page and Fetch Necessary Libraries
 
