@@ -2,6 +2,8 @@
 
 > Document under construction
 
+**NB! This code example is for prototyping only. Not for deployment in production.**
+
 The EE R410 breakout board is a pinout of the Ublox Sara R410M modem with power circuits, SIM card slot and an USB port. The breakout board does not include a processing unit and must be used together with an external unit that manages the modems serial port and issues AT commands (aka Hayes commands) to the modem in a controlled fashion. It connects to a PC via USB for easy experimentation, or via UART to embedded devices (an MCU or even a Raspberry Pi). It comes fully assembled with soldered headers and antenna.
 
 More about the Ublox Sara R410M modem can be found here: https://www.u-blox.com/en/product/sara-r4n4-series
