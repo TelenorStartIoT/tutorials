@@ -1,6 +1,6 @@
 # Get started with Nordic Thingy:91 in MIC
 
-**NB! This code example is for prototyping only. Not for deployment in production. We also recommend that you update the modem firmware as described in [Thingy modem firmware upgrade](https://github.com/TelenorStartIoT/tutorials/tree/master/08-Thingy-modem-fw-upgrade)**
+**NB! This code example is for prototyping only. Not for deployment in production. We also recommend that you update the modem firmware as described in [Thingy modem firmware upgrade](https://startiot.telenor.com/tutorials/thingy91-modem-firmware-upgrade/)**
 
 After completing this tutorial you will be able to see the data from Thingy:91 in your dashboard in Telenor Managed IoT Cloud (MIC).
 
