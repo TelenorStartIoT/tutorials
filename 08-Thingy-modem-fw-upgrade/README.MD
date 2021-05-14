@@ -6,7 +6,7 @@ This tutorial will show you how to upgrade the modem firmware on your Nordic Sem
 
 Go to https://www.nordicsemi.com/Software-and-tools/Prototyping-platforms/Nordic-Thingy-91/Download#infotabs and download the newest "Precompiled application and modem firmware". 
 
-![Download FW][08-Thingy-modem-fw-upgrade/assets/01_Firmware_Thingy.PNG]
+![Download FW](08-Thingy-modem-fw-upgrade/assets/01_Firmware_Thingy.png)
 
 Unzip the downloaded folder. You should now have a regular folder with the following contents. Do not unzip the mfwnrf9160xx folder. 
 
