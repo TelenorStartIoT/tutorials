@@ -2,6 +2,8 @@
 
 This document contains common GraphQL query recipes for you to use or take example of. You should read the "Managed IoT Cloud - GraphQL API" first so you know how to run the following queries.
 
+**NB! This code example is for prototyping only. Not for deployment in production.**
+
 ## 1. Query all rules available to the currently authorized user. Sort by rule name.
 
 ```js
